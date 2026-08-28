@@ -1,0 +1,515 @@
+# Whole Brain Cellular Activation After Mu and NOP Receptor Agonism Identified Differential Regional and Network Consequences
+
+Analysis code accompanying:
+
+> Martinez M, Ozawa A, Van Zant D, Thornberry J, Toll L.
+> *Whole Brain Cellular Activation After Mu and NOP Receptor Agonism
+> Identified Differential Regional and Network Consequences.*
+> [JOURNAL] 2026. [PAPER_DOI]
+
+Repository: https://github.com/toll-lab-code/cfos-opioid-brain-analyses
+
+Toll Lab, Stiles-Nicholson Brain Institute, Charles E. Schmidt College of
+Medicine, Florida Atlantic University.
+
+Archived release: https://doi.org/10.5281/zenodo.21502549
+Processed data: https://doi.org/10.5281/zenodo.21522238
+
+---
+
+## Overview
+
+TRAP2/Ai9 reporter mice were used to map whole-brain cellular activation across
+four conditions. Cleared brains were imaged by light-sheet microscopy and
+registered to the Allen CCFv3 atlas, yielding per-animal regional cell counts.
+This repository contains the code that takes those counts through regional
+statistics and co-activation network analysis.
+
+**Conditions and group sizes** (n per sex, males + females):
+
+| Condition | Label in figures | Composite header prefix | Males | Females | Total |
+|---|---|---|---|---|---|
+| Vehicle | Veh | `Vehicle` | 6 | 6 | 12 |
+| Acute morphine, 10 mg/kg | Mor | `Morphine` | 6 | 6 | 12 |
+| Morphine-dependent | MorDep | `Chronic Morphine` | 5 | 5 | 10 |
+| Ro 64-6198, 0.6 mg/kg | Ro | `Ro` | 6 | 6 | 12 |
+
+198 grey-matter CCFv3 regions are analysed.
+
+---
+
+## Repository layout
+
+```
+.
+├── README.md
+├── LICENSE
+├── sessionInfo.txt               # R environment used for the published run
+├── scripts/
+│   ├── preprocess_neuroinfo.R    # step 1: clean per-animal exports
+│   ├── regional_analysis.R       # step 3: region-wise statistics
+│   ├── network_analysis.R        # step 4: co-activation networks
+│   ├── regional_figures.R        # step 5: Figures 2 and 3
+│   ├── coactivation_figures.R    # step 6: Figures 4 and S2
+│   ├── cartography_figures.R     # step 7: Figure 5 panels A and B
+│   ├── network_graph_figures.R   # step 8: Figure 5 panel C
+│   └── divisions.R               # shared division palette (sourced, not run)
+├── data/
+│   ├── 1.json                    # Allen CCFv3 structure ontology
+│   ├── ccfv3_volumes.xlsx        # CCFv3 regional volumes
+│   ├── Drug_Composite.xlsx       # compiled counts (see step 2)
+│   ├── region_division_lookup.csv # region -> anatomical division
+│   ├── sba_data/                 # Scalable Brain Atlas coronal data (see below)
+│   └── neuroinfo_raw/            # per-animal NeuroInfo exports
+└── results/                      # created on first run
+```
+
+Scripts resolve paths relative to the repository root and are intended to be
+run from there. Both directories can be redirected without editing the code:
+
+```bash
+export CFOS_DATA_DIR=/path/to/data
+export CFOS_OUTPUT_DIR=/path/to/results
+```
+
+---
+
+## Requirements
+
+R 4.4.3. Each script checks for its own dependencies on startup and stops with
+an `install.packages()` command if anything is missing. The exact environment
+used to produce the published results is recorded in `sessionInfo.txt`
+(R 4.4.3, aarch64-apple-darwin20).
+
+| Script | Packages |
+|---|---|
+| `preprocess_neuroinfo.R` | dplyr, jsonlite, purrr, tibble |
+| `regional_analysis.R` | readxl, openxlsx, dplyr, MASS, emmeans |
+| `network_analysis.R` | tidyverse, readxl, openxlsx, igraph |
+| `regional_figures.R` | tidyverse, readxl, showtext, ggbeeswarm, scales |
+| `coactivation_figures.R` | readxl (showtext and sysfonts optional) |
+| `cartography_figures.R` | jsonlite, xml2, viridisLite, scales, stringr, rsvg, magick, readxl |
+| `network_graph_figures.R` | readxl, igraph, magick |
+
+Install everything at once:
+
+```r
+install.packages(c("tidyverse", "readxl", "openxlsx", "dplyr", "MASS",
+                   "emmeans", "igraph", "jsonlite", "purrr", "tibble",
+                   "showtext", "ggbeeswarm", "scales", "xml2", "viridisLite",
+                   "stringr", "rsvg", "magick"))
+```
+
+`cartography_figures.R` additionally needs system libraries for `rsvg` and
+`magick`, which must be installed outside R:
+
+```bash
+# Debian / Ubuntu
+sudo apt-get install librsvg2-dev libmagick++-dev
+# macOS (Homebrew)
+brew install librsvg imagemagick
+```
+
+Versions used for the published analysis: tidyverse 2.0.0, dplyr 1.2.0,
+purrr 1.2.1, tibble 3.3.1, readxl 1.4.5, openxlsx 4.2.8.1, igraph 2.2.2,
+MASS 7.3-65, emmeans 2.0.2, ggbeeswarm 0.7.3, scales 1.4.0.
+
+`regional_figures.R` renders text in Arial. The script looks for the font in the
+macOS system font directory by default; set `ARIAL_DIR` to point elsewhere:
+
+```bash
+export ARIAL_DIR=/path/to/fonts
+```
+
+If Arial is not found the script falls back to the device default sans family
+and prints a message. Figures still render, but glyph metrics differ slightly
+from the published versions.
+
+The Allen ontology (`data/1.json`) is the structure graph download from the
+Allen Institute API, saved under its default file name:
+`http://api.brain-map.org/api/v2/structure_graph_download/1.json`
+
+---
+
+## Pipeline
+
+Run in order. Step 2 is a manual step and is documented in full below.
+
+### Step 1. Clean the NeuroInfo exports
+
+```bash
+Rscript scripts/preprocess_neuroinfo.R
+```
+
+Reads every `.csv` under `data/neuroinfo_raw/` (searched recursively, so any
+per-condition or per-sex subfolder arrangement works), and for each file:
+
+1. Skips the export's title line and de-duplicates header names.
+2. Drops the export bookkeeping columns and any `section` column.
+3. Fills blank region names from the Allen ontology, matched on acronym.
+4. Averages the left and right hemisphere rows for each region. A region is
+   kept only if it is present **and** has both hemispheres; regions that are
+   absent or unilateral in a given export drop out here.
+5. Restricts to the analysis region whitelist and applies the exclusion list.
+
+Writes one CSV per animal to `results/neuroinfo_cleaned/`, mirroring the input
+folder structure and named `<animal>_counts.csv`, plus `batch_cleaning_summary.csv` listing every file
+processed, its output row count, any regions skipped for missing hemispheres,
+and any file that errored.
+
+Each cleaned file has 198 rows and the following columns:
+
+| Column | Contents |
+|---|---|
+| `acronym` | CCFv3 acronym, the join key used everywhere downstream |
+| `name` | full CCFv3 region name |
+| `id` | Allen structure ID |
+| `count` | hemisphere-averaged cell count, the value used in all analyses |
+| `fluorescence strength` | hemisphere-averaged fluorescence measure |
+| `channel (...)` | cleared placeholder column |
+
+The script assumes no particular file-naming scheme. If your exports use a
+different layout, adjust the constants at the top of the Config section
+(`FILE_PATTERN`, `RAW_SUFFIXES`, `CLEAN_SUFFIX`, `HEADER_SKIP`, `DROP_COLS`,
+`FLUOR_COL`, `BLANK_COL`). Hemisphere labels may be `left`/`right`, `L`/`R`,
+or `lh`/`rh` in any case.
+
+### Step 2. Compile the composite workbook (manual)
+
+`Drug_Composite.xlsx` is assembled by hand in a spreadsheet application from
+the cleaned per-animal files produced in step 1. It is provided in this
+repository, so steps 3 and 4 can be run without repeating this step. The
+procedure is documented here for transparency and for anyone reproducing the
+pipeline from raw exports.
+
+**Workbook structure.** Two sheets, named exactly:
+
+- `Clustered Males`
+- `Clustered Females`
+
+Each sheet is laid out as:
+
+| Column | Contents |
+|---|---|
+| A | `name` in row 1, then the full CCFv3 region name |
+| B | `acronym` in row 1, then the CCFv3 acronym |
+| C | blank spacer |
+| D onward | one column per animal, grouped by condition, with a blank spacer column between condition blocks |
+
+Regions occupy rows 2 to 199 (198 regions). The region order must be identical
+in both sheets and across every column.
+
+**Animal column headers** must take the form `<Condition> - <Sex> <number>`,
+for example `Vehicle - Male 1`, `Chronic Morphine - Female 5`, `Ro - Male 6`.
+
+The condition strings are matched by prefix and must be exactly one of:
+
+| Condition | Required prefix |
+|---|---|
+| Vehicle | `Vehicle` |
+| Acute morphine | `Morphine` |
+| Morphine-dependent | `Chronic Morphine` |
+| Ro 64-6198 | `Ro` |
+
+**Cell values.** For each animal column, take that animal's cleaned CSV from
+step 1 and copy the `count` column, matched to the composite rows on `acronym`
+rather than on row position. These are hemisphere-averaged counts and are
+therefore often non-integer. The other numeric columns of the cleaned file
+(`id`, `fluorescence strength`) are not carried into the composite.
+
+**Checks before proceeding.** Assembly by hand is the most error-prone part of
+the pipeline, and a misaligned paste is not always visible. Confirm that:
+
+- Both sheets have 198 region rows and the acronym column matches between them.
+- Each animal appears exactly once. Duplicated columns are easy to introduce by
+  copy-paste and will bias every statistic for that condition.
+- Counts per condition are Vehicle 6, Morphine 6, Chronic Morphine 5, Ro 6 in
+  each sheet, 46 animals in total.
+- No header contains a typo in the condition prefix.
+
+`regional_analysis.R` includes a column-integrity guard that aborts if any
+column that looks like an animal cannot be assigned to exactly one condition
+group, which catches prefix typos. It cannot detect a duplicated animal or a
+misaligned paste, so the checks above matter.
+
+### Step 3. Regional statistics
+
+```bash
+Rscript scripts/regional_analysis.R
+```
+
+Reads `data/Drug_Composite.xlsx` and `data/ccfv3_volumes.xlsx`. Counts are
+normalised to log10(cells/mm3) using CCFv3 regional volumes. Analysis
+hierarchy:
+
+- **Primary:** one-way ANOVA on pooled males and females, condition only, with
+  Tukey pairwise tests on 5 a priori condition pairs and BH-FDR correction
+  across the 198 regions.
+- **Secondary:** sex-stratified one-way ANOVA.
+- **Supplementary:** two-way ANOVA (condition x sex), and a negative binomial
+  GLM on raw counts with log(volume) offset as a robustness check.
+
+The pair Morphine-Dependent versus Ro is not tested.
+
+Sign convention: for every comparison (A vs B) all signed quantities are
+reported as treatment minus reference, so a treatment-induced increase is
+positive.
+
+**Outputs** (to `results/`):
+
+- `Drug_Statistical_Results_Primary.xlsx`
+- `Drug_Statistical_Results_BySex.xlsx`
+- `Drug_Statistical_Results_TwoWay.xlsx`
+- `Drug_Statistical_Results_NegBin.xlsx`
+- `normalized_data_combined.csv`, `normalized_data_males.csv`,
+  `normalized_data_females.csv`
+
+### Step 4. Co-activation networks
+
+```bash
+Rscript scripts/network_analysis.R
+```
+
+Reads `data/Drug_Composite.xlsx`. Region-by-region Pearson correlations across
+animals within each condition, thresholded to a common 10% density on positive
+edges so that degree, modularity and node roles are comparable across
+conditions. Modules are detected by consensus Louvain (1,000 runs) on the
+thresholded graph. Node roles use the Guimera-Amaral cartographic framework on
+the weighted within-module degree z-score and participation coefficient.
+
+Sex-stratified networks are computed alongside a pooled Combined network in
+which each region is mean-centred within sex before pooling. The Combined
+network carries the resampling-based inference (bootstrap confidence intervals
+and label-permutation tests), since per-sex n of 5 to 6 is too small for stable
+resampling.
+
+**Outputs** (to `results/`):
+
+- `00_Processed_Data.xlsx`
+- `01_Connectivity.xlsx`
+- `02_Network_Metrics.xlsx`
+- `03_Modules_and_Roles.xlsx`
+
+Every workbook opens with a README sheet describing each of its sheets and the
+method behind it.
+
+### Step 5. Figures 2 and 3
+
+```bash
+Rscript scripts/regional_figures.R
+```
+
+Must be run after `regional_analysis.R`, since it reads the statistics workbooks
+that step produces. Reads `data/Drug_Composite.xlsx`, `data/ccfv3_volumes.xlsx`,
+the primary and by-sex statistics workbooks from `results/`, and
+`data/region_division_lookup.csv`. Sources `scripts/divisions.R` for the
+division palette.
+
+Renders eight panels, each written twice at 1200 dpi as an LZW-compressed TIFF
+for submission and a PNG for assembly:
+
+| Figure | Panels produced |
+|---|---|
+| Figure 2 | A (lollipop, top 30 regions by Cohen's \|d\|), B (significant-region counts), C (whole-brain totals), E (exemplar bars: MBO, ASO, TRS, MEA) |
+| Figure 3 | A (diverging bars, males vs females), B (sex-stratified: SNr, AVPV, LC), C (acute vs dependent effect sizes), D (exemplar bars: DMH, NOD) |
+
+Figure 2 Panel D is representative light-sheet imagery and is not produced by
+this script. Panels are written to `results/figures/Figure2/` and
+`results/figures/Figure3/` and assembled into final figures separately.
+
+`divisions.R` is sourced rather than run on its own. It defines the 13-division
+CCFv3 grouping, its colour palette, a 7-division coarse grouping used where a
+13-colour legend is not legible, and the `struct_of()` / `super_of()` helpers
+that map region acronyms onto each.
+
+### Step 6. Figures 4 and S2
+
+```bash
+Rscript scripts/coactivation_figures.R
+```
+
+Must be run after `network_analysis.R`, since it reads the correlation matrices
+from `results/01_Connectivity.xlsx`. Sources `scripts/divisions.R` for the
+division palette.
+
+Both figure sets are produced in a single run, each into its own folder:
+
+| Set | Contents | Output folder |
+|---|---|---|
+| Figure 4 | Combined per-condition heatmaps plus companion panels (mean \|r\| by condition, region involvement, within-division mean \|r\|), condition titles baked in | `results/figures/Figure4/` |
+| Figure S2 | Sex-stratified heatmaps (Males/Females per condition), condition-difference and sex-difference maps, as small titleless panels | `results/figures/FigureS2/` |
+
+To render only one set, drop the other from `RENDER_MODES` near the top of the
+file. Individual panels can be toggled with the `DO_*` flags below it.
+
+Heatmaps are square correlation matrices with regions ordered by anatomical
+division and a division colour bar alongside, following Kimbrough et al. 2020.
+Row and column labels for the supplement grid are added at assembly rather than
+rendered into the panels. Panels are written as paired TIFF and PNG.
+
+Mean \|r\| values are computed from the correlation matrices at run time. Set
+`MEANR_FROM_DATA <- FALSE` to substitute the reported values held in
+`MEANR_REPORTED`, which are otherwise used only as a cross-check.
+
+### Step 7. Figure 5, Panels A and B
+
+```bash
+Rscript scripts/cartography_figures.R
+```
+
+Must be run after `network_analysis.R`, since it reads the `Node_Roles` sheet of
+`results/03_Modules_and_Roles.xlsx`. Also requires the Scalable Brain Atlas data
+described below.
+
+Colours Scalable Brain Atlas coronal sections by the weighted cartographic node
+metrics, one strip per condition:
+
+| Panel | Metric | Column read | Colour map |
+|---|---|---|---|
+| A | Participation coefficient | `Participation_coef_wt` | viridis |
+| B | Within-module degree z-score | `WM_strength_z` | diverging |
+
+For each atlas region polygon the value is resolved by exact acronym match,
+then by averaging descendants, then by nearest ancestor; polygons with no
+coverage are left grey. Nine coronal slices spanning anterior to posterior are
+composited into a horizontal strip per condition, with a matching colourbar.
+Outputs are written to `results/figures/Figure5/` as HTML (an interactive SVG
+grid) and PNG.
+
+### Step 8. Figure 5, Panel C
+
+```bash
+Rscript scripts/network_graph_figures.R
+```
+
+Must be run after `network_analysis.R`, since it reads both
+`results/01_Connectivity.xlsx` and `results/03_Modules_and_Roles.xlsx`.
+
+Draws the force-directed co-activation graphs, one panel per condition and sex,
+following Kimbrough 2020, Bloch 2024 and Ardinger 2024. Edges are rethresholded
+to the same 10% density used in the analysis, reproducing the pipeline's
+thresholding so the drawn graph is the one the modules, PC and WMDz were
+computed on. Encoding:
+
+| Element | Encodes |
+|---|---|
+| Node size | Participation coefficient (weighted) |
+| Node fill | Within-module degree z-score, blue-white-red, clamped at 2.5 |
+| Node ring | Consensus-Louvain module, assigned within panel |
+| Edge | Positive co-activation edges retained at 10% density |
+| Layout | Force-directed, Kamada-Kawai, fixed seed |
+
+Nodes are labelled by connector hub (role R6) only, which makes the labelled set
+a strict subset of the black-ringed WMDz hubs. Display applies a 2-core filter
+and keeps the giant component, so the node count drawn in a panel is smaller
+than the node count in the analysis graph; metrics are always computed on the
+full thresholded network.
+
+Outputs to `results/figures/Figure5C/`: twelve network panels, a shared legend,
+and three role-composition bar panels, each as paired TIFF and PNG.
+
+---
+
+## Input data specifications
+
+### `data/Drug_Composite.xlsx`
+
+See step 2. Sheets `Clustered Males` and `Clustered Females`; columns `name`,
+`acronym`, then one column per animal; 198 region rows.
+
+### `data/ccfv3_volumes.xlsx`
+
+Regional volumes from CCFv3 registration. A title occupies row 1, column
+headers are on row 2, and data begin on row 3. The analysis uses the
+`abbreviation` column as the join key and `Mean Volume (m)` as the volume in
+mm3.
+
+### `data/1.json`
+
+Allen CCFv3 structure ontology as downloaded from the Allen Institute API. The
+structure tree sits under the `msg` key of the response object. Used only to
+fill in region names left blank by the export; it does not affect which regions
+are retained.
+
+### `data/region_division_lookup.csv`
+
+Two columns, `Region` (CCFv3 acronym) and `Structure` (anatomical division).
+One row per analysed region, covering all 198 with all 13 divisions
+represented. This is the single assignment source for division membership, so
+the grouping is identical in every figure.
+
+### `data/sba_data/`
+
+Coronal section geometry from the Scalable Brain Atlas, used only by
+`cartography_figures.R` to draw the atlas strips. The template is the Allen
+Mouse Brain Common Coordinate Framework version 3 (`ABA_v3`), the same atlas
+version the cell counts are registered to:
+
+https://scalablebrainatlas.incf.org/mouse/ABA_v3
+
+This is third-party data and is **not redistributed in this repository**. The
+Scalable Brain Atlas publishes a citation policy rather than a redistribution
+licence, so obtain the data directly from the source above and place it at this
+path. From the Downloads section of that page, take `coronal_svg.zip` and the
+`rgb2acr.json` / `acr2full.json` maps. The folder must contain:
+
+```
+sba_data/
+├── rgb2acr.json      # polygon fill colour -> region acronym
+├── acr2parent.json   # region acronym -> parent acronym
+├── acr2full.json     # region acronym -> full region name
+└── coronal_svg/      # one SVG per coronal section
+```
+
+Only `rgb2acr.json` and `coronal_svg/` are strictly required; the other two
+improve region resolution when an acronym is not matched directly. The nine
+sections used are listed in `SELECTED_SLICES` in the script.
+
+**Citation.** Use of these data carries a citation requirement: cite both the
+atlas template and the Scalable Brain Atlas itself.
+
+> Lein ES, Hawrylycz MJ, Ao N, et al. (2007). Genome-wide atlas of gene
+> expression in the adult mouse brain. *Nature* 445(7124):168-176.
+> doi:10.1038/nature05453
+
+> Bakker R, Tiesinga P, Kotter R (2015). The Scalable Brain Atlas: instant
+> web-based access to public brain atlases and related content.
+> *Neuroinformatics.* doi:10.1007/s12021-014-9258-x
+
+### `data/neuroinfo_raw/`
+
+Per-animal NeuroInfo region tables exported as CSV. Expected columns include
+`acronym`, `name` and `hemisphere`, with one row per region per hemisphere.
+
+---
+
+## Notes
+
+- The join key throughout is the region `acronym`, never the region name
+  string.
+- Two distinct hub definitions appear in the outputs and are not
+  interchangeable: the cartographic hub (weighted within-module degree z-score
+  at or above 1.5, used for node roles) and a multi-centrality convergence flag
+  in `03_Modules_and_Roles.xlsx`. They index different constructs and should
+  not be mixed within a single claim.
+- Module numbers are assigned per condition and are not comparable across
+  conditions.
+- Full methodological detail, parameter justifications and references are given
+  in the Supplemental Methods of the accompanying paper.
+
+---
+
+## License
+
+Code in this repository is released under the MIT license; see `LICENSE`.
+Processed data deposited at https://doi.org/10.5281/zenodo.21522238 are released under CC-BY-4.0.
+
+## Citation
+
+If you use this code, please cite the paper above and the archived release
+https://doi.org/10.5281/zenodo.21502549.
+
+## Use of AI assistance
+
+Generative AI (Claude, Anthropic; model Opus 4.8) was used during manuscript preparation and in preparing the analysis code for public deposit. Specifically, it was used to: (i) correct, update, and debug analysis code written by the authors, and to write utility scripts used to assemble the supplemental tables; (ii) consistency-check manuscript and supplemental text, including terminology standardization and cross-checking reported numerical values against the source data workbooks; and (iii) prepare the deposited R and Python code for public release, including removing machine-specific file paths, generalizing input handling, standardizing comments and headers, and drafting repository documentation. The study design, the analytical approach, the execution of all statistical and network analyses, and the interpretation of results were determined and carried out by the authors. No generative AI image tools were used to create figure content; all figure content was rendered directly from the study data by R and Python scripts. All AI-assisted outputs were reviewed, verified, and where necessary corrected by the authors, who take full responsibility for the accuracy and integrity of the work.
+

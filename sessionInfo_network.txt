@@ -1,0 +1,39 @@
+R version 4.4.3 (2025-02-28)
+Platform: aarch64-apple-darwin20
+Running under: macOS 26.6
+
+Matrix products: default
+BLAS:   /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libBLAS.dylib 
+LAPACK: /Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/lib/libRlapack.dylib;  LAPACK version 3.12.0
+
+locale:
+[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
+
+time zone: America/Los_Angeles
+tzcode source: internal
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+other attached packages:
+ [1] igraph_2.2.2     emmeans_2.0.2    MASS_7.3-65      openxlsx_4.2.8.1
+ [5] ggh4x_0.3.1      scales_1.4.0     ggbeeswarm_0.7.3 showtext_0.9-8  
+ [9] showtextdb_3.0   sysfonts_0.8.9   readxl_1.4.5     lubridate_1.9.5 
+[13] forcats_1.0.1    stringr_1.6.0    dplyr_1.2.0      purrr_1.2.1     
+[17] readr_2.2.0      tidyr_1.3.2      tibble_3.3.1     ggplot2_4.0.2   
+[21] tidyverse_2.0.0 
+
+loaded via a namespace (and not attached):
+ [1] gtable_0.3.6       beeswarm_0.4.0     ggrepel_0.9.8      lattice_0.22-9    
+ [5] tzdb_0.5.0         vctrs_0.7.2        tools_4.4.3        generics_0.1.4    
+ [9] sandwich_3.1-1     pkgconfig_2.0.3    Matrix_1.7-5       RColorBrewer_1.1-3
+[13] S7_0.2.1           lifecycle_1.0.5    compiler_4.4.3     farver_2.1.2      
+[17] textshaping_1.0.5  codetools_0.2-20   vipor_0.4.7        pillar_1.11.1     
+[21] magick_2.9.1       multcomp_1.4-30    tidyselect_1.2.1   zip_2.3.3         
+[25] mvtnorm_1.3-6      stringi_1.8.7      labeling_0.4.3     rsvg_2.7.0        
+[29] splines_4.4.3      grid_4.4.3         cli_3.6.5          magrittr_2.0.4    
+[33] survival_3.8-6     TH.data_1.1-5      withr_3.0.2        timechange_0.4.0  
+[37] estimability_1.5.1 cellranger_1.1.0   ragg_1.5.1         zoo_1.8-15        
+[41] hms_1.1.4          viridisLite_0.4.3  rlang_1.1.7        Rcpp_1.1.1        
+[45] xtable_1.8-8       glue_1.8.0         xml2_1.5.2         rstudioapi_0.18.0 
+[49] jsonlite_2.0.0     R6_2.6.1           systemfonts_1.3.2 

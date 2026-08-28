@@ -1,0 +1,1684 @@
+Region,,,,Experiment,Marker 1,,,Total,,
+name,acronym,id,hemisphere,section,count,strength,channel Ex: 561nm Em: 620nm,count,strength,channel Ex: 561nm Em: 620nm
+Outside,,0,left,all,94497,307.23,909.559,94497,307.23,909.559
+Outside,,0,right,all,119009,272.807,781.069,119009,272.807,781.069
+root,root,997,left,all,2291641,311.667,1162.77,2291641,311.667,1162.77
+root,root,997,right,all,1824762,279.343,1026.24,1824762,279.343,1026.24
+Basic cell groups and regions,grey,8,left,all,2150057,313.915,1170.07,2150057,313.915,1170.07
+Basic cell groups and regions,grey,8,right,all,1698899,280.968,1033.42,1698899,280.968,1033.42
+Cerebrum,CH,567,left,all,1520769,321.849,1136.87,1520769,321.849,1136.87
+Cerebrum,CH,567,right,all,1170085,283.622,975.102,1170085,283.622,975.102
+Cerebral cortex,CTX,688,left,all,1324935,331.751,1119.2,1324935,331.751,1119.2
+Cerebral cortex,CTX,688,right,all,1025945,290.223,960.788,1025945,290.223,960.788
+Cortical plate,CTXpl,695,left,all,1279317,332.784,1123.8,1279317,332.784,1123.8
+Cortical plate,CTXpl,695,right,all,993079,290.985,965.145,993079,290.985,965.145
+Isocortex,Isocortex,315,left,all,832492,323.709,1104.39,832492,323.709,1104.39
+Isocortex,Isocortex,315,right,all,630275,282.662,948.64,630275,282.662,948.64
+Frontal pole/ cerebral cortex,FRP,184,left,all,6336,312.396,989.886,6336,312.396,989.886
+Frontal pole/ cerebral cortex,FRP,184,right,all,6485,286.629,900.07,6485,286.629,900.07
+Frontal pole/ layer 1,FRP1,68,left,all,1105,230.019,765.457,1105,230.019,765.457
+Frontal pole/ layer 1,FRP1,68,right,all,1107,200.175,673.579,1107,200.175,673.579
+Frontal pole/ layer 2/3,FRP2/3,667,left,all,1619,343.054,1050.71,1619,343.054,1050.71
+Frontal pole/ layer 2/3,FRP2/3,667,right,all,1885,301.827,934.9,1885,301.827,934.9
+Frontal pole/ layer 5,FRP5,526157192,left,all,2893,337.734,1059.86,2893,337.734,1059.86
+Frontal pole/ layer 5,FRP5,526157192,right,all,2852,321.931,986.849,2852,321.931,986.849
+Frontal pole/ layer 6a,FRP6a,526157196,left,all,716,268.455,916.719,716,268.455,916.719
+Frontal pole/ layer 6a,FRP6a,526157196,right,all,638,234.382,803.223,638,234.382,803.223
+Frontal pole/ layer 6b,FRP6b,526322264,left,all,3,163.737,814,3,163.737,814
+Frontal pole/ layer 6b,FRP6b,526322264,right,all,3,188.95,689.667,3,188.95,689.667
+Somatomotor areas,MO,500,left,all,174013,330.529,1096.21,174013,330.529,1096.21
+Somatomotor areas,MO,500,right,all,138817,291.878,966.764,138817,291.878,966.764
+Primary motor area,MOp,985,left,all,81346,330.396,1132.16,81346,330.396,1132.16
+Primary motor area,MOp,985,right,all,59648,288.994,992.837,59648,288.994,992.837
+Primary motor area/ Layer 1,MOp1,320,left,all,6276,344.166,1101.93,6276,344.166,1101.93
+Primary motor area/ Layer 1,MOp1,320,right,all,2854,243.342,802.7,2854,243.342,802.7
+Primary motor area/ Layer 2/3,MOp2/3,943,left,all,29944,302.454,1061.35,29944,302.454,1061.35
+Primary motor area/ Layer 2/3,MOp2/3,943,right,all,21991,267.875,934.578,21991,267.875,934.578
+Primary motor area/ Layer 5,MOp5,648,left,all,27214,389.83,1249.88,27214,389.83,1249.88
+Primary motor area/ Layer 5,MOp5,648,right,all,20236,342.916,1108.56,20236,342.916,1108.56
+Primary motor area/ Layer 6a,MOp6a,844,left,all,17550,283.013,1081.37,17550,283.013,1081.37
+Primary motor area/ Layer 6a,MOp6a,844,right,all,14352,254.907,957.4,14352,254.907,957.4
+Primary motor area/ Layer 6b,MOp6b,882,left,all,362,231.961,1125.9,362,231.961,1125.9
+Primary motor area/ Layer 6b,MOp6b,882,right,all,215,255.309,949.051,215,255.309,949.051
+Secondary motor area,MOs,993,left,all,92667,330.645,1064.65,92667,330.645,1064.65
+Secondary motor area,MOs,993,right,all,79169,294.05,947.119,79169,294.05,947.119
+Secondary motor area/ layer 1,MOs1,656,left,all,8950,339.274,1057.47,8950,339.274,1057.47
+Secondary motor area/ layer 1,MOs1,656,right,all,6917,274.849,859.341,6917,274.849,859.341
+Secondary motor area/ layer 2/3,MOs2/3,962,left,all,30914,303.612,1014.56,30914,303.612,1014.56
+Secondary motor area/ layer 2/3,MOs2/3,962,right,all,27913,271.222,894.646,27913,271.222,894.646
+Secondary motor area/ layer 5,MOs5,767,left,all,36629,375.592,1136.64,36629,375.592,1136.64
+Secondary motor area/ layer 5,MOs5,767,right,all,31489,334.811,1026.88,31489,334.811,1026.88
+Secondary motor area/ layer 6a,MOs6a,1021,left,all,16000,275.984,1001.33,16000,275.984,1001.33
+Secondary motor area/ layer 6a,MOs6a,1021,right,all,12682,254.314,912.929,12682,254.314,912.929
+Secondary motor area/ layer 6b,MOs6b,1085,left,all,174,254.082,1001.27,174,254.082,1001.27
+Secondary motor area/ layer 6b,MOs6b,1085,right,all,168,237.216,911.101,168,237.216,911.101
+Somatosensory areas,SS,453,left,all,250045,337.032,1228.15,250045,337.032,1228.15
+Somatosensory areas,SS,453,right,all,155178,279.464,1005.98,155178,279.464,1005.98
+Primary somatosensory area,SSp,322,left,all,179915,339.946,1244.04,179915,339.946,1244.04
+Primary somatosensory area,SSp,322,right,all,113336,282.864,1024.03,113336,282.864,1024.03
+Primary somatosensory area/ nose,SSp-n,353,left,all,26220,376.68,1392.74,26220,376.68,1392.74
+Primary somatosensory area/ nose,SSp-n,353,right,all,14988,287.119,1090.05,14988,287.119,1090.05
+Primary somatosensory area/ nose/ layer 1,SSp-n1,558,left,all,3034,440.196,1342.63,3034,440.196,1342.63
+Primary somatosensory area/ nose/ layer 1,SSp-n1,558,right,all,1158,258.534,882.234,1158,258.534,882.234
+Primary somatosensory area/ nose/ layer 2/3,SSp-n2/3,838,left,all,5959,337.122,1325.68,5959,337.122,1325.68
+Primary somatosensory area/ nose/ layer 2/3,SSp-n2/3,838,right,all,3322,258.5,1040.05,3322,258.5,1040.05
+Primary somatosensory area/ nose/ layer 4,SSp-n4,654,left,all,5043,404.389,1526.89,5043,404.389,1526.89
+Primary somatosensory area/ nose/ layer 4,SSp-n4,654,right,all,2436,303.729,1201.5,2436,303.729,1201.5
+Primary somatosensory area/ nose/ layer 5,SSp-n5,702,left,all,5940,433.641,1527.74,5940,433.641,1527.74
+Primary somatosensory area/ nose/ layer 5,SSp-n5,702,right,all,3289,358.033,1238.8,3289,358.033,1238.8
+Primary somatosensory area/ nose/ layer 6a,SSp-n6a,889,left,all,6020,310.035,1243.5,6020,310.035,1243.5
+Primary somatosensory area/ nose/ layer 6a,SSp-n6a,889,right,all,4529,255.658,1018.81,4529,255.658,1018.81
+Primary somatosensory area/ nose/ layer 6b,SSp-n6b,929,left,all,224,225.493,1266.6,224,225.493,1266.6
+Primary somatosensory area/ nose/ layer 6b,SSp-n6b,929,right,all,254,275.128,966.98,254,275.128,966.98
+Primary somatosensory area/ barrel field,SSp-bfd,329,left,all,42097,317.899,1114.35,42097,317.899,1114.35
+Primary somatosensory area/ barrel field,SSp-bfd,329,right,all,23751,266.215,909.378,23751,266.215,909.378
+Primary somatosensory area/ barrel field/ layer 1,SSp-bfd1,981,left,all,4673,327.996,1075.94,4673,327.996,1075.94
+Primary somatosensory area/ barrel field/ layer 1,SSp-bfd1,981,right,all,2377,229.102,747.129,2377,229.102,747.129
+Primary somatosensory area/ barrel field/ layer 2/3,SSp-bfd2/3,201,left,all,9933,274.741,1052.3,9933,274.741,1052.3
+Primary somatosensory area/ barrel field/ layer 2/3,SSp-bfd2/3,201,right,all,5072,248.508,901.43,5072,248.508,901.43
+Primary somatosensory area/ barrel field/ layer 4,SSp-bfd4,1047,left,all,7886,348.544,1226.52,7886,348.544,1226.52
+Primary somatosensory area/ barrel field/ layer 4,SSp-bfd4,1047,right,all,4457,293.37,989.484,4457,293.37,989.484
+Primary somatosensory area/ barrel field/ layer 5,SSp-bfd5,1070,left,all,9452,397.488,1257.16,9452,397.488,1257.16
+Primary somatosensory area/ barrel field/ layer 5,SSp-bfd5,1070,right,all,5544,323.133,1030.57,5544,323.133,1030.57
+Primary somatosensory area/ barrel field/ layer 6a,SSp-bfd6a,1038,left,all,9314,256.215,978.968,9314,256.215,978.968
+Primary somatosensory area/ barrel field/ layer 6a,SSp-bfd6a,1038,right,all,5684,224.999,822.777,5684,224.999,822.777
+Primary somatosensory area/ barrel field/ layer 6b,SSp-bfd6b,1062,left,all,839,272.712,902.433,839,272.712,902.433
+Primary somatosensory area/ barrel field/ layer 6b,SSp-bfd6b,1062,right,all,617,226.86,729.948,617,226.86,729.948
+Primary somatosensory area/ lower limb,SSp-ll,337,left,all,15170,318.516,1159.09,15170,318.516,1159.09
+Primary somatosensory area/ lower limb,SSp-ll,337,right,all,11247,289.681,995.235,11247,289.681,995.235
+Primary somatosensory area/ lower limb/ layer 1,SSp-ll1,1030,left,all,1212,336.414,1090.35,1212,336.414,1090.35
+Primary somatosensory area/ lower limb/ layer 1,SSp-ll1,1030,right,all,758,234.668,773.215,758,234.668,773.215
+Primary somatosensory area/ lower limb/ layer 2/3,SSp-ll2/3,113,left,all,4102,265.169,1042.84,4102,265.169,1042.84
+Primary somatosensory area/ lower limb/ layer 2/3,SSp-ll2/3,113,right,all,2908,244.604,916.484,2908,244.604,916.484
+Primary somatosensory area/ lower limb/ layer 4,SSp-ll4,1094,left,all,1900,293.251,1183.37,1900,293.251,1183.37
+Primary somatosensory area/ lower limb/ layer 4,SSp-ll4,1094,right,all,1530,278.608,993.195,1530,278.608,993.195
+Primary somatosensory area/ lower limb/ layer 5,SSp-ll5,1128,left,all,4334,436.36,1387.86,4334,436.36,1387.86
+Primary somatosensory area/ lower limb/ layer 5,SSp-ll5,1128,right,all,3281,398.351,1207.47,3281,398.351,1207.47
+Primary somatosensory area/ lower limb/ layer 6a,SSp-ll6a,478,left,all,3456,245.062,1029.95,3456,245.062,1029.95
+Primary somatosensory area/ lower limb/ layer 6a,SSp-ll6a,478,right,all,2653,229.554,890.284,2653,229.554,890.284
+Primary somatosensory area/ lower limb/ layer 6b,SSp-ll6b,510,left,all,166,247.775,971.096,166,247.775,971.096
+Primary somatosensory area/ lower limb/ layer 6b,SSp-ll6b,510,right,all,117,227.257,845.744,117,227.257,845.744
+Primary somatosensory area/ mouth,SSp-m,345,left,all,50987,355.983,1321.39,50987,355.983,1321.39
+Primary somatosensory area/ mouth,SSp-m,345,right,all,32614,287.678,1094.03,32614,287.678,1094.03
+Primary somatosensory area/ mouth/ layer 1,SSp-m1,878,left,all,5274,426.921,1270.74,5274,426.921,1270.74
+Primary somatosensory area/ mouth/ layer 1,SSp-m1,878,right,all,2383,255.096,855.033,2383,255.096,855.033
+Primary somatosensory area/ mouth/ layer 2/3,SSp-m2/3,657,left,all,12892,306.623,1232.57,12892,306.623,1232.57
+Primary somatosensory area/ mouth/ layer 2/3,SSp-m2/3,657,right,all,7766,255.774,1041.29,7766,255.774,1041.29
+Primary somatosensory area/ mouth/ layer 4,SSp-m4,950,left,all,8678,395.089,1438.32,8678,395.089,1438.32
+Primary somatosensory area/ mouth/ layer 4,SSp-m4,950,right,all,5222,316.343,1202.92,5222,316.343,1202.92
+Primary somatosensory area/ mouth/ layer 5,SSp-m5,974,left,all,12324,392.945,1414.15,12324,392.945,1414.15
+Primary somatosensory area/ mouth/ layer 5,SSp-m5,974,right,all,7787,337.48,1213.1,7787,337.48,1213.1
+Primary somatosensory area/ mouth/ layer 6a,SSp-m6a,1102,left,all,11280,315.129,1251.65,11280,315.129,1251.65
+Primary somatosensory area/ mouth/ layer 6a,SSp-m6a,1102,right,all,9214,265.843,1038.54,9214,265.843,1038.54
+Primary somatosensory area/ mouth/ layer 6b,SSp-m6b,2,left,all,539,222.777,1396.77,539,222.777,1396.77
+Primary somatosensory area/ mouth/ layer 6b,SSp-m6b,2,right,all,242,242.667,1071.92,242,242.667,1071.92
+Primary somatosensory area/ upper limb,SSp-ul,369,left,all,29289,339.44,1273.71,29289,339.44,1273.71
+Primary somatosensory area/ upper limb,SSp-ul,369,right,all,19822,289.767,1054.89,19822,289.767,1054.89
+Primary somatosensory area/ upper limb/ layer 1,SSp-ul1,450,left,all,2610,362.794,1156.19,2610,362.794,1156.19
+Primary somatosensory area/ upper limb/ layer 1,SSp-ul1,450,right,all,1213,257.746,865.802,1213,257.746,865.802
+Primary somatosensory area/ upper limb/ layer 2/3,SSp-ul2/3,854,left,all,8058,306.122,1199.68,8058,306.122,1199.68
+Primary somatosensory area/ upper limb/ layer 2/3,SSp-ul2/3,854,right,all,5439,262.914,1006.18,5439,262.914,1006.18
+Primary somatosensory area/ upper limb/ layer 4,SSp-ul4,577,left,all,4717,362.318,1396.58,4717,362.318,1396.58
+Primary somatosensory area/ upper limb/ layer 4,SSp-ul4,577,right,all,3104,316.927,1148.46,3104,316.927,1148.46
+Primary somatosensory area/ upper limb/ layer 5,SSp-ul5,625,left,all,7382,414.097,1453.69,7382,414.097,1453.69
+Primary somatosensory area/ upper limb/ layer 5,SSp-ul5,625,right,all,4891,357.696,1207.06,4891,357.696,1207.06
+Primary somatosensory area/ upper limb/ layer 6a,SSp-ul6a,945,left,all,6393,270.965,1120.62,6393,270.965,1120.62
+Primary somatosensory area/ upper limb/ layer 6a,SSp-ul6a,945,right,all,5093,245.193,952.409,5093,245.193,952.409
+Primary somatosensory area/ upper limb/ layer 6b,SSp-ul6b,1026,left,all,129,232.866,1070.05,129,232.866,1070.05
+Primary somatosensory area/ upper limb/ layer 6b,SSp-ul6b,1026,right,all,82,233.348,829.988,82,233.348,829.988
+Primary somatosensory area/ trunk,SSp-tr,361,left,all,6479,272.252,956.345,6479,272.252,956.345
+Primary somatosensory area/ trunk,SSp-tr,361,right,all,4565,275.53,854.395,4565,275.53,854.395
+Primary somatosensory area/ trunk/ layer 1,SSp-tr1,1006,left,all,388,261.446,904.206,388,261.446,904.206
+Primary somatosensory area/ trunk/ layer 1,SSp-tr1,1006,right,all,465,223.09,705.327,465,223.09,705.327
+Primary somatosensory area/ trunk/ layer 2/3,SSp-tr2/3,670,left,all,1798,236.05,866.766,1798,236.05,866.766
+Primary somatosensory area/ trunk/ layer 2/3,SSp-tr2/3,670,right,all,1081,238.989,791.142,1081,238.989,791.142
+Primary somatosensory area/ trunk/ layer 4,SSp-tr4,1086,left,all,588,269.046,986.408,588,269.046,986.408
+Primary somatosensory area/ trunk/ layer 4,SSp-tr4,1086,right,all,652,277.846,851.161,652,277.846,851.161
+Primary somatosensory area/ trunk/ layer 5,SSp-tr5,1111,left,all,2269,338.189,1084.75,2269,338.189,1084.75
+Primary somatosensory area/ trunk/ layer 5,SSp-tr5,1111,right,all,1558,351.813,1008.34,1558,351.813,1008.34
+Primary somatosensory area/ trunk/ layer 6a,SSp-tr6a,9,left,all,1282,218.432,872.935,1282,218.432,872.935
+Primary somatosensory area/ trunk/ layer 6a,SSp-tr6a,9,right,all,716,206.415,735.911,716,206.415,735.911
+Primary somatosensory area/ trunk/ layer 6b,SSp-tr6b,461,left,all,154,210.909,821.214,154,210.909,821.214
+Primary somatosensory area/ trunk/ layer 6b,SSp-tr6b,461,right,all,93,200.389,690.774,93,200.389,690.774
+Primary somatosensory area/ unassigned,SSp-un,182305689,left,all,9673,332.272,1233.88,9673,332.272,1233.88
+Primary somatosensory area/ unassigned,SSp-un,182305689,right,all,6349,282.02,1014.09,6349,282.02,1014.09
+Primary somatosensory area/ unassigned/ layer 1,SSp-un1,182305693,left,all,901,382.469,1237.93,901,382.469,1237.93
+Primary somatosensory area/ unassigned/ layer 1,SSp-un1,182305693,right,all,546,264.12,873.67,546,264.12,873.67
+Primary somatosensory area/ unassigned/ layer 2/3,SSp-un2/3,182305697,left,all,2709,303.832,1158.13,2709,303.832,1158.13
+Primary somatosensory area/ unassigned/ layer 2/3,SSp-un2/3,182305697,right,all,1676,256.214,987.51,1676,256.214,987.51
+Primary somatosensory area/ unassigned/ layer 4,SSp-un4,182305701,left,all,1592,358.612,1341.69,1592,358.612,1341.69
+Primary somatosensory area/ unassigned/ layer 4,SSp-un4,182305701,right,all,840,293.649,1095.02,840,293.649,1095.02
+Primary somatosensory area/ unassigned/ layer 5,SSp-un5,182305705,left,all,2314,391.035,1381.53,2314,391.035,1381.53
+Primary somatosensory area/ unassigned/ layer 5,SSp-un5,182305705,right,all,1486,351.051,1164.7,1486,351.051,1164.7
+Primary somatosensory area/ unassigned/ layer 6a,SSp-un6a,182305709,left,all,2090,265.979,1093.74,2090,265.979,1093.74
+Primary somatosensory area/ unassigned/ layer 6a,SSp-un6a,182305709,right,all,1673,246.867,924.135,1673,246.867,924.135
+Primary somatosensory area/ unassigned/ layer 6b,SSp-un6b,182305713,left,all,67,219.718,953.403,67,219.718,953.403
+Primary somatosensory area/ unassigned/ layer 6b,SSp-un6b,182305713,right,all,128,277.997,857.328,128,277.997,857.328
+Supplemental somatosensory area,SSs,378,left,all,70130,329.555,1187.36,70130,329.555,1187.36
+Supplemental somatosensory area,SSs,378,right,all,41842,270.255,957.103,41842,270.255,957.103
+Supplemental somatosensory area/ layer 1,SSs1,873,left,all,6826,431.185,1252.8,6826,431.185,1252.8
+Supplemental somatosensory area/ layer 1,SSs1,873,right,all,3120,260.634,823.981,3120,260.634,823.981
+Supplemental somatosensory area/ layer 2/3,SSs2/3,806,left,all,16978,284.238,1143.42,16978,284.238,1143.42
+Supplemental somatosensory area/ layer 2/3,SSs2/3,806,right,all,9320,241.77,936.062,9320,241.77,936.062
+Supplemental somatosensory area/ layer 4,SSs4,1035,left,all,9500,355.195,1278.16,9500,355.195,1278.16
+Supplemental somatosensory area/ layer 4,SSs4,1035,right,all,5406,283.774,1024.84,5406,283.774,1024.84
+Supplemental somatosensory area/ layer 5,SSs5,1090,left,all,19038,354.932,1229.32,19038,354.932,1229.32
+Supplemental somatosensory area/ layer 5,SSs5,1090,right,all,10918,312.824,1033.37,10918,312.824,1033.37
+Supplemental somatosensory area/ layer 6a,SSs6a,862,left,all,16662,293.231,1109.89,16662,293.231,1109.89
+Supplemental somatosensory area/ layer 6a,SSs6a,862,right,all,12008,248.894,914.119,12008,248.894,914.119
+Supplemental somatosensory area/ layer 6b,SSs6b,893,left,all,1126,288.896,1124.04,1126,288.896,1124.04
+Supplemental somatosensory area/ layer 6b,SSs6b,893,right,all,1070,283.487,890.479,1070,283.487,890.479
+Gustatory areas,GU,1057,left,all,12652,336.016,1120.26,12652,336.016,1120.26
+Gustatory areas,GU,1057,right,all,8476,271.627,901.545,8476,271.627,901.545
+Gustatory areas/ layer 1,GU1,36,left,all,1140,441.865,1271.74,1140,441.865,1271.74
+Gustatory areas/ layer 1,GU1,36,right,all,560,306.704,863.986,560,306.704,863.986
+Gustatory areas/ layer 2/3,GU2/3,180,left,all,2551,274.67,984.566,2551,274.67,984.566
+Gustatory areas/ layer 2/3,GU2/3,180,right,all,1453,232.421,821.236,1453,232.421,821.236
+Gustatory areas/ layer 4,GU4,148,left,all,1094,330.213,1045,1094,330.213,1045
+Gustatory areas/ layer 4,GU4,148,right,all,605,254.378,854.084,605,254.378,854.084
+Gustatory areas/ layer 5,GU5,187,left,all,4723,351.843,1128.85,4723,351.843,1128.85
+Gustatory areas/ layer 5,GU5,187,right,all,2923,278.852,916.61,2923,278.852,916.61
+Gustatory areas/ layer 6a,GU6a,638,left,all,2973,329.847,1178.44,2973,329.847,1178.44
+Gustatory areas/ layer 6a,GU6a,638,right,all,2691,282.4,938.339,2691,282.4,938.339
+Gustatory areas/ layer 6b,GU6b,662,left,all,171,252.771,1367.45,171,252.771,1367.45
+Gustatory areas/ layer 6b,GU6b,662,right,all,244,261.999,997.414,244,261.999,997.414
+Visceral area,VISC,677,left,all,14964,311.639,1040.33,14964,311.639,1040.33
+Visceral area,VISC,677,right,all,9474,259.938,822.193,9474,259.938,822.193
+Visceral area/ layer 1,VISC1,897,left,all,1768,400.025,1224.74,1768,400.025,1224.74
+Visceral area/ layer 1,VISC1,897,right,all,576,260.063,807.474,576,260.063,807.474
+Visceral area/ layer 2/3,VISC2/3,1106,left,all,3071,276.036,996.831,3071,276.036,996.831
+Visceral area/ layer 2/3,VISC2/3,1106,right,all,1921,246.31,787.117,1921,246.31,787.117
+Visceral area/ layer 4,VISC4,1010,left,all,1219,302.717,1071.5,1219,302.717,1071.5
+Visceral area/ layer 4,VISC4,1010,right,all,786,257.175,862.109,786,257.175,862.109
+Visceral area/ layer 5,VISC5,1058,left,all,4749,337.241,1064.82,4749,337.241,1064.82
+Visceral area/ layer 5,VISC5,1058,right,all,3215,282.658,859.923,3215,282.658,859.923
+Visceral area/ layer 6a,VISC6a,857,left,all,3741,272.563,953.108,3741,272.563,953.108
+Visceral area/ layer 6a,VISC6a,857,right,all,2643,240.293,789.417,2643,240.293,789.417
+Visceral area/ layer 6b,VISC6b,849,left,all,416,284.097,990.978,416,284.097,990.978
+Visceral area/ layer 6b,VISC6b,849,right,all,333,281.44,851.658,333,281.44,851.658
+Auditory areas,AUD,247,left,all,42123,325.922,1004.25,42123,325.922,1004.25
+Auditory areas,AUD,247,right,all,30919,286.088,904.562,30919,286.088,904.562
+Dorsal auditory area,AUDd,1011,left,all,8469,317.409,979.518,8469,317.409,979.518
+Dorsal auditory area,AUDd,1011,right,all,6783,283.743,894.825,6783,283.743,894.825
+Dorsal auditory area/ layer 1,AUDd1,527,left,all,987,295.006,918.741,987,295.006,918.741
+Dorsal auditory area/ layer 1,AUDd1,527,right,all,592,231.942,768.716,592,231.942,768.716
+Dorsal auditory area/ layer 2/3,AUDd2/3,600,left,all,2204,260.01,896.364,2204,260.01,896.364
+Dorsal auditory area/ layer 2/3,AUDd2/3,600,right,all,1951,250.686,869.378,1951,250.686,869.378
+Dorsal auditory area/ layer 4,AUDd4,678,left,all,1089,340.923,1037.64,1089,340.923,1037.64
+Dorsal auditory area/ layer 4,AUDd4,678,right,all,880,311.889,982.702,880,311.889,982.702
+Dorsal auditory area/ layer 5,AUDd5,252,left,all,2459,367.956,1063.41,2459,367.956,1063.41
+Dorsal auditory area/ layer 5,AUDd5,252,right,all,1820,340.674,980.966,1820,340.674,980.966
+Dorsal auditory area/ layer 6a,AUDd6a,156,left,all,1529,306.075,952.819,1529,306.075,952.819
+Dorsal auditory area/ layer 6a,AUDd6a,156,right,all,1348,257.945,821.325,1348,257.945,821.325
+Dorsal auditory area/ layer 6b,AUDd6b,243,left,all,201,397.254,1051.68,201,397.254,1051.68
+Dorsal auditory area/ layer 6b,AUDd6b,243,right,all,192,291.834,838.943,192,291.834,838.943
+Primary auditory area,AUDp,1002,left,all,15467,327.076,1036.76,15467,327.076,1036.76
+Primary auditory area,AUDp,1002,right,all,11230,287.686,932.881,11230,287.686,932.881
+Primary auditory area/ layer 1,AUDp1,735,left,all,2265,328.704,1001.75,2265,328.704,1001.75
+Primary auditory area/ layer 1,AUDp1,735,right,all,825,238.204,792.057,825,238.204,792.057
+Primary auditory area/ layer 2/3,AUDp2/3,251,left,all,3312,265.735,951.554,3312,265.735,951.554
+Primary auditory area/ layer 2/3,AUDp2/3,251,right,all,2522,243.949,876.735,2522,243.949,876.735
+Primary auditory area/ layer 4,AUDp4,816,left,all,1736,301.05,1057.6,1736,301.05,1057.6
+Primary auditory area/ layer 4,AUDp4,816,right,all,1386,275.204,976.04,1386,275.204,976.04
+Primary auditory area/ layer 5,AUDp5,847,left,all,4997,371.079,1105.6,4997,371.079,1105.6
+Primary auditory area/ layer 5,AUDp5,847,right,all,3989,330.419,1005.22,3989,330.419,1005.22
+Primary auditory area/ layer 6a,AUDp6a,954,left,all,2785,324.83,1019.41,2785,324.83,1019.41
+Primary auditory area/ layer 6a,AUDp6a,954,right,all,2145,279.594,889.041,2145,279.594,889.041
+Primary auditory area/ layer 6b,AUDp6b,1005,left,all,372,410.473,1116.55,372,410.473,1116.55
+Primary auditory area/ layer 6b,AUDp6b,1005,right,all,363,329.883,942.298,363,329.883,942.298
+Posterior auditory area,AUDpo,1027,left,all,4968,380.43,1113.44,4968,380.43,1113.44
+Posterior auditory area,AUDpo,1027,right,all,4059,315.875,963.071,4059,315.875,963.071
+Posterior auditory area/ layer 1,AUDpo1,696,left,all,619,368.441,1089.02,619,368.441,1089.02
+Posterior auditory area/ layer 1,AUDpo1,696,right,all,341,243.443,780.155,341,243.443,780.155
+Posterior auditory area/ layer 2/3,AUDpo2/3,643,left,all,1243,293.805,992.853,1243,293.805,992.853
+Posterior auditory area/ layer 2/3,AUDpo2/3,643,right,all,1024,262.449,891.391,1024,262.449,891.391
+Posterior auditory area/ layer 4,AUDpo4,759,left,all,617,322.897,1069.26,617,322.897,1069.26
+Posterior auditory area/ layer 4,AUDpo4,759,right,all,597,310.713,1002.26,597,310.713,1002.26
+Posterior auditory area/ layer 5,AUDpo5,791,left,all,1477,466.049,1230.13,1477,466.049,1230.13
+Posterior auditory area/ layer 5,AUDpo5,791,right,all,1251,383.033,1072.81,1251,383.033,1072.81
+Posterior auditory area/ layer 6a,AUDpo6a,249,left,all,791,404.464,1131.26,791,404.464,1131.26
+Posterior auditory area/ layer 6a,AUDpo6a,249,right,all,664,312.843,936.803,664,312.843,936.803
+Posterior auditory area/ layer 6b,AUDpo6b,456,left,all,221,403.61,1139.77,221,403.61,1139.77
+Posterior auditory area/ layer 6b,AUDpo6b,456,right,all,182,318.559,922.082,182,318.559,922.082
+Ventral auditory area,AUDv,1018,left,all,13219,309.54,941.017,13219,309.54,941.017
+Ventral auditory area,AUDv,1018,right,all,8847,272.193,849.236,8847,272.193,849.236
+Ventral auditory area/ layer 1,AUDv1,959,left,all,1455,311.278,948.503,1455,311.278,948.503
+Ventral auditory area/ layer 1,AUDv1,959,right,all,505,252.372,789.376,505,252.372,789.376
+Ventral auditory area/ layer 2/3,AUDv2/3,755,left,all,2968,275.724,863.179,2968,275.724,863.179
+Ventral auditory area/ layer 2/3,AUDv2/3,755,right,all,1675,228.609,749.361,1675,228.609,749.361
+Ventral auditory area/ layer 4,AUDv4,990,left,all,1791,330.15,969.018,1791,330.15,969.018
+Ventral auditory area/ layer 4,AUDv4,990,right,all,941,245.962,824.391,941,245.962,824.391
+Ventral auditory area/ layer 5,AUDv5,1023,left,all,4406,330.599,986.135,4406,330.599,986.135
+Ventral auditory area/ layer 5,AUDv5,1023,right,all,3439,291.998,884.674,3439,291.998,884.674
+Ventral auditory area/ layer 6a,AUDv6a,520,left,all,2346,291.068,918.048,2346,291.068,918.048
+Ventral auditory area/ layer 6a,AUDv6a,520,right,all,2029,286.713,885.369,2029,286.713,885.369
+Ventral auditory area/ layer 6b,AUDv6b,598,left,all,253,354.896,1040.15,253,354.896,1040.15
+Ventral auditory area/ layer 6b,AUDv6b,598,right,all,258,311.445,948.919,258,311.445,948.919
+Visual areas,VIS,669,left,all,92798,309.03,1025.24,92798,309.03,1025.24
+Visual areas,VIS,669,right,all,70286,281.52,852.325,70286,281.52,852.325
+Anterolateral visual area,VISal,402,left,all,5742,335.892,1047.89,5742,335.892,1047.89
+Anterolateral visual area,VISal,402,right,all,4154,291.045,890.37,4154,291.045,890.37
+Anterolateral visual area/ layer 1,VISal1,1074,left,all,702,348.743,1098.52,702,348.743,1098.52
+Anterolateral visual area/ layer 1,VISal1,1074,right,all,243,237.277,768.955,243,237.277,768.955
+Anterolateral visual area/ layer 2/3,VISal2/3,905,left,all,1479,264.291,941.603,1479,264.291,941.603
+Anterolateral visual area/ layer 2/3,VISal2/3,905,right,all,1140,244.394,827.993,1140,244.394,827.993
+Anterolateral visual area/ layer 4,VISal4,1114,left,all,806,319.713,1054.25,806,319.713,1054.25
+Anterolateral visual area/ layer 4,VISal4,1114,right,all,599,299.257,917.048,599,299.257,917.048
+Anterolateral visual area/ layer 5,VISal5,233,left,all,1570,436.074,1180.7,1570,436.074,1180.7
+Anterolateral visual area/ layer 5,VISal5,233,right,all,1235,362.233,1001.3,1235,362.233,1001.3
+Anterolateral visual area/ layer 6a,VISal6a,601,left,all,967,295.437,971.048,967,295.437,971.048
+Anterolateral visual area/ layer 6a,VISal6a,601,right,all,771,260.301,836.562,771,260.301,836.562
+Anterolateral visual area/ layer 6b,VISal6b,649,left,all,218,298.042,966.784,218,298.042,966.784
+Anterolateral visual area/ layer 6b,VISal6b,649,right,all,166,273.673,824.855,166,273.673,824.855
+Anteromedial visual area,VISam,394,left,all,4477,281.878,920.36,4477,281.878,920.36
+Anteromedial visual area,VISam,394,right,all,4210,279.974,832.6,4210,279.974,832.6
+Anteromedial visual area/ layer 1,VISam1,281,left,all,147,252.51,782.415,147,252.51,782.415
+Anteromedial visual area/ layer 1,VISam1,281,right,all,513,215.716,662.827,513,215.716,662.827
+Anteromedial visual area/ layer 2/3,VISam2/3,1066,left,all,1154,230.655,801.562,1154,230.655,801.562
+Anteromedial visual area/ layer 2/3,VISam2/3,1066,right,all,923,243.076,756.182,923,243.076,756.182
+Anteromedial visual area/ layer 4,VISam4,401,left,all,303,228.584,861.696,303,228.584,861.696
+Anteromedial visual area/ layer 4,VISam4,401,right,all,389,320.06,887.753,389,320.06,887.753
+Anteromedial visual area/ layer 5,VISam5,433,left,all,1809,338.677,1026.27,1809,338.677,1026.27
+Anteromedial visual area/ layer 5,VISam5,433,right,all,1320,336.468,934.467,1320,336.468,934.467
+Anteromedial visual area/ layer 6a,VISam6a,1046,left,all,903,263.467,911.666,903,263.467,911.666
+Anteromedial visual area/ layer 6a,VISam6a,1046,right,all,843,246.778,810.967,843,246.778,810.967
+Anteromedial visual area/ layer 6b,VISam6b,441,left,all,161,241.217,867,161,241.217,867
+Anteromedial visual area/ layer 6b,VISam6b,441,right,all,222,301.784,922.432,222,301.784,922.432
+Lateral visual area,VISl,409,left,all,9906,328.833,1047.21,9906,328.833,1047.21
+Lateral visual area,VISl,409,right,all,6658,287.058,856.474,6658,287.058,856.474
+Lateral visual area/ layer 1,VISl1,421,left,all,1249,331.216,1060.46,1249,331.216,1060.46
+Lateral visual area/ layer 1,VISl1,421,right,all,417,234.902,754.149,417,234.902,754.149
+Lateral visual area/ layer 2/3,VISl2/3,973,left,all,2423,263.712,961.599,2423,263.712,961.599
+Lateral visual area/ layer 2/3,VISl2/3,973,right,all,1466,238.103,790.235,1466,238.103,790.235
+Lateral visual area/ layer 4,VISl4,573,left,all,1488,320.385,1072.82,1488,320.385,1072.82
+Lateral visual area/ layer 4,VISl4,573,right,all,1174,311.159,914.101,1174,311.159,914.101
+Lateral visual area/ layer 5,VISl5,613,left,all,2606,418.812,1162.91,2606,418.812,1162.91
+Lateral visual area/ layer 5,VISl5,613,right,all,1924,342.859,936.147,1924,342.859,936.147
+Lateral visual area/ layer 6a,VISl6a,74,left,all,1731,295.265,973.689,1731,295.265,973.689
+Lateral visual area/ layer 6a,VISl6a,74,right,all,1370,259.235,801.289,1370,259.235,801.289
+Lateral visual area/ layer 6b,VISl6b,121,left,all,409,306.825,994.655,409,306.825,994.655
+Lateral visual area/ layer 6b,VISl6b,121,right,all,307,273.962,838.349,307,273.962,838.349
+Primary visual area,VISp,385,left,all,48164,298.985,1051,48164,298.985,1051
+Primary visual area,VISp,385,right,all,34472,279.621,870.529,34472,279.621,870.529
+Primary visual area/ layer 1,VISp1,593,left,all,7347,319.769,1046.91,7347,319.769,1046.91
+Primary visual area/ layer 1,VISp1,593,right,all,3032,227.234,717.191,3032,227.234,717.191
+Primary visual area/ layer 2/3,VISp2/3,821,left,all,11140,248.081,977.007,11140,248.081,977.007
+Primary visual area/ layer 2/3,VISp2/3,821,right,all,8101,242.256,822.897,8101,242.256,822.897
+Primary visual area/ layer 4,VISp4,721,left,all,6664,273.639,1080.56,6664,273.639,1080.56
+Primary visual area/ layer 4,VISp4,721,right,all,5974,286.465,910.984,5974,286.465,910.984
+Primary visual area/ layer 5,VISp5,778,left,all,12967,367.335,1161.87,12967,367.335,1161.87
+Primary visual area/ layer 5,VISp5,778,right,all,9030,339.819,969.063,9030,339.819,969.063
+Primary visual area/ layer 6a,VISp6a,33,left,all,8544,268.647,974.049,8544,268.647,974.049
+Primary visual area/ layer 6a,VISp6a,33,right,all,7147,264.468,836.659,7147,264.468,836.659
+Primary visual area/ layer 6b,VISp6b,305,left,all,1502,269.825,969.162,1502,269.825,969.162
+Primary visual area/ layer 6b,VISp6b,305,right,all,1188,267.283,838.057,1188,267.283,838.057
+Posterolateral visual area,VISpl,425,left,all,5031,276.016,871.348,5031,276.016,871.348
+Posterolateral visual area,VISpl,425,right,all,4564,258.97,727.678,4564,258.97,727.678
+Posterolateral visual area/ layer 1,VISpl1,750,left,all,692,275.45,840.158,692,275.45,840.158
+Posterolateral visual area/ layer 1,VISpl1,750,right,all,690,219.109,635.904,690,219.109,635.904
+Posterolateral visual area/ layer 2/3,VISpl2/3,269,left,all,1328,259.964,856.41,1328,259.964,856.41
+Posterolateral visual area/ layer 2/3,VISpl2/3,269,right,all,1116,241.353,691.746,1116,241.353,691.746
+Posterolateral visual area/ layer 4,VISpl4,869,left,all,249,246.645,855.373,249,246.645,855.373
+Posterolateral visual area/ layer 4,VISpl4,869,right,all,302,309.322,827.579,302,309.322,827.579
+Posterolateral visual area/ layer 5,VISpl5,902,left,all,1897,297.767,904.498,1897,297.767,904.498
+Posterolateral visual area/ layer 5,VISpl5,902,right,all,1566,275.822,757.128,1566,275.822,757.128
+Posterolateral visual area/ layer 6a,VISpl6a,377,left,all,784,257.934,846.658,784,257.934,846.658
+Posterolateral visual area/ layer 6a,VISpl6a,377,right,all,806,259.847,748.378,806,259.847,748.378
+Posterolateral visual area/ layer 6b,VISpl6b,393,left,all,81,299.919,894.407,81,299.919,894.407
+Posterolateral visual area/ layer 6b,VISpl6b,393,right,all,84,316.811,852.095,84,316.811,852.095
+posteromedial visual area,VISpm,533,left,all,6189,292.887,985.564,6189,292.887,985.564
+posteromedial visual area,VISpm,533,right,all,6261,283.814,868.189,6261,283.814,868.189
+posteromedial visual area/ layer 1,VISpm1,805,left,all,459,290.262,955.861,459,290.262,955.861
+posteromedial visual area/ layer 1,VISpm1,805,right,all,732,235.1,709.406,732,235.1,709.406
+posteromedial visual area/ layer 2/3,VISpm2/3,41,left,all,1600,242.094,874.931,1600,242.094,874.931
+posteromedial visual area/ layer 2/3,VISpm2/3,41,right,all,1609,242.128,806.463,1609,242.128,806.463
+posteromedial visual area/ layer 4,VISpm4,501,left,all,627,252.117,964.156,627,252.117,964.156
+posteromedial visual area/ layer 4,VISpm4,501,right,all,675,297.951,916.415,675,297.951,916.415
+posteromedial visual area/ layer 5,VISpm5,565,left,all,2289,352.917,1088.23,2289,352.917,1088.23
+posteromedial visual area/ layer 5,VISpm5,565,right,all,1905,348.165,968.823,1905,348.165,968.823
+posteromedial visual area/ layer 6a,VISpm6a,257,left,all,997,273.567,965.6,997,273.567,965.6
+posteromedial visual area/ layer 6a,VISpm6a,257,right,all,1110,258.1,856.377,1110,258.1,856.377
+posteromedial visual area/ layer 6b,VISpm6b,469,left,all,217,246.307,934.797,217,246.307,934.797
+posteromedial visual area/ layer 6b,VISpm6b,469,right,all,230,280.077,887.309,230,280.077,887.309
+Laterointermediate area,VISli,312782574,left,all,3724,343.684,1045.42,3724,343.684,1045.42
+Laterointermediate area,VISli,312782574,right,all,2744,288.818,851.776,2744,288.818,851.776
+Laterointermediate area/ layer 1,VISli1,312782578,left,all,467,356.753,1086.12,467,356.753,1086.12
+Laterointermediate area/ layer 1,VISli1,312782578,right,all,124,227.373,752.903,124,227.373,752.903
+Laterointermediate area/ layer 2/3,VISli2/3,312782582,left,all,815,267.214,920.987,815,267.214,920.987
+Laterointermediate area/ layer 2/3,VISli2/3,312782582,right,all,629,239.75,776.895,629,239.75,776.895
+Laterointermediate area/ layer 4,VISli4,312782586,left,all,348,274.909,959.58,348,274.909,959.58
+Laterointermediate area/ layer 4,VISli4,312782586,right,all,338,301.22,871.367,338,301.22,871.367
+Laterointermediate area/ layer 5,VISli5,312782590,left,all,1257,405.33,1129.02,1257,405.33,1129.02
+Laterointermediate area/ layer 5,VISli5,312782590,right,all,983,339.337,924.83,983,339.337,924.83
+Laterointermediate area/ layer 6a,VISli6a,312782594,left,all,638,339.185,1036.32,638,339.185,1036.32
+Laterointermediate area/ layer 6a,VISli6a,312782594,right,all,529,258.325,805.352,529,258.325,805.352
+Laterointermediate area/ layer 6b,VISli6b,312782598,left,all,199,371.507,1110.72,199,371.507,1110.72
+Laterointermediate area/ layer 6b,VISli6b,312782598,right,all,141,294.221,890.674,141,294.221,890.674
+Postrhinal area,VISpor,312782628,left,all,9565,350.003,1007.06,9565,350.003,1007.06
+Postrhinal area,VISpor,312782628,right,all,7223,290.393,816.454,7223,290.393,816.454
+Postrhinal area/ layer 1,VISpor1,312782632,left,all,1232,338.755,964.046,1232,338.755,964.046
+Postrhinal area/ layer 1,VISpor1,312782632,right,all,623,250.315,733.49,623,250.315,733.49
+Postrhinal area/ layer 2/3,VISpor2/3,312782636,left,all,2595,285.387,905.661,2595,285.387,905.661
+Postrhinal area/ layer 2/3,VISpor2/3,312782636,right,all,1709,246.239,733.319,1709,246.239,733.319
+Postrhinal area/ layer 4,VISpor4,312782640,left,all,354,266.723,920.35,354,266.723,920.35
+Postrhinal area/ layer 4,VISpor4,312782640,right,all,346,270.908,786.15,346,270.908,786.15
+Postrhinal area/ layer 5,VISpor5,312782644,left,all,3212,399.689,1068.53,3212,399.689,1068.53
+Postrhinal area/ layer 5,VISpor5,312782644,right,all,2698,322.135,859.987,2698,322.135,859.987
+Postrhinal area/ layer 6a,VISpor6a,312782648,left,all,1781,366.575,1061,1781,366.575,1061
+Postrhinal area/ layer 6a,VISpor6a,312782648,right,all,1497,289.036,844.598,1497,289.036,844.598
+Postrhinal area/ layer 6b,VISpor6b,312782652,left,all,391,406.049,1143.38,391,406.049,1143.38
+Postrhinal area/ layer 6b,VISpor6b,312782652,right,all,350,357.715,944.071,350,357.715,944.071
+Anterior cingulate area,ACA,31,left,all,33717,279.42,1144.79,33717,279.42,1144.79
+Anterior cingulate area,ACA,31,right,all,33875,271.647,1101.37,33875,271.647,1101.37
+Anterior cingulate area/ dorsal part,ACAd,39,left,all,20840,288.019,1093.31,20840,288.019,1093.31
+Anterior cingulate area/ dorsal part,ACAd,39,right,all,21350,279.098,1047.91,21350,279.098,1047.91
+Anterior cingulate area/ dorsal part/ layer 1,ACAd1,935,left,all,1424,337.114,1076.84,1424,337.114,1076.84
+Anterior cingulate area/ dorsal part/ layer 1,ACAd1,935,right,all,1631,258.459,1001.23,1631,258.459,1001.23
+Anterior cingulate area/ dorsal part/ layer 2/3,ACAd2/3,211,left,all,4548,252.285,982.311,4548,252.285,982.311
+Anterior cingulate area/ dorsal part/ layer 2/3,ACAd2/3,211,right,all,5563,254.302,999.587,5563,254.302,999.587
+Anterior cingulate area/ dorsal part/ layer 5,ACAd5,1015,left,all,9471,315.853,1148.83,9471,315.853,1148.83
+Anterior cingulate area/ dorsal part/ layer 5,ACAd5,1015,right,all,9630,312.63,1111.61,9630,312.63,1111.61
+Anterior cingulate area/ dorsal part/ layer 6a,ACAd6a,919,left,all,5263,256.276,1092.8,5263,256.276,1092.8
+Anterior cingulate area/ dorsal part/ layer 6a,ACAd6a,919,right,all,4477,245.873,988.979,4477,245.873,988.979
+Anterior cingulate area/ dorsal part/ layer 6b,ACAd6b,927,left,all,134,258.654,1132.34,134,258.654,1132.34
+Anterior cingulate area/ dorsal part/ layer 6b,ACAd6b,927,right,all,49,226.787,951.204,49,226.787,951.204
+Anterior cingulate area/ ventral part,ACAv,48,left,all,12877,265.504,1228.11,12877,265.504,1228.11
+Anterior cingulate area/ ventral part,ACAv,48,right,all,12525,258.947,1192.52,12525,258.947,1192.52
+Anterior cingulate area/ ventral part/ layer 1,ACAv1,588,left,all,1659,320.498,1228.89,1659,320.498,1228.89
+Anterior cingulate area/ ventral part/ layer 1,ACAv1,588,right,all,1692,243.37,1176.69,1692,243.37,1176.69
+Anterior cingulate area/ ventral part/ layer 2/3,ACAv2/3,296,left,all,1868,220.466,1105.66,1868,220.466,1105.66
+Anterior cingulate area/ ventral part/ layer 2/3,ACAv2/3,296,right,all,3180,237.425,1203.23,3180,237.425,1203.23
+Anterior cingulate area/ ventral part/ layer 5,ACAv5,772,left,all,6933,266.762,1260.45,6933,266.762,1260.45
+Anterior cingulate area/ ventral part/ layer 5,ACAv5,772,right,all,6105,276.135,1212.79,6105,276.135,1212.79
+Anterior cingulate area/ ventral part/ 6a,ACAv6a,810,left,all,2247,260.399,1236.24,2247,260.399,1236.24
+Anterior cingulate area/ ventral part/ 6a,ACAv6a,810,right,all,1499,252.266,1111.19,1499,252.266,1111.19
+Anterior cingulate area/ ventral part/ 6b,ACAv6b,819,left,all,170,239.902,1139.42,170,239.902,1139.42
+Anterior cingulate area/ ventral part/ 6b,ACAv6b,819,right,all,49,256.482,1006.1,49,256.482,1006.1
+Prelimbic area,PL,972,left,all,12456,258.987,915.448,12456,258.987,915.448
+Prelimbic area,PL,972,right,all,12990,255.7,892.642,12990,255.7,892.642
+Prelimbic area/ layer 1,PL1,171,left,all,1330,299.732,906.492,1330,299.732,906.492
+Prelimbic area/ layer 1,PL1,171,right,all,1577,274.267,869.526,1577,274.267,869.526
+Prelimbic area/ layer 2/3,PL2/3,304,left,all,2337,237.193,870.187,2337,237.193,870.187
+Prelimbic area/ layer 2/3,PL2/3,304,right,all,2788,234.214,859.794,2788,234.214,859.794
+Prelimbic area/ layer 5,PL5,363,left,all,6440,269.939,942.879,6440,269.939,942.879
+Prelimbic area/ layer 5,PL5,363,right,all,6539,271.209,929.598,6539,271.209,929.598
+Prelimbic area/ layer 6a,PL6a,84,left,all,2326,227.099,890.359,2326,227.099,890.359
+Prelimbic area/ layer 6a,PL6a,84,right,all,2080,221.669,838.461,2080,221.669,838.461
+Prelimbic area/ layer 6b,PL6b,132,left,all,23,275.544,888.696,23,275.544,888.696
+Prelimbic area/ layer 6b,PL6b,132,right,all,6,255.027,739,6,255.027,739
+Infralimbic area,ILA,44,left,all,2636,234.633,908.822,2636,234.633,908.822
+Infralimbic area,ILA,44,right,all,2365,227.776,885.027,2365,227.776,885.027
+Infralimbic area/ layer 1,ILA1,707,left,all,205,261.17,865.015,205,261.17,865.015
+Infralimbic area/ layer 1,ILA1,707,right,all,139,292.095,958.475,139,292.095,958.475
+Infralimbic area/ layer 2/3,ILA2/3,556,left,all,140,223.467,804.671,140,223.467,804.671
+Infralimbic area/ layer 2/3,ILA2/3,556,right,all,204,211.885,816.716,204,211.885,816.716
+Infralimbic area/ layer 5,ILA5,827,left,all,1398,226.544,906.943,1398,226.544,906.943
+Infralimbic area/ layer 5,ILA5,827,right,all,1310,219.865,886.273,1310,219.865,886.273
+Infralimbic area/ layer 6a,ILA6a,1054,left,all,891,242.835,938.591,891,242.835,938.591
+Infralimbic area/ layer 6a,ILA6a,1054,right,all,710,234.325,887.872,710,234.325,887.872
+Infralimbic area/ layer 6b,ILA6b,1081,left,all,2,296.235,741,2,296.235,741
+Infralimbic area/ layer 6b,ILA6b,1081,right,all,2,235.015,921.5,2,235.015,921.5
+Orbital area,ORB,714,left,all,30691,289.755,975.056,30691,289.755,975.056
+Orbital area,ORB,714,right,all,26518,258.514,895.515,26518,258.514,895.515
+Orbital area/ lateral part,ORBl,723,left,all,15312,314.734,1056.67,15312,314.734,1056.67
+Orbital area/ lateral part,ORBl,723,right,all,11456,262.054,924.125,11456,262.054,924.125
+Orbital area/ lateral part/ layer 1,ORBl1,448,left,all,879,269.43,913.301,879,269.43,913.301
+Orbital area/ lateral part/ layer 1,ORBl1,448,right,all,827,269.058,916.34,827,269.058,916.34
+Orbital area/ lateral part/ layer 2/3,ORBl2/3,412,left,all,3476,299.587,1034.58,3476,299.587,1034.58
+Orbital area/ lateral part/ layer 2/3,ORBl2/3,412,right,all,2764,260.631,936.45,2764,260.631,936.45
+Orbital area/ lateral part/ layer 5,ORBl5,630,left,all,8136,334.792,1103.01,8136,334.792,1103.01
+Orbital area/ lateral part/ layer 5,ORBl5,630,right,all,6000,272.927,948.921,6000,272.927,948.921
+Orbital area/ lateral part/ layer 6a,ORBl6a,440,left,all,2724,291.079,996.369,2724,291.079,996.369
+Orbital area/ lateral part/ layer 6a,ORBl6a,440,right,all,1810,226.14,829,1810,226.14,829
+Orbital area/ lateral part/ layer 6b,ORBl6b,488,left,all,97,249.955,955.124,97,249.955,955.124
+Orbital area/ lateral part/ layer 6b,ORBl6b,488,right,all,55,223.998,847.164,55,223.998,847.164
+Orbital area/ medial part,ORBm,731,left,all,6054,257.828,861.681,6054,257.828,861.681
+Orbital area/ medial part,ORBm,731,right,all,6540,249.17,857.061,6540,249.17,857.061
+Orbital area/ medial part/ layer 1,ORBm1,484,left,all,1197,256.858,805.764,1197,256.858,805.764
+Orbital area/ medial part/ layer 1,ORBm1,484,right,all,1687,244.261,800.322,1687,244.261,800.322
+Orbital area/ medial part/ layer 2/3,ORBm2/3,582,left,all,1562,254.951,840.754,1562,254.951,840.754
+Orbital area/ medial part/ layer 2/3,ORBm2/3,582,right,all,1838,252.423,871.95,1838,252.423,871.95
+Orbital area/ medial part/ layer 5,ORBm5,620,left,all,2522,268.304,907.906,2522,268.304,907.906
+Orbital area/ medial part/ layer 5,ORBm5,620,right,all,2390,259.615,904.087,2390,259.615,904.087
+Orbital area/ medial part/ layer 6a,ORBm6a,910,left,all,765,229.914,840.38,765,229.914,840.38
+Orbital area/ medial part/ layer 6a,ORBm6a,910,right,all,622,213.124,786.251,622,213.124,786.251
+Orbital area/ medial part/ layer 6b,ORBm6b,527696977,left,all,8,331.587,778.5,8,331.587,778.5
+Orbital area/ medial part/ layer 6b,ORBm6b,527696977,right,all,3,169.117,858,3,169.117,858
+Orbital area/ ventrolateral part,ORBvl,746,left,all,9325,269.466,914.642,9325,269.466,914.642
+Orbital area/ ventrolateral part,ORBvl,746,right,all,8522,260.926,886.565,8522,260.926,886.565
+Orbital area/ ventrolateral part/ layer 1,ORBvl1,969,left,all,1587,249.433,822.054,1587,249.433,822.054
+Orbital area/ ventrolateral part/ layer 1,ORBvl1,969,right,all,1561,246.256,815.113,1561,246.256,815.113
+Orbital area/ ventrolateral part/ layer 2/3,ORBvl2/3,288,left,all,2799,280.099,926.941,2799,280.099,926.941
+Orbital area/ ventrolateral part/ layer 2/3,ORBvl2/3,288,right,all,2526,277.011,914.501,2526,277.011,914.501
+Orbital area/ ventrolateral part/ layer 5,ORBvl5,1125,left,all,3665,274.735,949.974,3665,274.735,949.974
+Orbital area/ ventrolateral part/ layer 5,ORBvl5,1125,right,all,3433,264.593,921.349,3433,264.593,921.349
+Orbital area/ ventrolateral part/ layer 6a,ORBvl6a,608,left,all,1260,256.604,903.046,1260,256.604,903.046
+Orbital area/ ventrolateral part/ layer 6a,ORBvl6a,608,right,all,998,230.779,808.202,998,230.779,808.202
+Orbital area/ ventrolateral part/ layer 6b,ORBvl6b,680,left,all,14,192.951,745.929,14,192.951,745.929
+Orbital area/ ventrolateral part/ layer 6b,ORBvl6b,680,right,all,4,202.222,828.25,4,202.222,828.25
+Agranular insular area,AI,95,left,all,53995,360.83,1100.12,53995,360.83,1100.12
+Agranular insular area,AI,95,right,all,39740,289.446,893.889,39740,289.446,893.889
+Agranular insular area/ dorsal part,AId,104,left,all,28852,366.267,1105.05,28852,366.267,1105.05
+Agranular insular area/ dorsal part,AId,104,right,all,20375,284.221,891.725,20375,284.221,891.725
+Agranular insular area/ dorsal part/ layer 1,AId1,996,left,all,2544,379.121,1105.59,2544,379.121,1105.59
+Agranular insular area/ dorsal part/ layer 1,AId1,996,right,all,1437,261.643,817.104,1437,261.643,817.104
+Agranular insular area/ dorsal part/ layer 2/3,AId2/3,328,left,all,6680,342.644,1048.66,6680,342.644,1048.66
+Agranular insular area/ dorsal part/ layer 2/3,AId2/3,328,right,all,5854,287.821,886.086,5854,287.821,886.086
+Agranular insular area/ dorsal part/ layer 5,AId5,1101,left,all,13237,394.266,1125.48,13237,394.266,1125.48
+Agranular insular area/ dorsal part/ layer 5,AId5,1101,right,all,8871,298.394,911.726,8871,298.394,911.726
+Agranular insular area/ dorsal part/ layer 6a,AId6a,783,left,all,6131,331.818,1116.51,6131,331.818,1116.51
+Agranular insular area/ dorsal part/ layer 6a,AId6a,783,right,all,4088,257.55,880.533,4088,257.55,880.533
+Agranular insular area/ dorsal part/ layer 6b,AId6b,831,left,all,260,234.343,1238.16,260,234.343,1238.16
+Agranular insular area/ dorsal part/ layer 6b,AId6b,831,right,all,125,241.655,960.272,125,241.655,960.272
+Agranular insular area/ posterior part,AIp,111,left,all,14664,365.44,1127.58,14664,365.44,1127.58
+Agranular insular area/ posterior part,AIp,111,right,all,11194,303.922,896.91,11194,303.922,896.91
+Agranular insular area/ posterior part/ layer 1,AIp1,120,left,all,2324,440.984,1398.97,2324,440.984,1398.97
+Agranular insular area/ posterior part/ layer 1,AIp1,120,right,all,1084,290.931,922.798,1084,290.931,922.798
+Agranular insular area/ posterior part/ layer 2/3,AIp2/3,163,left,all,5360,373.164,1126.81,5360,373.164,1126.81
+Agranular insular area/ posterior part/ layer 2/3,AIp2/3,163,right,all,4621,325.375,941.987,4621,325.375,941.987
+Agranular insular area/ posterior part/ layer 5,AIp5,344,left,all,4142,360.951,1069.86,4142,360.951,1069.86
+Agranular insular area/ posterior part/ layer 5,AIp5,344,right,all,3312,304.498,880.563,3312,304.498,880.563
+Agranular insular area/ posterior part/ layer 6a,AIp6a,314,left,all,2696,296.674,995.763,2696,296.674,995.763
+Agranular insular area/ posterior part/ layer 6a,AIp6a,314,right,all,2109,263.823,813.63,2109,263.823,813.63
+Agranular insular area/ posterior part/ layer 6b,AIp6b,355,left,all,142,274.105,901.704,142,274.105,901.704
+Agranular insular area/ posterior part/ layer 6b,AIp6b,355,right,all,68,268.766,800.176,68,268.766,800.176
+Agranular insular area/ ventral part,AIv,119,left,all,10479,339.407,1048.09,10479,339.407,1048.09
+Agranular insular area/ ventral part,AIv,119,right,all,8171,282.645,895.143,8171,282.645,895.143
+Agranular insular area/ ventral part/ layer 1,AIv1,704,left,all,1287,364.739,1124.57,1287,364.739,1124.57
+Agranular insular area/ ventral part/ layer 1,AIv1,704,right,all,983,275.393,868.556,983,275.393,868.556
+Agranular insular area/ ventral part/ layer 2/3,AIv2/3,694,left,all,3205,350.064,1034.47,3205,350.064,1034.47
+Agranular insular area/ ventral part/ layer 2/3,AIv2/3,694,right,all,2954,307.367,927.654,2954,307.367,927.654
+Agranular insular area/ ventral part/ layer 5,AIv5,800,left,all,4997,326.674,1022.67,4997,326.674,1022.67
+Agranular insular area/ ventral part/ layer 5,AIv5,800,right,all,3533,268.226,872.017,3533,268.226,872.017
+Agranular insular area/ ventral part/ layer 6a,AIv6a,675,left,all,976,338.018,1120.84,976,338.018,1120.84
+Agranular insular area/ ventral part/ layer 6a,AIv6a,675,right,all,694,258.483,908.853,694,258.483,908.853
+Agranular insular area/ ventral part/ layer 6b,AIv6b,699,left,all,14,212.909,1137.79,14,212.909,1137.79
+Agranular insular area/ ventral part/ layer 6b,AIv6b,699,right,all,7,541.277,1221.43,7,541.277,1221.43
+Retrosplenial area,RSP,254,left,all,54782,292.242,1033.9,54782,292.242,1033.9
+Retrosplenial area,RSP,254,right,all,56367,284.664,965.956,56367,284.664,965.956
+Retrosplenial area/ lateral agranular part,RSPagl,894,left,all,11337,270.936,886.422,11337,270.936,886.422
+Retrosplenial area/ lateral agranular part,RSPagl,894,right,all,11896,271.083,804.355,11896,271.083,804.355
+Retrosplenial area/ lateral agranular part/ layer 1,RSPagl1,671,left,all,907,246.403,781.02,907,246.403,781.02
+Retrosplenial area/ lateral agranular part/ layer 1,RSPagl1,671,right,all,1223,216.341,668.177,1223,216.341,668.177
+Retrosplenial area/ lateral agranular part/ layer 2/3,RSPagl2/3,965,left,all,3034,225.462,793.007,3034,225.462,793.007
+Retrosplenial area/ lateral agranular part/ layer 2/3,RSPagl2/3,965,right,all,3400,248.367,760.923,3400,248.367,760.923
+Retrosplenial area/ lateral agranular part/ layer 5,RSPagl5,774,left,all,4940,316.507,973.409,4940,316.507,973.409
+Retrosplenial area/ lateral agranular part/ layer 5,RSPagl5,774,right,all,4726,313.556,883.428,4726,313.556,883.428
+Retrosplenial area/ lateral agranular part/ layer 6a,RSPagl6a,906,left,all,2308,246.3,870.039,2308,246.3,870.039
+Retrosplenial area/ lateral agranular part/ layer 6a,RSPagl6a,906,right,all,2394,249.557,781.067,2394,249.557,781.067
+Retrosplenial area/ lateral agranular part/ layer 6b,RSPagl6b,279,left,all,148,216.631,799.365,148,216.631,799.365
+Retrosplenial area/ lateral agranular part/ layer 6b,RSPagl6b,279,right,all,153,238.349,779.98,153,238.349,779.98
+Retrosplenial area/ dorsal part,RSPd,879,left,all,19630,280.103,943.802,19630,280.103,943.802
+Retrosplenial area/ dorsal part,RSPd,879,right,all,20272,273.149,880.372,20272,273.149,880.372
+Retrosplenial area/ dorsal part/ layer 1,RSPd1,442,left,all,2372,251.659,843.76,2372,251.659,843.76
+Retrosplenial area/ dorsal part/ layer 1,RSPd1,442,right,all,2272,232.96,799.697,2272,232.96,799.697
+Retrosplenial area/ dorsal part/ layer 2/3,RSPd2/3,434,left,all,5696,252.72,907.61,5696,252.72,907.61
+Retrosplenial area/ dorsal part/ layer 2/3,RSPd2/3,434,right,all,6214,248.375,860.632,6214,248.375,860.632
+Retrosplenial area/ dorsal part/ layer 4,RSPd4,545,left,all,0,0,0,0,0,0
+Retrosplenial area/ dorsal part/ layer 4,RSPd4,545,right,all,0,0,0,0,0,0
+Retrosplenial area/ dorsal part/ layer 5,RSPd5,610,left,all,7380,321.485,1027.25,7380,321.485,1027.25
+Retrosplenial area/ dorsal part/ layer 5,RSPd5,610,right,all,7615,318.767,958.077,7615,318.767,958.077
+Retrosplenial area/ dorsal part/ layer 6a,RSPd6a,274,left,all,4058,261.567,904.846,4058,261.567,904.846
+Retrosplenial area/ dorsal part/ layer 6a,RSPd6a,274,right,all,4048,248.814,812.104,4048,248.814,812.104
+Retrosplenial area/ dorsal part/ layer 6b,RSPd6b,330,left,all,124,225.825,828.532,124,225.825,828.532
+Retrosplenial area/ dorsal part/ layer 6b,RSPd6b,330,right,all,123,243.782,803.707,123,243.782,803.707
+Retrosplenial area/ ventral part,RSPv,886,left,all,23815,312.39,1178.37,23815,312.39,1178.37
+Retrosplenial area/ ventral part,RSPv,886,right,all,24199,300.986,1117.09,24199,300.986,1117.09
+Retrosplenial area/ ventral part/ layer 1,RSPv1,542,left,all,2746,273.992,1084.49,2746,273.992,1084.49
+Retrosplenial area/ ventral part/ layer 1,RSPv1,542,right,all,2487,253.398,1039.28,2487,253.398,1039.28
+Retrosplenial area/ ventral part/ layer 2/3,RSPv2/3,430,left,all,5090,280.147,1136.53,5090,280.147,1136.53
+Retrosplenial area/ ventral part/ layer 2/3,RSPv2/3,430,right,all,5635,278.7,1110.37,5635,278.7,1110.37
+Retrosplenial area/ ventral part/ layer 5,RSPv5,687,left,all,12131,350.081,1257.97,12131,350.081,1257.97
+Retrosplenial area/ ventral part/ layer 5,RSPv5,687,right,all,12362,334.427,1179.12,12362,334.427,1179.12
+Retrosplenial area/ ventral part/ layer 6a,RSPv6a,590,left,all,3664,265.794,1054.09,3664,265.794,1054.09
+Retrosplenial area/ ventral part/ layer 6a,RSPv6a,590,right,all,3558,256.635,978.125,3558,256.635,978.125
+Retrosplenial area/ ventral part/ layer 6b,RSPv6b,622,left,all,184,220.263,962.902,184,220.263,962.902
+Retrosplenial area/ ventral part/ layer 6b,RSPv6b,622,right,all,157,226.682,856.465,157,226.682,856.465
+Posterior parietal association areas,PTLp,22,left,all,13558,287.902,952.393,13558,287.902,952.393
+Posterior parietal association areas,PTLp,22,right,all,10045,271.149,821.442,10045,271.149,821.442
+Anterior area,VISa,312782546,left,all,7103,270.676,902.553,7103,270.676,902.553
+Anterior area,VISa,312782546,right,all,5439,260.131,777.984,5439,260.131,777.984
+Anterior area/ layer 1,VISa1,312782550,left,all,320,242.698,785.237,320,242.698,785.237
+Anterior area/ layer 1,VISa1,312782550,right,all,603,220.9,676.791,603,220.9,676.791
+Anterior area/ layer 2/3,VISa2/3,312782554,left,all,1758,233.885,813.845,1758,233.885,813.845
+Anterior area/ layer 2/3,VISa2/3,312782554,right,all,1291,250.582,741.949,1291,250.582,741.949
+Anterior area/ layer 4,VISa4,312782558,left,all,617,253.058,893.229,617,253.058,893.229
+Anterior area/ layer 4,VISa4,312782558,right,all,780,303.229,861.015,780,303.229,861.015
+Anterior area/ layer 5,VISa5,312782562,left,all,2702,325.811,997.486,2702,325.811,997.486
+Anterior area/ layer 5,VISa5,312782562,right,all,1642,292.768,851.25,1642,292.768,851.25
+Anterior area/ layer 6a,VISa6a,312782566,left,all,1458,234.369,874.307,1458,234.369,874.307
+Anterior area/ layer 6a,VISa6a,312782566,right,all,940,212.798,709.555,940,212.798,709.555
+Anterior area/ layer 6b,VISa6b,312782570,left,all,248,224.14,837.71,248,224.14,837.71
+Anterior area/ layer 6b,VISa6b,312782570,right,all,183,223.371,705.825,183,223.371,705.825
+Rostrolateral visual area,VISrl,417,left,all,6455,306.857,1007.24,6455,306.857,1007.24
+Rostrolateral visual area,VISrl,417,right,all,4606,284.16,872.759,4606,284.16,872.759
+Rostrolateral area/ layer 1,VISrl1,312782604,left,all,611,283.922,948.912,611,283.922,948.912
+Rostrolateral area/ layer 1,VISrl1,312782604,right,all,520,235.138,735.577,520,235.138,735.577
+Rostrolateral area/ layer 2/3,VISrl2/3,312782608,left,all,1747,252.51,906.062,1747,252.51,906.062
+Rostrolateral area/ layer 2/3,VISrl2/3,312782608,right,all,1075,238.272,811.337,1075,238.272,811.337
+Rostrolateral area/ layer 4,VISrl4,312782612,left,all,918,313.599,1026,918,313.599,1026
+Rostrolateral area/ layer 4,VISrl4,312782612,right,all,745,313.661,927.485,745,313.661,927.485
+Rostrolateral area/ layer 5,VISrl5,312782616,left,all,1771,399.291,1177.15,1771,399.291,1177.15
+Rostrolateral area/ layer 5,VISrl5,312782616,right,all,1296,357.226,1013.12,1296,357.226,1013.12
+Rostrolateral area/ layer 6a,VISrl6a,312782620,left,all,1179,266.283,941.114,1179,266.283,941.114
+Rostrolateral area/ layer 6a,VISrl6a,312782620,right,all,820,241.035,789.451,820,241.035,789.451
+Rostrolateral area/ layer 6b,VISrl6b,312782624,left,all,229,249.668,885.821,229,249.668,885.821
+Rostrolateral area/ layer 6b,VISrl6b,312782624,right,all,150,240.898,759.453,150,240.898,759.453
+Temporal association areas,TEa,541,left,all,21977,332.699,972.611,21977,332.699,972.611
+Temporal association areas,TEa,541,right,all,15977,284.472,850.992,15977,284.472,850.992
+Temporal association areas/ layer 1,TEa1,97,left,all,2261,333.105,997.716,2261,333.105,997.716
+Temporal association areas/ layer 1,TEa1,97,right,all,1004,244.161,780.629,1004,244.161,780.629
+Temporal association areas/ layer 2/3,TEa2/3,1127,left,all,4942,269.488,856.648,4942,269.488,856.648
+Temporal association areas/ layer 2/3,TEa2/3,1127,right,all,2979,229.746,748.969,2979,229.746,748.969
+Temporal association areas/ layer 4,TEa4,234,left,all,2175,310.168,929.635,2175,310.168,929.635
+Temporal association areas/ layer 4,TEa4,234,right,all,1447,271.747,825.321,1447,271.747,825.321
+Temporal association areas/ layer 5,TEa5,289,left,all,7069,375.636,1034.66,7069,375.636,1034.66
+Temporal association areas/ layer 5,TEa5,289,right,all,5897,310.518,895.332,5897,310.518,895.332
+Temporal association areas/ layer 6a,TEa6a,729,left,all,4692,333.293,983.528,4692,333.293,983.528
+Temporal association areas/ layer 6a,TEa6a,729,right,all,4044,293.146,872.241,4044,293.146,872.241
+Temporal association areas/ layer 6b,TEa6b,786,left,all,838,397.34,1115.78,838,397.34,1115.78
+Temporal association areas/ layer 6b,TEa6b,786,right,all,606,339.336,957.122,606,339.336,957.122
+Perirhinal area,PERI,922,left,all,4963,428.072,1111.39,4963,428.072,1111.39
+Perirhinal area,PERI,922,right,all,4010,407.596,1068.51,4010,407.596,1068.51
+Perirhinal area/ layer 1,PERI1,540,left,all,1067,436.066,1131.36,1067,436.066,1131.36
+Perirhinal area/ layer 1,PERI1,540,right,all,552,450.146,1096.74,552,450.146,1096.74
+Perirhinal area/ layer 2/3,PERI2/3,888,left,all,2248,442.551,1142.87,2248,442.551,1142.87
+Perirhinal area/ layer 2/3,PERI2/3,888,right,all,2008,408.966,1084.12,2008,408.966,1084.12
+Perirhinal area/ layer 5,PERI5,692,left,all,1032,409.419,1053.28,1032,409.419,1053.28
+Perirhinal area/ layer 5,PERI5,692,right,all,924,393.024,1047.99,924,393.024,1047.99
+Perirhinal area/ layer 6a,PERI6a,335,left,all,525,395.661,1056.38,525,395.661,1056.38
+Perirhinal area/ layer 6a,PERI6a,335,right,all,481,389.215,1018.57,481,389.215,1018.57
+Perirhinal area/ layer 6b,PERI6b,368,left,all,91,375.21,1075.59,91,375.21,1075.59
+Perirhinal area/ layer 6b,PERI6b,368,right,all,45,320.237,980.6,45,320.237,980.6
+Ectorhinal area,ECT,895,left,all,10786,315.666,920.209,10786,315.666,920.209
+Ectorhinal area,ECT,895,right,all,8753,302.24,868.623,8753,302.24,868.623
+Ectorhinal area/Layer 1,ECT1,836,left,all,1207,302.363,910.623,1207,302.363,910.623
+Ectorhinal area/Layer 1,ECT1,836,right,all,651,247.293,743.816,651,247.293,743.816
+Ectorhinal area/Layer 2/3,ECT2/3,427,left,all,2904,286.156,861.347,2904,286.156,861.347
+Ectorhinal area/Layer 2/3,ECT2/3,427,right,all,2021,259.595,805.197,2021,259.595,805.197
+Ectorhinal area/Layer 5,ECT5,988,left,all,3299,337.072,959.084,3299,337.072,959.084
+Ectorhinal area/Layer 5,ECT5,988,right,all,3140,330.119,918.068,3140,330.119,918.068
+Ectorhinal area/Layer 6a,ECT6a,977,left,all,3033,323.587,932.208,3033,323.587,932.208
+Ectorhinal area/Layer 6a,ECT6a,977,right,all,2739,316.386,891.41,2739,316.386,891.41
+Ectorhinal area/Layer 6b,ECT6b,1045,left,all,343,336.394,972.292,343,336.394,972.292
+Ectorhinal area/Layer 6b,ECT6b,1045,right,all,202,280.794,827.842,202,280.794,827.842
+Olfactory areas,OLF,698,left,all,215028,344.668,1096.25,215028,344.668,1096.25
+Olfactory areas,OLF,698,right,all,184043,303.182,971.906,184043,303.182,971.906
+Main olfactory bulb,MOB,507,left,all,48036,350.904,1140.45,48036,350.904,1140.45
+Main olfactory bulb,MOB,507,right,all,52695,337.006,1160.19,52695,337.006,1160.19
+Accessory olfactory bulb,AOB,151,left,all,2482,309.883,919.376,2482,309.883,919.376
+Accessory olfactory bulb,AOB,151,right,all,2160,305.256,904.016,2160,305.256,904.016
+Accessory olfactory bulb/ glomerular layer,AOBgl,188,left,all,252,284.379,812.968,252,284.379,812.968
+Accessory olfactory bulb/ glomerular layer,AOBgl,188,right,all,420,349.865,875.907,420,349.865,875.907
+Accessory olfactory bulb/ granular layer,AOBgr,196,left,all,1101,307.268,991.397,1101,307.268,991.397
+Accessory olfactory bulb/ granular layer,AOBgr,196,right,all,424,259.789,895.366,424,259.789,895.366
+Accessory olfactory bulb/ mitral layer,AOBmi,204,left,all,1129,318.125,872.891,1129,318.125,872.891
+Accessory olfactory bulb/ mitral layer,AOBmi,204,right,all,1316,305.668,915.774,1316,305.668,915.774
+Anterior olfactory nucleus,AON,159,left,all,29350,296.934,963.219,29350,296.934,963.219
+Anterior olfactory nucleus,AON,159,right,all,26176,269.752,908.162,26176,269.752,908.162
+Taenia tecta,TT,589,left,all,5196,268.662,886.553,5196,268.662,886.553
+Taenia tecta,TT,589,right,all,5150,263.023,877.821,5150,263.023,877.821
+Taenia tecta/ dorsal part,TTd,597,left,all,2838,269.831,915.592,2838,269.831,915.592
+Taenia tecta/ dorsal part,TTd,597,right,all,2768,267.696,904.847,2768,267.696,904.847
+Taenia tecta/ ventral part,TTv,605,left,all,2358,267.256,851.602,2358,267.256,851.602
+Taenia tecta/ ventral part,TTv,605,right,all,2382,257.594,846.416,2382,257.594,846.416
+Dorsal peduncular area,DP,814,left,all,2078,273.911,958.635,2078,273.911,958.635
+Dorsal peduncular area,DP,814,right,all,1814,257.031,926.006,1814,257.031,926.006
+Piriform area,PIR,961,left,all,77982,381.672,1161.12,77982,381.672,1161.12
+Piriform area,PIR,961,right,all,60127,308.306,910.346,60127,308.306,910.346
+Nucleus of the lateral olfactory tract,NLOT,619,left,all,2091,291.572,1179.83,2091,291.572,1179.83
+Nucleus of the lateral olfactory tract,NLOT,619,right,all,1518,253.678,950.774,1518,253.678,950.774
+Nucleus of the lateral olfactory tract/ molecular layer,NLOT1,260,left,all,443,237.939,1014.83,443,237.939,1014.83
+Nucleus of the lateral olfactory tract/ molecular layer,NLOT1,260,right,all,154,214.874,797.136,154,214.874,797.136
+Nucleus of the lateral olfactory tract/ pyramidal layer,NLOT2,268,left,all,1173,289.839,1209.13,1173,289.839,1209.13
+Nucleus of the lateral olfactory tract/ pyramidal layer,NLOT2,268,right,all,1067,252.596,972.562,1067,252.596,972.562
+Nucleus of the lateral olfactory tract/ layer 3,NLOT3,1139,left,all,475,345.87,1261.34,475,345.87,1261.34
+Nucleus of the lateral olfactory tract/ layer 3,NLOT3,1139,right,all,297,277.687,952.162,297,277.687,952.162
+Cortical amygdalar area,COA,631,left,all,16232,267.299,997.52,16232,267.299,997.52
+Cortical amygdalar area,COA,631,right,all,8962,225.17,738.175,8962,225.17,738.175
+Cortical amygdalar area/ anterior part,COAa,639,left,all,3350,255.998,998.849,3350,255.998,998.849
+Cortical amygdalar area/ anterior part,COAa,639,right,all,1813,245.492,847.122,1813,245.492,847.122
+Cortical amygdalar area/ posterior part,COAp,647,left,all,12882,270.237,997.174,12882,270.237,997.174
+Cortical amygdalar area/ posterior part,COAp,647,right,all,7149,220.016,710.546,7149,220.016,710.546
+Cortical amygdalar area/ posterior part/ lateral zone,COApl,655,left,all,5882,277.075,991.887,5882,277.075,991.887
+Cortical amygdalar area/ posterior part/ lateral zone,COApl,655,right,all,3551,227.565,719.867,3551,227.565,719.867
+Cortical amygdalar area/ posterior part/ medial zone,COApm,663,left,all,7000,264.492,1001.62,7000,264.492,1001.62
+Cortical amygdalar area/ posterior part/ medial zone,COApm,663,right,all,3598,212.566,701.347,3598,212.566,701.347
+Piriform-amygdalar area,PAA,788,left,all,4317,296.015,1050.65,4317,296.015,1050.65
+Piriform-amygdalar area,PAA,788,right,all,2985,240.781,780.07,2985,240.781,780.07
+Postpiriform transition area,TR,566,left,all,9280,380.957,1142.92,9280,380.957,1142.92
+Postpiriform transition area,TR,566,right,all,6958,321.553,887.74,6958,321.553,887.74
+Hippocampal formation,HPF,1089,left,all,231797,354.353,1219.08,231797,354.353,1219.08
+Hippocampal formation,HPF,1089,right,all,178761,307.77,1016.38,178761,307.77,1016.38
+Hippocampal region,HIP,1080,left,all,98703,319.302,1307.82,98703,319.302,1307.82
+Hippocampal region,HIP,1080,right,all,72313,294.864,1135.3,72313,294.864,1135.3
+Ammon's horn,CA,375,left,all,75864,334.078,1320.28,75864,334.078,1320.28
+Ammon's horn,CA,375,right,all,56196,305.129,1146.91,56196,305.129,1146.91
+Field CA1,CA1,382,left,all,42429,308.792,1224.36,42429,308.792,1224.36
+Field CA1,CA1,382,right,all,31011,286.194,1058.83,31011,286.194,1058.83
+Field CA2,CA2,423,left,all,2303,396.808,1490.27,2303,396.808,1490.27
+Field CA2,CA2,423,right,all,1579,396.367,1418.59,1579,396.367,1418.59
+Field CA3,CA3,463,left,all,31132,363.9,1438.44,31132,363.9,1438.44
+Field CA3,CA3,463,right,all,23606,323.901,1244.46,23606,323.901,1244.46
+Dentate gyrus,DG,726,left,all,22338,271.231,1271.4,22338,271.231,1271.4
+Dentate gyrus,DG,726,right,all,15555,260.047,1094.9,15555,260.047,1094.9
+Dentate gyrus/ molecular layer,DG-mo,10703,left,all,11132,255.869,1191.85,11132,255.869,1191.85
+Dentate gyrus/ molecular layer,DG-mo,10703,right,all,6556,245.372,1026.83,6556,245.372,1026.83
+Dentate gyrus/ polymorph layer,DG-po,10704,left,all,4782,312.658,1364.43,4782,312.658,1364.43
+Dentate gyrus/ polymorph layer,DG-po,10704,right,all,3442,328.04,1180.62,3442,328.04,1180.62
+Dentate gyrus/ granule cell layer,DG-sg,632,left,all,6424,267.013,1340.01,6424,267.013,1340.01
+Dentate gyrus/ granule cell layer,DG-sg,632,right,all,5557,235.245,1122.12,5557,235.245,1122.12
+Fasciola cinerea,FC,982,left,all,307,229.407,1025.4,307,229.407,1025.4
+Fasciola cinerea,FC,982,right,all,308,242.417,1089.48,308,242.417,1089.48
+Induseum griseum,IG,19,left,all,194,218.246,1076.52,194,218.246,1076.52
+Induseum griseum,IG,19,right,all,254,219.508,1095.61,254,219.508,1095.61
+Retrohippocampal region,RHP,822,left,all,131928,381.175,1154.54,131928,381.175,1154.54
+Retrohippocampal region,RHP,822,right,all,105512,316.789,935.38,105512,316.789,935.38
+Entorhinal area,ENT,909,left,all,83826,420.149,1128.69,83826,420.149,1128.69
+Entorhinal area,ENT,909,right,all,70136,335.308,902.877,70136,335.308,902.877
+Entorhinal area/ lateral part,ENTl,918,left,all,45991,459.22,1170.5,45991,459.22,1170.5
+Entorhinal area/ lateral part,ENTl,918,right,all,38089,378.553,977.163,38089,378.553,977.163
+Entorhinal area/ lateral part/ layer 1,ENTl1,1121,left,all,6674,465.725,1286.22,6674,465.725,1286.22
+Entorhinal area/ lateral part/ layer 1,ENTl1,1121,right,all,3134,287.233,892.294,3134,287.233,892.294
+Entorhinal area/ lateral part/ layer 2,ENTl2,20,left,all,13338,580.285,1348.11,13338,580.285,1348.11
+Entorhinal area/ lateral part/ layer 2,ENTl2,20,right,all,12761,463.489,1127.67,12761,463.489,1127.67
+Entorhinal area/ lateral part/ layer 3,ENTl3,52,left,all,8938,457.141,1135.57,8938,457.141,1135.57
+Entorhinal area/ lateral part/ layer 3,ENTl3,52,right,all,7999,387.994,989.184,7999,387.994,989.184
+Entorhinal area/ lateral part/ layer 5,ENTl5,139,left,all,8760,384.993,1021.99,8760,384.993,1021.99
+Entorhinal area/ lateral part/ layer 5,ENTl5,139,right,all,8416,329.754,863.263,8416,329.754,863.263
+Entorhinal area/ lateral part/ layer 6a,ENTl6a,28,left,all,8281,339.743,985.951,8281,339.743,985.951
+Entorhinal area/ lateral part/ layer 6a,ENTl6a,28,right,all,5779,298.525,840.072,5779,298.525,840.072
+Entorhinal area/ medial part/ dorsal zone,ENTm,926,left,all,37835,372.657,1077.86,37835,372.657,1077.86
+Entorhinal area/ medial part/ dorsal zone,ENTm,926,right,all,32047,283.909,814.587,32047,283.909,814.587
+Entorhinal area/ medial part/ dorsal zone/ layer 1,ENTm1,526,left,all,5276,350.806,1031.21,5276,350.806,1031.21
+Entorhinal area/ medial part/ dorsal zone/ layer 1,ENTm1,526,right,all,5608,328.97,884.087,5608,328.97,884.087
+Entorhinal area/ medial part/ dorsal zone/ layer 2,ENTm2,543,left,all,11383,444.985,1194.15,11383,444.985,1194.15
+Entorhinal area/ medial part/ dorsal zone/ layer 2,ENTm2,543,right,all,10679,295.457,832.25,10679,295.457,832.25
+Entorhinal area/ medial part/ dorsal zone/ layer 3,ENTm3,664,left,all,8639,366.577,1064.18,8639,366.577,1064.18
+Entorhinal area/ medial part/ dorsal zone/ layer 3,ENTm3,664,right,all,6617,276.325,793.285,6617,276.325,793.285
+Entorhinal area/ medial part/ dorsal zone/ layer 5,ENTm5,727,left,all,7365,343.242,1028.09,7365,343.242,1028.09
+Entorhinal area/ medial part/ dorsal zone/ layer 5,ENTm5,727,right,all,6269,249.432,760.661,6269,249.432,760.661
+Entorhinal area/ medial part/ dorsal zone/ layer 6,ENTm6,743,left,all,5172,287.802,963.274,5172,287.802,963.274
+Entorhinal area/ medial part/ dorsal zone/ layer 6,ENTm6,743,right,all,2874,245.739,780.015,2874,245.739,780.015
+Parasubiculum,PAR,843,left,all,7066,327.452,1094.58,7066,327.452,1094.58
+Parasubiculum,PAR,843,right,all,6319,268.92,871.503,6319,268.92,871.503
+Postsubiculum,POST,1037,left,all,7062,262.814,1127.67,7062,262.814,1127.67
+Postsubiculum,POST,1037,right,all,4431,247.37,957.809,4431,247.37,957.809
+Presubiculum,PRE,1084,left,all,6116,284.756,1141.96,6116,284.756,1141.96
+Presubiculum,PRE,1084,right,all,3020,237.792,914.84,3020,237.792,914.84
+Subiculum,SUB,502,left,all,15066,333.612,1301.99,15066,333.612,1301.99
+Subiculum,SUB,502,right,all,12397,296.008,1097.98,12397,296.008,1097.98
+Prosubiculum,ProS,484682470,left,all,8362,353.98,1320.41,8362,353.98,1320.41
+Prosubiculum,ProS,484682470,right,all,5852,319.908,1087.3,5852,319.908,1087.3
+Hippocampo-amygdalar transition area,HATA,589508447,left,all,2342,257.116,1022.54,2342,257.116,1022.54
+Hippocampo-amygdalar transition area,HATA,589508447,right,all,1711,253.308,922.825,1711,253.308,922.825
+Area prostriata,APr,484682508,left,all,2088,272.288,942.79,2088,272.288,942.79
+Area prostriata,APr,484682508,right,all,1646,254.706,791.123,1646,254.706,791.123
+Cortical subplate,CTXsp,703,left,all,45618,302.79,990.359,45618,302.79,990.359
+Cortical subplate,CTXsp,703,right,all,32866,267.211,829.146,32866,267.211,829.146
+Claustrum,CLA,583,left,all,3367,312.674,1152.1,3367,312.674,1152.1
+Claustrum,CLA,583,right,all,2963,271.576,928.078,2963,271.576,928.078
+Endopiriform nucleus,EP,942,left,all,15097,337.289,1015.75,15097,337.289,1015.75
+Endopiriform nucleus,EP,942,right,all,11950,289.381,845.793,11950,289.381,845.793
+Endopiriform nucleus/ dorsal part,EPd,952,left,all,11213,332.086,1023.3,11213,332.086,1023.3
+Endopiriform nucleus/ dorsal part,EPd,952,right,all,8656,288.456,856.486,8656,288.456,856.486
+Endopiriform nucleus/ ventral part,EPv,966,left,all,3884,352.308,993.96,3884,352.308,993.96
+Endopiriform nucleus/ ventral part,EPv,966,right,all,3294,291.811,817.696,3294,291.811,817.696
+Lateral amygdalar nucleus,LA,131,left,all,2467,223.314,833.06,2467,223.314,833.06
+Lateral amygdalar nucleus,LA,131,right,all,1573,208.383,709.543,1573,208.383,709.543
+Basolateral amygdalar nucleus,BLA,295,left,all,11063,302.972,991.718,11063,302.972,991.718
+Basolateral amygdalar nucleus,BLA,295,right,all,7515,270.147,828.103,7515,270.147,828.103
+Basolateral amygdalar nucleus/ anterior part,BLAa,303,left,all,4847,310.703,1056.61,4847,310.703,1056.61
+Basolateral amygdalar nucleus/ anterior part,BLAa,303,right,all,2840,280.769,878.237,2840,280.769,878.237
+Basolateral amygdalar nucleus/ posterior part,BLAp,311,left,all,4421,315.774,995.146,4421,315.774,995.146
+Basolateral amygdalar nucleus/ posterior part,BLAp,311,right,all,3457,278.627,852.768,3457,278.627,852.768
+Basolateral amygdalar nucleus/ ventral part,BLAv,451,left,all,1795,250.565,808.052,1795,250.565,808.052
+Basolateral amygdalar nucleus/ ventral part,BLAv,451,right,all,1218,221.312,641.2,1218,221.312,641.2
+Basomedial amygdalar nucleus,BMA,319,left,all,6951,272.253,927.241,6951,272.253,927.241
+Basomedial amygdalar nucleus,BMA,319,right,all,3809,232.991,742.44,3809,232.991,742.44
+Basomedial amygdalar nucleus/ anterior part,BMAa,327,left,all,3690,273.477,967.227,3690,273.477,967.227
+Basomedial amygdalar nucleus/ anterior part,BMAa,327,right,all,2029,236.644,755.493,2029,236.644,755.493
+Basomedial amygdalar nucleus/ posterior part,BMAp,334,left,all,3261,270.867,881.995,3261,270.867,881.995
+Basomedial amygdalar nucleus/ posterior part,BMAp,334,right,all,1780,228.827,727.561,1780,228.827,727.561
+Posterior amygdalar nucleus,PA,780,left,all,5056,264.287,938.283,5056,264.287,938.283
+Posterior amygdalar nucleus,PA,780,right,all,3885,244.061,827.727,3885,244.061,827.727
+Cerebral nuclei,CNU,623,left,all,195834,254.856,1256.35,195834,254.856,1256.35
+Cerebral nuclei,CNU,623,right,all,144140,236.639,1076.99,144140,236.639,1076.99
+Striatum,STR,477,left,all,158835,243.301,1242.8,158835,243.301,1242.8
+Striatum,STR,477,right,all,112683,224.416,1051.7,112683,224.416,1051.7
+Striatum dorsal region,STRd,485,left,all,96610,231.712,1344.21,96610,231.712,1344.21
+Striatum dorsal region,STRd,485,right,all,68746,215.693,1110.9,68746,215.693,1110.9
+Caudoputamen,CP,672,left,all,96610,231.712,1344.21,96610,231.712,1344.21
+Caudoputamen,CP,672,right,all,68746,215.693,1110.9,68746,215.693,1110.9
+Striatum ventral region,STRv,493,left,all,24117,255.69,1091.28,24117,255.69,1091.28
+Striatum ventral region,STRv,493,right,all,16032,239.304,954.178,16032,239.304,954.178
+Nucleus accumbens,ACB,56,left,all,8228,233.036,1011.36,8228,233.036,1011.36
+Nucleus accumbens,ACB,56,right,all,5945,225.318,952.804,5945,225.318,952.804
+Fundus of striatum,FS,998,left,all,2318,329.783,1252.34,2318,329.783,1252.34
+Fundus of striatum,FS,998,right,all,1705,269.819,1032.92,1705,269.819,1032.92
+Olfactory tubercle,OT,754,left,all,13571,256.77,1112.22,13571,256.77,1112.22
+Olfactory tubercle,OT,754,right,all,8382,243.017,939.136,8382,243.017,939.136
+Lateral septal complex,LSX,275,left,all,9045,214.276,1123.05,9045,214.276,1123.05
+Lateral septal complex,LSX,275,right,all,8190,213.185,1073.4,8190,213.185,1073.4
+Lateral septal nucleus,LS,242,left,all,7797,212.384,1118.86,7797,212.384,1118.86
+Lateral septal nucleus,LS,242,right,all,7246,212.754,1067.49,7246,212.754,1067.49
+Lateral septal nucleus/ caudal (caudodorsal) part,LSc,250,left,all,1399,197.827,1062.84,1399,197.827,1062.84
+Lateral septal nucleus/ caudal (caudodorsal) part,LSc,250,right,all,1278,208.548,972.383,1278,208.548,972.383
+Lateral septal nucleus/ rostral (rostroventral) part,LSr,258,left,all,4719,217.045,1115.39,4719,217.045,1115.39
+Lateral septal nucleus/ rostral (rostroventral) part,LSr,258,right,all,4429,216.194,1080.81,4429,216.194,1080.81
+Lateral septal nucleus/ ventral part,LSv,266,left,all,1679,211.414,1175.26,1679,211.414,1175.26
+Lateral septal nucleus/ ventral part,LSv,266,right,all,1539,206.348,1108.12,1539,206.348,1108.12
+Septofimbrial nucleus,SF,310,left,all,1144,229.087,1157.68,1144,229.087,1157.68
+Septofimbrial nucleus,SF,310,right,all,852,218.033,1128.82,852,218.033,1128.82
+Septohippocampal nucleus,SH,333,left,all,104,193.187,1056.6,104,193.187,1056.6
+Septohippocampal nucleus,SH,333,right,all,92,202.211,1025.57,92,202.211,1025.57
+Striatum-like amygdalar nuclei,sAMY,278,left,all,19638,278.421,1041.62,19638,278.421,1041.62
+Striatum-like amygdalar nuclei,sAMY,278,right,all,12162,240.718,853.585,12162,240.718,853.585
+Anterior amygdalar area,AAA,23,left,all,2862,379.963,1345.5,2862,379.963,1345.5
+Anterior amygdalar area,AAA,23,right,all,2221,294.892,1044.81,2221,294.892,1044.81
+Bed nucleus of the accessory olfactory tract,BA,292,left,all,96,235.128,995.312,96,235.128,995.312
+Bed nucleus of the accessory olfactory tract,BA,292,right,all,31,201.661,705.161,31,201.661,705.161
+Central amygdalar nucleus,CEA,536,left,all,6907,284.721,1099.01,6907,284.721,1099.01
+Central amygdalar nucleus,CEA,536,right,all,3977,250.603,919.73,3977,250.603,919.73
+Central amygdalar nucleus/ capsular part,CEAc,544,left,all,1292,249.669,1030.93,1292,249.669,1030.93
+Central amygdalar nucleus/ capsular part,CEAc,544,right,all,896,235.256,884.442,896,235.256,884.442
+Central amygdalar nucleus/ lateral part,CEAl,551,left,all,1215,253.289,1079.75,1215,253.289,1079.75
+Central amygdalar nucleus/ lateral part,CEAl,551,right,all,638,235.244,898.42,638,235.244,898.42
+Central amygdalar nucleus/ medial part,CEAm,559,left,all,4400,303.692,1124.31,4400,303.692,1124.31
+Central amygdalar nucleus/ medial part,CEAm,559,right,all,2443,260.242,938.238,2443,260.242,938.238
+Intercalated amygdalar nucleus,IA,1105,left,all,481,272.588,945.096,481,272.588,945.096
+Intercalated amygdalar nucleus,IA,1105,right,all,360,257.213,802.792,360,257.213,802.792
+Medial amygdalar nucleus,MEA,403,left,all,9292,243.213,910.838,9292,243.213,910.838
+Medial amygdalar nucleus,MEA,403,right,all,5573,211.226,734.281,5573,211.226,734.281
+Pallidum,PAL,803,left,all,36999,304.463,1314.53,36999,304.463,1314.53
+Pallidum,PAL,803,right,all,31457,280.42,1167.58,31457,280.42,1167.58
+Pallidum/ dorsal region,PALd,818,left,all,6796,301.373,1476.31,6796,301.373,1476.31
+Pallidum/ dorsal region,PALd,818,right,all,4569,262.914,1214.28,4569,262.914,1214.28
+Globus pallidus/ external segment,GPe,1022,left,all,5756,307.319,1510.96,5756,307.319,1510.96
+Globus pallidus/ external segment,GPe,1022,right,all,3919,265.37,1237.77,3919,265.37,1237.77
+Globus pallidus/ internal segment,GPi,1031,left,all,1040,268.464,1284.52,1040,268.464,1284.52
+Globus pallidus/ internal segment,GPi,1031,right,all,650,248.106,1072.67,650,248.106,1072.67
+Pallidum/ ventral region,PALv,835,left,all,13275,334.902,1283.1,13275,334.902,1283.1
+Pallidum/ ventral region,PALv,835,right,all,11354,296.446,1103.6,11354,296.446,1103.6
+Substantia innominata,SI,342,left,all,11085,320.2,1237.9,11085,320.2,1237.9
+Substantia innominata,SI,342,right,all,9371,289.415,1078.79,9371,289.415,1078.79
+Magnocellular nucleus,MA,298,left,all,2190,409.315,1511.84,2190,409.315,1511.84
+Magnocellular nucleus,MA,298,right,all,1983,329.673,1220.83,1983,329.673,1220.83
+Pallidum/ medial region,PALm,826,left,all,7403,310.648,1290.69,7403,310.648,1290.69
+Pallidum/ medial region,PALm,826,right,all,7392,307.237,1265.1,7392,307.237,1265.1
+Medial septal complex,MSC,904,left,all,6114,333.16,1314.38,6114,333.16,1314.38
+Medial septal complex,MSC,904,right,all,6185,326.481,1283.58,6185,326.481,1283.58
+Medial septal nucleus,MS,564,left,all,1999,336.525,1498.72,1999,336.525,1498.72
+Medial septal nucleus,MS,564,right,all,2263,349.479,1518.21,2263,349.479,1518.21
+Diagonal band nucleus,NDB,596,left,all,4115,331.525,1224.83,4115,331.525,1224.83
+Diagonal band nucleus,NDB,596,right,all,3922,313.212,1148.19,3922,313.212,1148.19
+Triangular nucleus of septum,TRS,581,left,all,1289,203.868,1178.32,1289,203.868,1178.32
+Triangular nucleus of septum,TRS,581,right,all,1207,208.622,1170.42,1207,208.622,1170.42
+Pallidum/ caudal region,PALc,809,left,all,5982,254.715,1297.35,5982,254.715,1297.35
+Pallidum/ caudal region,PALc,809,right,all,5433,241.057,1183.37,5433,241.057,1183.37
+Bed nuclei of the stria terminalis,BST,351,left,all,5940,254.713,1296.96,5940,254.713,1296.96
+Bed nuclei of the stria terminalis,BST,351,right,all,5410,241.129,1183.05,5410,241.129,1183.05
+Bed nucleus of the anterior commissure,BAC,287,left,all,42,254.889,1353.4,42,254.889,1353.4
+Bed nucleus of the anterior commissure,BAC,287,right,all,23,224.167,1258.39,23,224.167,1258.39
+Brain stem,BS,343,left,all,451368,290.23,1278.66,451368,290.23,1278.66
+Brain stem,BS,343,right,all,382764,275.553,1187.23,382764,275.553,1187.23
+Interbrain,IB,1129,left,all,155877,273.118,1359.91,155877,273.118,1359.91
+Interbrain,IB,1129,right,all,137934,256.6,1223.43,137934,256.6,1223.43
+Thalamus,TH,549,left,all,105256,285.571,1476.6,105256,285.571,1476.6
+Thalamus,TH,549,right,all,91424,265.179,1315.73,91424,265.179,1315.73
+Thalamus/ sensory-motor cortex related,DORsm,864,left,all,37944,316.866,1575.06,37944,316.866,1575.06
+Thalamus/ sensory-motor cortex related,DORsm,864,right,all,31735,290.518,1358.25,31735,290.518,1358.25
+Ventral group of the dorsal thalamus,VENT,637,left,all,28232,329.956,1616.54,28232,329.956,1616.54
+Ventral group of the dorsal thalamus,VENT,637,right,all,23634,302.842,1381.92,23634,302.842,1381.92
+Ventral anterior-lateral complex of the thalamus,VAL,629,left,all,4561,325.19,1607.61,4561,325.19,1607.61
+Ventral anterior-lateral complex of the thalamus,VAL,629,right,all,4046,305.395,1415.97,4046,305.395,1415.97
+Ventral medial nucleus of the thalamus,VM,685,left,all,3836,269.835,1437.28,3836,269.835,1437.28
+Ventral medial nucleus of the thalamus,VM,685,right,all,3262,264.077,1300.92,3262,264.077,1300.92
+Ventral posterior complex of the thalamus,VP,709,left,all,18297,347.864,1660.16,18297,347.864,1660.16
+Ventral posterior complex of the thalamus,VP,709,right,all,15151,313.69,1390.94,15151,313.69,1390.94
+Ventral posterolateral nucleus of the thalamus,VPL,718,left,all,4802,300.092,1517.75,4802,300.092,1517.75
+Ventral posterolateral nucleus of the thalamus,VPL,718,right,all,3841,290.787,1274.92,3841,290.787,1274.92
+Ventral posterolateral nucleus of the thalamus/ parvicellular part,VPLpc,725,left,all,505,370.184,1748,505,370.184,1748
+Ventral posterolateral nucleus of the thalamus/ parvicellular part,VPLpc,725,right,all,427,308.304,1477.37,427,308.304,1477.37
+Ventral posteromedial nucleus of the thalamus,VPM,733,left,all,12007,372.589,1730.31,12007,372.589,1730.31
+Ventral posteromedial nucleus of the thalamus,VPM,733,right,all,9991,327.851,1436.52,9991,327.851,1436.52
+Ventral posteromedial nucleus of the thalamus/ parvicellular part,VPMpc,741,left,all,983,267.762,1453.89,983,267.762,1453.89
+Ventral posteromedial nucleus of the thalamus/ parvicellular part,VPMpc,741,right,all,892,256.267,1338.75,892,256.267,1338.75
+Posterior triangular thalamic nucleus,PoT,563807435,left,all,1538,280.998,1571.13,1538,280.998,1571.13
+Posterior triangular thalamic nucleus,PoT,563807435,right,all,1175,261.801,1373.26,1175,261.801,1373.26
+Subparafascicular nucleus,SPF,406,left,all,760,234.581,1447.48,760,234.581,1447.48
+Subparafascicular nucleus,SPF,406,right,all,739,224.406,1371.87,739,224.406,1371.87
+Subparafascicular nucleus/ magnocellular part,SPFm,414,left,all,279,244.796,1416.54,279,244.796,1416.54
+Subparafascicular nucleus/ magnocellular part,SPFm,414,right,all,245,224.602,1363.02,245,224.602,1363.02
+Subparafascicular nucleus/ parvicellular part,SPFp,422,left,all,481,228.656,1465.43,481,228.656,1465.43
+Subparafascicular nucleus/ parvicellular part,SPFp,422,right,all,494,224.309,1376.27,494,224.309,1376.27
+Subparafascicular area,SPA,609,left,all,314,213.85,1212.57,314,213.85,1212.57
+Subparafascicular area,SPA,609,right,all,336,228.674,1201.87,336,228.674,1201.87
+Peripeduncular nucleus,PP,1044,left,all,325,406.344,1431.25,325,406.344,1431.25
+Peripeduncular nucleus,PP,1044,right,all,346,270.066,1176.6,346,270.066,1176.6
+Geniculate group/ dorsal thalamus,GENd,1008,left,all,8313,280.324,1465.15,8313,280.324,1465.15
+Geniculate group/ dorsal thalamus,GENd,1008,right,all,6680,258.399,1290.23,6680,258.399,1290.23
+Medial geniculate complex,MG,475,left,all,4606,276.27,1457.12,4606,276.27,1457.12
+Medial geniculate complex,MG,475,right,all,3560,256.153,1279.08,3560,256.153,1279.08
+Medial geniculate complex/ dorsal part,MGd,1072,left,all,1197,270.067,1353.41,1197,270.067,1353.41
+Medial geniculate complex/ dorsal part,MGd,1072,right,all,869,243.64,1089.8,869,243.64,1089.8
+Medial geniculate complex/ ventral part,MGv,1079,left,all,1846,274.074,1413.8,1846,274.074,1413.8
+Medial geniculate complex/ ventral part,MGv,1079,right,all,1427,246.411,1284.75,1427,246.411,1284.75
+Medial geniculate complex/ medial part,MGm,1088,left,all,1563,283.616,1587.72,1563,283.616,1587.72
+Medial geniculate complex/ medial part,MGm,1088,right,all,1264,275.754,1402.82,1264,275.754,1402.82
+Dorsal part of the lateral geniculate complex,LGd,170,left,all,3707,285.361,1475.12,3707,285.361,1475.12
+Dorsal part of the lateral geniculate complex,LGd,170,right,all,3120,260.962,1302.96,3120,260.962,1302.96
+Dorsal part of the lateral geniculate complex/ shell,LGd-sh,496345664,left,all,967,257.669,1458.53,967,257.669,1458.53
+Dorsal part of the lateral geniculate complex/ shell,LGd-sh,496345664,right,all,783,241.334,1290.37,783,241.334,1290.37
+Dorsal part of the lateral geniculate complex/ core,LGd-co,496345668,left,all,2152,301.128,1462.21,2152,301.128,1462.21
+Dorsal part of the lateral geniculate complex/ core,LGd-co,496345668,right,all,1863,267.732,1288.75,1863,267.732,1288.75
+Dorsal part of the lateral geniculate complex/ ipsilateral zone,LGd-ip,496345672,left,all,588,273.199,1549.65,588,273.199,1549.65
+Dorsal part of the lateral geniculate complex/ ipsilateral zone,LGd-ip,496345672,right,all,474,266.778,1379.6,474,266.778,1379.6
+Thalamus/ polymodal association cortex related,DORpm,856,left,all,63316,267.545,1421.14,63316,267.545,1421.14
+Thalamus/ polymodal association cortex related,DORpm,856,right,all,56469,251.922,1294.49,56469,251.922,1294.49
+Lateral group of the dorsal thalamus,LAT,138,left,all,16548,288.421,1441.76,16548,288.421,1441.76
+Lateral group of the dorsal thalamus,LAT,138,right,all,13126,263.284,1263.36,13126,263.284,1263.36
+Lateral posterior nucleus of the thalamus,LP,218,left,all,6203,288.731,1388.82,6203,288.731,1388.82
+Lateral posterior nucleus of the thalamus,LP,218,right,all,4898,259.981,1222.79,4898,259.981,1222.79
+Posterior complex of the thalamus,PO,1020,left,all,6651,295.469,1482.11,6651,295.469,1482.11
+Posterior complex of the thalamus,PO,1020,right,all,5654,271.201,1300.05,5654,271.201,1300.05
+Posterior limiting nucleus of the thalamus,POL,1029,left,all,1275,277.703,1522.73,1275,277.703,1522.73
+Posterior limiting nucleus of the thalamus,POL,1029,right,all,702,253.405,1333.67,702,253.405,1333.67
+Suprageniculate nucleus,SGN,325,left,all,1235,294.995,1459.34,1235,294.995,1459.34
+Suprageniculate nucleus,SGN,325,right,all,922,261.252,1169.08,922,261.252,1169.08
+Ethmoid nucleus of the thalamus,Eth,560581551,left,all,1184,251.892,1387,1184,251.892,1387
+Ethmoid nucleus of the thalamus,Eth,560581551,right,all,950,242.461,1293.69,950,242.461,1293.69
+Anterior group of the dorsal thalamus,ATN,239,left,all,10618,279.003,1528.16,10618,279.003,1528.16
+Anterior group of the dorsal thalamus,ATN,239,right,all,10059,269.593,1400.92,10059,269.593,1400.92
+Anteroventral nucleus of thalamus,AV,255,left,all,2824,255.299,1579.78,2824,255.299,1579.78
+Anteroventral nucleus of thalamus,AV,255,right,all,2812,242.574,1402.2,2812,242.574,1402.2
+Anteromedial nucleus,AM,127,left,all,1936,241.913,1452.09,1936,241.913,1452.09
+Anteromedial nucleus,AM,127,right,all,1855,235.54,1350.38,1855,235.54,1350.38
+Anteromedial nucleus/ dorsal part,AMd,1096,left,all,1213,246.88,1467.07,1213,246.88,1467.07
+Anteromedial nucleus/ dorsal part,AMd,1096,right,all,1118,244.424,1376.23,1118,244.424,1376.23
+Anteromedial nucleus/ ventral part,AMv,1104,left,all,723,233.58,1426.97,723,233.58,1426.97
+Anteromedial nucleus/ ventral part,AMv,1104,right,all,737,222.062,1311.15,737,222.062,1311.15
+Anterodorsal nucleus,AD,64,left,all,1120,384.302,1897.01,1120,384.302,1897.01
+Anterodorsal nucleus,AD,64,right,all,1258,384.695,1803.19,1258,384.695,1803.19
+Interanteromedial nucleus of the thalamus,IAM,1120,left,all,171,212.889,1254.74,171,212.889,1254.74
+Interanteromedial nucleus of the thalamus,IAM,1120,right,all,171,215.971,1239.88,171,215.971,1239.88
+Interanterodorsal nucleus of the thalamus,IAD,1113,left,all,599,242.643,1446.1,599,242.643,1446.1
+Interanterodorsal nucleus of the thalamus,IAD,1113,right,all,495,241.502,1419.97,495,241.502,1419.97
+Lateral dorsal nucleus of thalamus,LD,155,left,all,3968,292.586,1448.59,3968,292.586,1448.59
+Lateral dorsal nucleus of thalamus,LD,155,right,all,3468,274.617,1286.22,3468,274.617,1286.22
+Medial group of the dorsal thalamus,MED,444,left,all,9000,242.553,1350.16,9000,242.553,1350.16
+Medial group of the dorsal thalamus,MED,444,right,all,8415,238.722,1292.9,8415,238.722,1292.9
+Intermediodorsal nucleus of the thalamus,IMD,59,left,all,807,242.882,1283.41,807,242.882,1283.41
+Intermediodorsal nucleus of the thalamus,IMD,59,right,all,876,227.615,1272.46,876,227.615,1272.46
+Mediodorsal nucleus of thalamus,MD,362,left,all,6279,245.311,1383.6,6279,245.311,1383.6
+Mediodorsal nucleus of thalamus,MD,362,right,all,5772,241.252,1320.15,5772,241.252,1320.15
+Submedial nucleus of the thalamus,SMT,366,left,all,1177,230.298,1316.45,1177,230.298,1316.45
+Submedial nucleus of the thalamus,SMT,366,right,all,1101,235.305,1256.62,1101,235.305,1256.62
+Perireunensis nucleus,PR,1077,left,all,737,238.267,1192.15,737,238.267,1192.15
+Perireunensis nucleus,PR,1077,right,all,666,237.048,1143.54,666,237.048,1143.54
+Midline group of the dorsal thalamus,MTN,571,left,all,6448,252.95,1337.16,6448,252.95,1337.16
+Midline group of the dorsal thalamus,MTN,571,right,all,6636,249.209,1303.79,6636,249.209,1303.79
+Paraventricular nucleus of the thalamus,PVT,149,left,all,2417,253.323,1377.51,2417,253.323,1377.51
+Paraventricular nucleus of the thalamus,PVT,149,right,all,2651,253.864,1365.6,2651,253.864,1365.6
+Parataenial nucleus,PT,15,left,all,1426,281.276,1453.72,1426,281.276,1453.72
+Parataenial nucleus,PT,15,right,all,1417,267.837,1388.31,1417,267.837,1388.31
+Nucleus of reuniens,RE,181,left,all,2202,238.174,1243.67,2202,238.174,1243.67
+Nucleus of reuniens,RE,181,right,all,2158,236.256,1199.59,2158,236.256,1199.59
+Xiphoid thalamic nucleus,Xi,560581559,left,all,403,231.223,1193.54,403,231.223,1193.54
+Xiphoid thalamic nucleus,Xi,560581559,right,all,410,222.907,1160.55,410,222.907,1160.55
+Intralaminar nuclei of the dorsal thalamus,ILM,51,left,all,8638,259.554,1429.75,8638,259.554,1429.75
+Intralaminar nuclei of the dorsal thalamus,ILM,51,right,all,7628,245.253,1330.44,7628,245.253,1330.44
+Rhomboid nucleus,RH,189,left,all,437,223.341,1302.19,437,223.341,1302.19
+Rhomboid nucleus,RH,189,right,all,506,239.328,1283.17,506,239.328,1283.17
+Central medial nucleus of the thalamus,CM,599,left,all,1114,233.583,1340.35,1114,233.583,1340.35
+Central medial nucleus of the thalamus,CM,599,right,all,1207,233.471,1317.13,1207,233.471,1317.13
+Paracentral nucleus,PCN,907,left,all,1162,248.808,1415.67,1162,248.808,1415.67
+Paracentral nucleus,PCN,907,right,all,1014,242.081,1308.2,1014,242.081,1308.2
+Central lateral nucleus of the thalamus,CL,575,left,all,1790,269.313,1399.69,1790,269.313,1399.69
+Central lateral nucleus of the thalamus,CL,575,right,all,1533,250.8,1297.43,1533,250.8,1297.43
+Parafascicular nucleus,PF,930,left,all,3035,259.11,1513.56,3035,259.11,1513.56
+Parafascicular nucleus,PF,930,right,all,2426,243.827,1404.65,2426,243.827,1404.65
+Posterior intralaminar thalamic nucleus,PIL,560581563,left,all,1100,296.942,1403.5,1100,296.942,1403.5
+Posterior intralaminar thalamic nucleus,PIL,560581563,right,all,942,261.591,1259.42,942,261.591,1259.42
+Reticular nucleus of the thalamus,RT,262,left,all,6979,257.501,1417.27,6979,257.501,1417.27
+Reticular nucleus of the thalamus,RT,262,right,all,5831,238.368,1195.45,5831,238.368,1195.45
+Geniculate group/ ventral thalamus,GENv,1014,left,all,2600,319.184,1496.62,2600,319.184,1496.62
+Geniculate group/ ventral thalamus,GENv,1014,right,all,2234,276.482,1285,2234,276.482,1285
+Intergeniculate leaflet of the lateral geniculate complex,IGL,27,left,all,367,300.939,1531.89,367,300.939,1531.89
+Intergeniculate leaflet of the lateral geniculate complex,IGL,27,right,all,273,250.005,1244.04,273,250.005,1244.04
+Intermediate geniculate nucleus,IntG,563807439,left,all,123,312.007,1701.45,123,312.007,1701.45
+Intermediate geniculate nucleus,IntG,563807439,right,all,107,264.135,1311.44,107,264.135,1311.44
+Ventral part of the lateral geniculate complex,LGv,178,left,all,2034,323.573,1488.14,2034,323.573,1488.14
+Ventral part of the lateral geniculate complex,LGv,178,right,all,1727,282.321,1292.32,1727,282.321,1292.32
+Subgeniculate nucleus,SubG,321,left,all,76,301.438,1221.75,76,301.438,1221.75
+Subgeniculate nucleus,SubG,321,right,all,127,264.397,1251.25,127,264.397,1251.25
+Epithalamus,EPI,958,left,all,2485,209.9,1203.58,2485,209.9,1203.58
+Epithalamus,EPI,958,right,all,2540,203.591,1142.51,2540,203.591,1142.51
+Medial habenula,MH,483,left,all,1508,191.453,1095.85,1508,191.453,1095.85
+Medial habenula,MH,483,right,all,1552,183.754,1024.84,1552,183.754,1024.84
+Lateral habenula,LH,186,left,all,977,238.373,1369.86,977,238.373,1369.86
+Lateral habenula,LH,186,right,all,988,234.753,1327.37,988,234.753,1327.37
+Hypothalamus,HY,1097,left,all,50621,247.225,1117.27,50621,247.225,1117.27
+Hypothalamus,HY,1097,right,all,46510,239.736,1042.01,46510,239.736,1042.01
+Periventricular zone,PVZ,157,left,all,864,219.025,922.288,864,219.025,922.288
+Periventricular zone,PVZ,157,right,all,1000,220.267,906.226,1000,220.267,906.226
+Supraoptic nucleus,SO,390,left,all,120,222.157,860.258,120,222.157,860.258
+Supraoptic nucleus,SO,390,right,all,115,229.358,783.965,115,229.358,783.965
+Accessory supraoptic group,ASO,332,left,all,26,192.093,888.962,26,192.093,888.962
+Accessory supraoptic group,ASO,332,right,all,45,206.224,910.4,45,206.224,910.4
+Paraventricular hypothalamic nucleus,PVH,38,left,all,441,235.049,1065.23,441,235.049,1065.23
+Paraventricular hypothalamic nucleus,PVH,38,right,all,549,230.451,1031.64,549,230.451,1031.64
+Periventricular hypothalamic nucleus/ anterior part,PVa,30,left,all,18,203.619,745.833,18,203.619,745.833
+Periventricular hypothalamic nucleus/ anterior part,PVa,30,right,all,38,213.454,679.816,38,213.454,679.816
+Periventricular hypothalamic nucleus/ intermediate part,PVi,118,left,all,67,219.458,669.597,67,219.458,669.597
+Periventricular hypothalamic nucleus/ intermediate part,PVi,118,right,all,75,207.698,667.413,75,207.698,667.413
+Arcuate hypothalamic nucleus,ARH,223,left,all,192,185.2,741.974,192,185.2,741.974
+Arcuate hypothalamic nucleus,ARH,223,right,all,178,193.285,746.315,178,193.285,746.315
+Periventricular region,PVR,141,left,all,7008,242.731,1022.62,7008,242.731,1022.62
+Periventricular region,PVR,141,right,all,7108,240.071,980.638,7108,240.071,980.638
+Anterodorsal preoptic nucleus,ADP,72,left,all,290,235.355,1172.08,290,235.355,1172.08
+Anterodorsal preoptic nucleus,ADP,72,right,all,216,222.167,1131.39,216,222.167,1131.39
+Anteroventral preoptic nucleus,AVP,263,left,all,435,255.164,1047.74,435,255.164,1047.74
+Anteroventral preoptic nucleus,AVP,263,right,all,432,253.683,974.933,432,253.683,974.933
+Anteroventral periventricular nucleus,AVPV,272,left,all,762,216.351,855.304,762,216.351,855.304
+Anteroventral periventricular nucleus,AVPV,272,right,all,780,213.452,839.81,780,213.452,839.81
+Dorsomedial nucleus of the hypothalamus,DMH,830,left,all,784,215.011,837.365,784,215.011,837.365
+Dorsomedial nucleus of the hypothalamus,DMH,830,right,all,959,225.599,833.946,959,225.599,833.946
+Median preoptic nucleus,MEPO,452,left,all,191,244.915,1143.07,191,244.915,1143.07
+Median preoptic nucleus,MEPO,452,right,all,232,256.769,1142.85,232,256.769,1142.85
+Medial preoptic area,MPO,523,left,all,2874,266.266,1122.68,2874,266.266,1122.68
+Medial preoptic area,MPO,523,right,all,2907,256.993,1073.01,2907,256.993,1073.01
+Vascular organ of the lamina terminalis,OV,763,left,all,17,386.339,1051.24,17,386.339,1051.24
+Vascular organ of the lamina terminalis,OV,763,right,all,21,286.161,1026.9,21,286.161,1026.9
+Posterodorsal preoptic nucleus,PD,914,left,all,91,241.827,1231.35,91,241.827,1231.35
+Posterodorsal preoptic nucleus,PD,914,right,all,75,223.162,1215.37,75,223.162,1215.37
+Parastrial nucleus,PS,1109,left,all,394,244.312,1211.11,394,244.312,1211.11
+Parastrial nucleus,PS,1109,right,all,320,251.446,1142.91,320,251.446,1142.91
+Periventricular hypothalamic nucleus/ posterior part,PVp,126,left,all,157,189.447,785.873,157,189.447,785.873
+Periventricular hypothalamic nucleus/ posterior part,PVp,126,right,all,110,191.139,747.155,110,191.139,747.155
+Periventricular hypothalamic nucleus/ preoptic part,PVpo,133,left,all,134,231.939,798.157,134,231.939,798.157
+Periventricular hypothalamic nucleus/ preoptic part,PVpo,133,right,all,190,204.952,774.832,190,204.952,774.832
+Subparaventricular zone,SBPV,347,left,all,184,201.605,789.967,184,201.605,789.967
+Subparaventricular zone,SBPV,347,right,all,228,216.092,802.838,228,216.092,802.838
+Suprachiasmatic nucleus,SCH,286,left,all,55,204.426,715.727,55,204.426,715.727
+Suprachiasmatic nucleus,SCH,286,right,all,42,212.888,719.833,42,212.888,719.833
+Subfornical organ,SFO,338,left,all,123,218.565,1091.05,123,218.565,1091.05
+Subfornical organ,SFO,338,right,all,113,217.931,1084.99,113,217.931,1084.99
+Ventromedial preoptic nucleus,VMPO,576073699,left,all,240,221.359,867.087,240,221.359,867.087
+Ventromedial preoptic nucleus,VMPO,576073699,right,all,233,237.393,868.661,233,237.393,868.661
+Ventrolateral preoptic nucleus,VLPO,689,left,all,277,225.093,914.253,277,225.093,914.253
+Ventrolateral preoptic nucleus,VLPO,689,right,all,250,232.123,878.012,250,232.123,878.012
+Hypothalamic medial zone,MEZ,467,left,all,12108,232.839,984.333,12108,232.839,984.333
+Hypothalamic medial zone,MEZ,467,right,all,11562,235.845,971.071,11562,235.845,971.071
+Anterior hypothalamic nucleus,AHN,88,left,all,2972,232.614,966.01,2972,232.614,966.01
+Anterior hypothalamic nucleus,AHN,88,right,all,3096,238.229,951.349,3096,238.229,951.349
+Mammillary body,MBO,331,left,all,1857,246.998,983.139,1857,246.998,983.139
+Mammillary body,MBO,331,right,all,1694,248.633,972.558,1694,248.633,972.558
+Lateral mammillary nucleus,LM,210,left,all,311,215.14,924.36,311,215.14,924.36
+Lateral mammillary nucleus,LM,210,right,all,245,219.258,943.755,245,219.258,943.755
+Medial mammillary nucleus,MM,491,left,all,434,249.631,957.968,434,249.631,957.968
+Medial mammillary nucleus,MM,491,right,all,340,234.059,987.429,340,234.059,987.429
+Medial mammillary nucleus/ median part,MMme,732,left,all,37,227.004,1039.27,37,227.004,1039.27
+Medial mammillary nucleus/ median part,MMme,732,right,all,54,269.768,1046.26,54,269.768,1046.26
+Medial mammillary nucleus/ lateral part,MMl,606826647,left,all,218,250.079,899.115,218,250.079,899.115
+Medial mammillary nucleus/ lateral part,MMl,606826647,right,all,123,234.198,919.626,123,234.198,919.626
+Medial mammillary nucleus/ medial part,MMm,606826651,left,all,108,254.447,1012.09,108,254.447,1012.09
+Medial mammillary nucleus/ medial part,MMm,606826651,right,all,70,224.382,976.7,70,224.382,976.7
+Medial mammillary nucleus/ posterior part,MMp,606826655,left,all,25,188.721,802.56,25,188.721,802.56
+Medial mammillary nucleus/ posterior part,MMp,606826655,right,all,26,221.726,857.846,26,221.726,857.846
+Medial mammillary nucleus/ dorsal part,MMd,606826659,left,all,46,287.504,1128.87,46,287.504,1128.87
+Medial mammillary nucleus/ dorsal part,MMd,606826659,right,all,67,219.922,1125.99,67,219.922,1125.99
+Supramammillary nucleus,SUM,525,left,all,702,276.319,1163.35,702,276.319,1163.35
+Supramammillary nucleus,SUM,525,right,all,680,273.205,1105.07,680,273.205,1105.07
+Tuberomammillary nucleus,TM,557,left,all,410,218.172,745.807,410,218.172,745.807
+Tuberomammillary nucleus,TM,557,right,all,429,238.009,767.186,429,238.009,767.186
+Tuberomammillary nucleus/ dorsal part,TMd,1126,left,all,39,189.767,768.308,39,189.767,768.308
+Tuberomammillary nucleus/ dorsal part,TMd,1126,right,all,45,286.316,763.311,45,286.316,763.311
+Tuberomammillary nucleus/ ventral part,TMv,1,left,all,371,221.158,743.442,371,221.158,743.442
+Tuberomammillary nucleus/ ventral part,TMv,1,right,all,384,232.348,767.641,384,232.348,767.641
+Medial preoptic nucleus,MPN,515,left,all,1978,242.317,1013.46,1978,242.317,1013.46
+Medial preoptic nucleus,MPN,515,right,all,2087,252.73,1020.62,2087,252.73,1020.62
+Dorsal premammillary nucleus,PMd,980,left,all,342,223.388,924.33,342,223.388,924.33
+Dorsal premammillary nucleus,PMd,980,right,all,121,242.861,924.157,121,242.861,924.157
+Ventral premammillary nucleus,PMv,1004,left,all,858,224.963,861.742,858,224.963,861.742
+Ventral premammillary nucleus,PMv,1004,right,all,702,215.149,807.074,702,215.149,807.074
+Paraventricular hypothalamic nucleus/ descending division,PVHd,63,left,all,384,240.937,1107.35,384,240.937,1107.35
+Paraventricular hypothalamic nucleus/ descending division,PVHd,63,right,all,404,257.182,1060.52,404,257.182,1060.52
+Ventromedial hypothalamic nucleus,VMH,693,left,all,1386,206.366,827.006,1386,206.366,827.006
+Ventromedial hypothalamic nucleus,VMH,693,right,all,1244,205.203,805.774,1244,205.203,805.774
+Posterior hypothalamic nucleus,PH,946,left,all,2331,232.498,1111.14,2331,232.498,1111.14
+Posterior hypothalamic nucleus,PH,946,right,all,2214,226.311,1081.93,2214,226.311,1081.93
+Hypothalamic lateral zone,LZ,290,left,all,22038,259.881,1248.92,22038,259.881,1248.92
+Hypothalamic lateral zone,LZ,290,right,all,18947,244.228,1133.2,18947,244.228,1133.2
+Lateral hypothalamic area,LHA,194,left,all,6842,258.024,1060.02,6842,258.024,1060.02
+Lateral hypothalamic area,LHA,194,right,all,5561,240.98,946.966,5561,240.98,946.966
+Lateral preoptic area,LPO,226,left,all,2510,272.516,1187.18,2510,272.516,1187.18
+Lateral preoptic area,LPO,226,right,all,2132,250.738,1050.43,2132,250.738,1050.43
+Preparasubthalamic nucleus,PST,356,left,all,51,220.711,999.059,51,220.711,999.059
+Preparasubthalamic nucleus,PST,356,right,all,51,206.142,898.471,51,206.142,898.471
+Parasubthalamic nucleus,PSTN,364,left,all,968,251.317,1135.48,968,251.317,1135.48
+Parasubthalamic nucleus,PSTN,364,right,all,948,236.994,1070.86,948,236.994,1070.86
+Perifornical nucleus,PeF,576073704,left,all,920,258.357,1025.97,920,258.357,1025.97
+Perifornical nucleus,PeF,576073704,right,all,691,244.752,936.551,691,244.752,936.551
+Retrochiasmatic area,RCH,173,left,all,172,200.879,789.058,172,200.879,789.058
+Retrochiasmatic area,RCH,173,right,all,134,206.699,751.284,134,206.699,751.284
+Subthalamic nucleus,STN,470,left,all,851,301.249,1484.61,851,301.249,1484.61
+Subthalamic nucleus,STN,470,right,all,803,273.611,1307.13,803,273.611,1307.13
+Tuberal nucleus,TU,614,left,all,1197,216.905,765.567,1197,216.905,765.567
+Tuberal nucleus,TU,614,right,all,823,212.543,713.207,823,212.543,713.207
+Zona incerta,ZI,797,left,all,8527,262.118,1510.7,8527,262.118,1510.7
+Zona incerta,ZI,797,right,all,7804,246.807,1348,7804,246.807,1348
+Fields of Forel,FF,804,left,all,1004,259.724,1601.89,1004,259.724,1601.89
+Fields of Forel,FF,804,right,all,861,266.401,1475.83,861,266.401,1475.83
+Median eminence,ME,10671,left,all,12,167.679,829,12,167.679,829
+Median eminence,ME,10671,right,all,34,270.367,1018.32,34,270.367,1018.32
+Midbrain,MB,313,left,all,137353,293.479,1369,137353,293.479,1369
+Midbrain,MB,313,right,all,116289,279.99,1285.68,116289,279.99,1285.68
+Midbrain/ sensory related,MBsen,339,left,all,21714,280.381,1144.02,21714,280.381,1144.02
+Midbrain/ sensory related,MBsen,339,right,all,17444,268.172,1047.1,17444,268.172,1047.1
+Superior colliculus/ sensory related,SCs,302,left,all,5590,269.775,1073.99,5590,269.775,1073.99
+Superior colliculus/ sensory related,SCs,302,right,all,5541,273.952,1040.22,5541,273.952,1040.22
+Superior colliculus/ optic layer,SCop,851,left,all,1992,268.558,1120.05,1992,268.558,1120.05
+Superior colliculus/ optic layer,SCop,851,right,all,2085,270.568,1101.46,2085,270.568,1101.46
+Superior colliculus/ superficial gray layer,SCsg,842,left,all,2552,263.502,1070.36,2552,263.502,1070.36
+Superior colliculus/ superficial gray layer,SCsg,842,right,all,2123,250.014,1009.99,2123,250.014,1009.99
+Superior colliculus/ zonal layer,SCzo,834,left,all,1046,287.397,995.138,1046,287.397,995.138
+Superior colliculus/ zonal layer,SCzo,834,right,all,1333,317.369,992.575,1333,317.369,992.575
+Inferior colliculus,IC,4,left,all,15161,281.14,1165.3,15161,281.14,1165.3
+Inferior colliculus,IC,4,right,all,11109,262.649,1047.01,11109,262.649,1047.01
+Inferior colliculus/ central nucleus,ICc,811,left,all,4208,272.281,1326.2,4208,272.281,1326.2
+Inferior colliculus/ central nucleus,ICc,811,right,all,2999,254.75,1184.73,2999,254.75,1184.73
+Inferior colliculus/ dorsal nucleus,ICd,820,left,all,4031,277.511,1139.3,4031,277.511,1139.3
+Inferior colliculus/ dorsal nucleus,ICd,820,right,all,2696,258.425,1016.81,2696,258.425,1016.81
+Inferior colliculus/ external nucleus,ICe,828,left,all,6922,288.639,1082.62,6922,288.639,1082.62
+Inferior colliculus/ external nucleus,ICe,828,right,all,5414,269.129,985.77,5414,269.129,985.77
+Nucleus of the brachium of the inferior colliculus,NB,580,left,all,278,297.139,1222.14,278,297.139,1222.14
+Nucleus of the brachium of the inferior colliculus,NB,580,right,all,220,297.102,1144.02,220,297.102,1144.02
+Nucleus sagulum,SAG,271,left,all,324,282.306,1184.47,324,282.306,1184.47
+Nucleus sagulum,SAG,271,right,all,211,268.933,1064.21,211,268.933,1064.21
+Parabigeminal nucleus,PBG,874,left,all,273,361.22,1176.26,273,361.22,1176.26
+Parabigeminal nucleus,PBG,874,right,all,265,292.644,1008.89,265,292.644,1008.89
+Midbrain trigeminal nucleus,MEV,460,left,all,46,794.737,1815.83,46,794.737,1815.83
+Midbrain trigeminal nucleus,MEV,460,right,all,42,751.443,1640.5,42,751.443,1640.5
+Subcommissural organ,SCO,599626923,left,all,42,203.324,1009.4,42,203.324,1009.4
+Subcommissural organ,SCO,599626923,right,all,56,197.106,1035.2,56,197.106,1035.2
+Midbrain/ motor related,MBmot,323,left,all,84715,296.409,1444.92,84715,296.409,1444.92
+Midbrain/ motor related,MBmot,323,right,all,73283,283.093,1349.54,73283,283.093,1349.54
+Substantia nigra/ reticular part,SNr,381,left,all,4496,352.516,1380.4,4496,352.516,1380.4
+Substantia nigra/ reticular part,SNr,381,right,all,4523,328.431,1277.11,4523,328.431,1277.11
+Ventral tegmental area,VTA,749,left,all,1782,269.569,1310.67,1782,269.569,1310.67
+Ventral tegmental area,VTA,749,right,all,1519,242.316,1222.56,1519,242.316,1222.56
+Paranigral nucleus,PN,607344830,left,all,87,213.164,1293.93,87,213.164,1293.93
+Paranigral nucleus,PN,607344830,right,all,41,249.331,1300.34,41,249.331,1300.34
+Midbrain reticular nucleus/ retrorubral area,RR,246,left,all,617,315.629,1428.58,617,315.629,1428.58
+Midbrain reticular nucleus/ retrorubral area,RR,246,right,all,491,296.15,1307.84,491,296.15,1307.84
+Midbrain reticular nucleus,MRN,128,left,all,18997,305.715,1529.49,18997,305.715,1529.49
+Midbrain reticular nucleus,MRN,128,right,all,15435,276.091,1403.46,15435,276.091,1403.46
+Superior colliculus/ motor related,SCm,294,left,all,24042,277.479,1361.52,24042,277.479,1361.52
+Superior colliculus/ motor related,SCm,294,right,all,21518,276.301,1278,21518,276.301,1278
+Superior colliculus/ motor related/ deep gray layer,SCdg,26,left,all,4549,271.597,1328.15,4549,271.597,1328.15
+Superior colliculus/ motor related/ deep gray layer,SCdg,26,right,all,4078,274.42,1258.72,4078,274.42,1258.72
+Superior colliculus/ motor related/ deep white layer,SCdw,42,left,all,1350,259.158,1312.8,1350,259.158,1312.8
+Superior colliculus/ motor related/ deep white layer,SCdw,42,right,all,1013,276.96,1277.62,1013,276.96,1277.62
+Superior colliculus/ motor related/ intermediate white layer,SCiw,17,left,all,9497,291.02,1465.78,9497,291.02,1465.78
+Superior colliculus/ motor related/ intermediate white layer,SCiw,17,right,all,8453,292.537,1350.03,8453,292.537,1350.03
+Superior colliculus/ motor related/ intermediate gray layer,SCig,10,left,all,8646,268.562,1272.15,8646,268.562,1272.15
+Superior colliculus/ motor related/ intermediate gray layer,SCig,10,right,all,7974,259.968,1211.55,7974,259.968,1211.55
+Periaqueductal gray,PAG,795,left,all,18115,288.987,1377.41,18115,288.987,1377.41
+Periaqueductal gray,PAG,795,right,all,16545,276.352,1317.09,16545,276.352,1317.09
+Precommissural nucleus,PRC,50,left,all,618,234.917,1227.79,618,234.917,1227.79
+Precommissural nucleus,PRC,50,right,all,542,237.017,1171.44,542,237.017,1171.44
+Interstitial nucleus of Cajal,INC,67,left,all,432,271.348,1821.38,432,271.348,1821.38
+Interstitial nucleus of Cajal,INC,67,right,all,344,271.561,1794.99,344,271.561,1794.99
+Nucleus of Darkschewitsch,ND,587,left,all,565,257.424,1811.46,565,257.424,1811.46
+Nucleus of Darkschewitsch,ND,587,right,all,536,254.682,1765.01,536,254.682,1765.01
+Supraoculomotor periaqueductal gray,Su3,614454277,left,all,263,277.264,1588.32,263,277.264,1588.32
+Supraoculomotor periaqueductal gray,Su3,614454277,right,all,263,292.171,1614.32,263,292.171,1614.32
+Pretectal region,PRT,1100,left,all,9998,262.397,1503.75,9998,262.397,1503.75
+Pretectal region,PRT,1100,right,all,7539,253.281,1379.13,7539,253.281,1379.13
+Anterior pretectal nucleus,APN,215,left,all,5935,250.975,1567.33,5935,250.975,1567.33
+Anterior pretectal nucleus,APN,215,right,all,4059,243.599,1406.37,4059,243.599,1406.37
+Medial pretectal area,MPT,531,left,all,261,280.352,1456.57,261,280.352,1456.57
+Medial pretectal area,MPT,531,right,all,268,263.628,1315.75,268,263.628,1315.75
+Nucleus of the optic tract,NOT,628,left,all,968,286.337,1266.47,968,286.337,1266.47
+Nucleus of the optic tract,NOT,628,right,all,663,275.089,1265.92,663,275.089,1265.92
+Nucleus of the posterior commissure,NPC,634,left,all,1422,277.454,1453.34,1422,277.454,1453.34
+Nucleus of the posterior commissure,NPC,634,right,all,1374,268.163,1371.45,1374,268.163,1371.45
+Olivary pretectal nucleus,OP,706,left,all,322,269.728,1355.31,322,269.728,1355.31
+Olivary pretectal nucleus,OP,706,right,all,270,256.51,1277.46,270,256.51,1277.46
+Posterior pretectal nucleus,PPT,1061,left,all,795,267.413,1433.95,795,267.413,1433.95
+Posterior pretectal nucleus,PPT,1061,right,all,693,264.362,1385.73,693,264.362,1385.73
+Retroparafascicular nucleus,RPF,549009203,left,all,295,303.632,1638.08,295,303.632,1638.08
+Retroparafascicular nucleus,RPF,549009203,right,all,212,220.568,1449.43,212,220.568,1449.43
+Cuneiform nucleus,CUN,616,left,all,1660,293.866,1135.84,1660,293.866,1135.84
+Cuneiform nucleus,CUN,616,right,all,994,269.975,1046.46,994,269.975,1046.46
+Red nucleus,RN,214,left,all,3757,432.939,1961.47,3757,432.939,1961.47
+Red nucleus,RN,214,right,all,3461,404.242,1822.59,3461,404.242,1822.59
+Oculomotor nucleus,III,35,left,all,183,305.536,1815.9,183,305.536,1815.9
+Oculomotor nucleus,III,35,right,all,239,338.829,1869.79,239,338.829,1869.79
+Medial accesory oculomotor nucleus,MA3,549009211,left,all,73,258.26,1759.29,73,258.26,1759.29
+Medial accesory oculomotor nucleus,MA3,549009211,right,all,95,284.917,1724.63,95,284.917,1724.63
+Edinger-Westphal nucleus,EW,975,left,all,193,328.515,1772.91,193,328.515,1772.91
+Edinger-Westphal nucleus,EW,975,right,all,217,319.942,1642.6,217,319.942,1642.6
+Trochlear nucleus,IV,115,left,all,52,371.726,1681.4,52,371.726,1681.4
+Trochlear nucleus,IV,115,right,all,48,401.665,1717.71,48,401.665,1717.71
+Paratrochlear nucleus,Pa4,606826663,left,all,84,359.055,1660.94,84,359.055,1660.94
+Paratrochlear nucleus,Pa4,606826663,right,all,77,360.711,1575.87,77,360.711,1575.87
+Ventral tegmental nucleus,VTN,757,left,all,158,302.686,1508.77,158,302.686,1508.77
+Ventral tegmental nucleus,VTN,757,right,all,155,291.241,1465.46,155,291.241,1465.46
+Anterior tegmental nucleus,AT,231,left,all,99,286.373,1405.81,99,286.373,1405.81
+Anterior tegmental nucleus,AT,231,right,all,88,282.038,1419.09,88,282.038,1419.09
+Lateral terminal nucleus of the accessory optic tract,LT,66,left,all,74,444.89,1500.89,74,444.89,1500.89
+Lateral terminal nucleus of the accessory optic tract,LT,66,right,all,85,296.997,1198.01,85,296.997,1198.01
+Dorsal terminal nucleus of the accessory optic tract,DT,75,left,all,65,338.853,1291.85,65,338.853,1291.85
+Dorsal terminal nucleus of the accessory optic tract,DT,75,right,all,32,247.149,886.938,32,247.149,886.938
+Medial terminal nucleus of the accessory optic tract,MT,58,left,all,183,335.018,1298.74,183,335.018,1298.74
+Medial terminal nucleus of the accessory optic tract,MT,58,right,all,181,292.633,1201.54,181,292.633,1201.54
+Midbrain/ behavioral state related,MBsta,348,left,all,7347,339.359,1413.01,7347,339.359,1413.01
+Midbrain/ behavioral state related,MBsta,348,right,all,6615,308.522,1342.44,6615,308.522,1342.44
+Substantia nigra/ compact part,SNc,374,left,all,751,346.105,1417.12,751,346.105,1417.12
+Substantia nigra/ compact part,SNc,374,right,all,799,299.101,1266.52,799,299.101,1266.52
+Pedunculopontine nucleus,PPN,1052,left,all,3572,362.581,1399.33,3572,362.581,1399.33
+Pedunculopontine nucleus,PPN,1052,right,all,2792,307.446,1236.41,2792,307.446,1236.41
+Midbrain raphe nuclei,RAmb,165,left,all,3024,310.254,1428.16,3024,310.254,1428.16
+Midbrain raphe nuclei,RAmb,165,right,all,3024,312.004,1460.4,3024,312.004,1460.4
+Interfascicular nucleus raphe,IF,12,left,all,208,297.782,1369.03,208,297.782,1369.03
+Interfascicular nucleus raphe,IF,12,right,all,216,309.305,1439.55,216,309.305,1439.55
+Interpeduncular nucleus,IPN,100,left,all,1486,238.144,1346.96,1486,238.144,1346.96
+Interpeduncular nucleus,IPN,100,right,all,1544,241.801,1378.61,1544,241.801,1378.61
+Interpeduncular nucleus/ rostral,IPR,607344834,left,all,476,215.142,1435.9,476,215.142,1435.9
+Interpeduncular nucleus/ rostral,IPR,607344834,right,all,607,215.919,1438.84,607,215.919,1438.84
+Interpeduncular nucleus/ caudal,IPC,607344838,left,all,196,227.974,1270.98,196,227.974,1270.98
+Interpeduncular nucleus/ caudal,IPC,607344838,right,all,218,211.207,1303.56,218,211.207,1303.56
+Interpeduncular nucleus/ apical,IPA,607344842,left,all,93,316.086,1447.57,93,316.086,1447.57
+Interpeduncular nucleus/ apical,IPA,607344842,right,all,109,346.668,1492.06,109,346.668,1492.06
+Interpeduncular nucleus/ lateral,IPL,607344846,left,all,210,234.99,1145.01,210,234.99,1145.01
+Interpeduncular nucleus/ lateral,IPL,607344846,right,all,196,240.108,1167.89,196,240.108,1167.89
+Interpeduncular nucleus/ intermediate,IPI,607344850,left,all,137,207.013,1253.28,137,207.013,1253.28
+Interpeduncular nucleus/ intermediate,IPI,607344850,right,all,96,212.075,1254.47,96,212.075,1254.47
+Interpeduncular nucleus/ dorsomedial,IPDM,607344854,left,all,43,322.589,1380.23,43,322.589,1380.23
+Interpeduncular nucleus/ dorsomedial,IPDM,607344854,right,all,38,286.746,1425.08,38,286.746,1425.08
+Interpeduncular nucleus/ dorsolateral,IPDL,607344858,left,all,196,255.374,1454.67,196,255.374,1454.67
+Interpeduncular nucleus/ dorsolateral,IPDL,607344858,right,all,165,297.938,1460.55,165,297.938,1460.55
+Interpeduncular nucleus/ rostrolateral,IPRL,607344862,left,all,94,243.786,1273.11,94,243.786,1273.11
+Interpeduncular nucleus/ rostrolateral,IPRL,607344862,right,all,67,234.237,1444.31,67,234.237,1444.31
+Rostral linear nucleus raphe,RL,197,left,all,164,313.016,1539.57,164,313.016,1539.57
+Rostral linear nucleus raphe,RL,197,right,all,152,298.23,1558.88,152,298.23,1558.88
+Central linear nucleus raphe,CLI,591,left,all,134,257.226,1311.08,134,257.226,1311.08
+Central linear nucleus raphe,CLI,591,right,all,128,275.735,1365.16,128,275.735,1365.16
+Dorsal nucleus raphe,DR,872,left,all,1032,423.048,1554.48,1032,423.048,1554.48
+Dorsal nucleus raphe,DR,872,right,all,984,429.599,1590.5,984,429.599,1590.5
+Hindbrain,HB,1065,left,all,158138,304.274,1120.11,158138,304.274,1120.11
+Hindbrain,HB,1065,right,all,128541,291.878,1059.3,128541,291.878,1059.3
+Pons,P,771,left,all,52432,311.004,1163.47,52432,311.004,1163.47
+Pons,P,771,right,all,40612,291.92,1094.82,40612,291.92,1094.82
+Pons/ sensory related,P-sen,1132,left,all,14529,312.897,1136.09,14529,312.897,1136.09
+Pons/ sensory related,P-sen,1132,right,all,9872,282.27,1024.5,9872,282.27,1024.5
+Nucleus of the lateral lemniscus,NLL,612,left,all,2973,328.227,1290.29,2973,328.227,1290.29
+Nucleus of the lateral lemniscus,NLL,612,right,all,2568,293.978,1131.9,2568,293.978,1131.9
+Principal sensory nucleus of the trigeminal,PSV,7,left,all,3725,324.801,1120.39,3725,324.801,1120.39
+Principal sensory nucleus of the trigeminal,PSV,7,right,all,2517,269.249,961.63,2517,269.249,961.63
+Parabrachial nucleus,PB,867,left,all,5118,306.271,1115.39,5118,306.271,1115.39
+Parabrachial nucleus,PB,867,right,all,2948,276.539,1027.82,2948,276.539,1027.82
+Koelliker-Fuse subnucleus,KF,123,left,all,757,309.734,1124.15,757,309.734,1124.15
+Koelliker-Fuse subnucleus,KF,123,right,all,476,276.438,1025.86,476,276.438,1025.86
+Superior olivary complex,SOC,398,left,all,2713,292.25,1027.69,2713,292.25,1027.69
+Superior olivary complex,SOC,398,right,all,1839,292.928,955.276,1839,292.928,955.276
+Superior olivary complex/ periolivary region,POR,122,left,all,1096,295.71,1026.67,1096,295.71,1026.67
+Superior olivary complex/ periolivary region,POR,122,right,all,602,319.899,1022.77,602,319.899,1022.77
+Superior olivary complex/ medial part,SOCm,105,left,all,560,286.893,1056.56,560,286.893,1056.56
+Superior olivary complex/ medial part,SOCm,105,right,all,431,282.257,974.615,431,282.257,974.615
+Superior olivary complex/ lateral part,SOCl,114,left,all,1057,291.502,1013.45,1057,291.502,1013.45
+Superior olivary complex/ lateral part,SOCl,114,right,all,806,278.49,894.526,806,278.49,894.526
+Pons/ motor related,P-mot,987,left,all,18857,305.138,1139.73,18857,305.138,1139.73
+Pons/ motor related,P-mot,987,right,all,15537,291.636,1070.35,15537,291.636,1070.35
+Barrington's nucleus,B,280,left,all,134,359.568,1172.08,134,359.568,1172.08
+Barrington's nucleus,B,280,right,all,107,325.014,1097.1,107,325.014,1097.1
+Dorsal tegmental nucleus,DTN,880,left,all,229,288.85,1326.78,229,288.85,1326.78
+Dorsal tegmental nucleus,DTN,880,right,all,185,241.863,1249.75,185,241.863,1249.75
+Posterodorsal tegmental nucleus,PDTg,599626927,left,all,98,285.423,1424.22,98,285.423,1424.22
+Posterodorsal tegmental nucleus,PDTg,599626927,right,all,74,306.428,1432.35,74,306.428,1432.35
+Pontine central gray,PCG,898,left,all,1381,302.695,1202.86,1381,302.695,1202.86
+Pontine central gray,PCG,898,right,all,1033,286.358,1197.25,1033,286.358,1197.25
+Pontine gray,PG,931,left,all,4857,266.76,1102.25,4857,266.76,1102.25
+Pontine gray,PG,931,right,all,4474,260.628,1019.1,4474,260.628,1019.1
+Pontine reticular nucleus/ caudal part,PRNc,1093,left,all,4857,308.967,1054.37,4857,308.967,1054.37
+Pontine reticular nucleus/ caudal part,PRNc,1093,right,all,4060,296.418,996.117,4060,296.418,996.117
+Supragenual nucleus,SG,318,left,all,41,197.408,1071.05,41,197.408,1071.05
+Supragenual nucleus,SG,318,right,all,30,350.477,1295.37,30,350.477,1295.37
+Supratrigeminal nucleus,SUT,534,left,all,1163,313.4,1222.69,1163,313.4,1222.69
+Supratrigeminal nucleus,SUT,534,right,all,749,274.422,1065.37,749,274.422,1065.37
+Tegmental reticular nucleus,TRN,574,left,all,3146,304.209,1160.4,3146,304.209,1160.4
+Tegmental reticular nucleus,TRN,574,right,all,2835,297.259,1128.99,2835,297.259,1128.99
+Motor nucleus of trigeminal,V,621,left,all,1563,390.33,1304.93,1563,390.33,1304.93
+Motor nucleus of trigeminal,V,621,right,all,1127,375.009,1209.4,1127,375.009,1209.4
+Peritrigeminal zone,P5,549009215,left,all,902,327.688,1176.1,902,327.688,1176.1
+Peritrigeminal zone,P5,549009215,right,all,509,334.994,1098.9,509,334.994,1098.9
+Accessory trigeminal nucleus,Acs5,549009219,left,all,38,447.089,1276.11,38,447.089,1276.11
+Accessory trigeminal nucleus,Acs5,549009219,right,all,33,316.843,1073.82,33,316.843,1073.82
+Parvicellular motor 5 nucleus,PC5,549009223,left,all,306,329.728,1097.29,306,329.728,1097.29
+Parvicellular motor 5 nucleus,PC5,549009223,right,all,189,326.278,1052.95,189,326.278,1052.95
+Intertrigeminal nucleus,I5,549009227,left,all,142,311.249,1086.92,142,311.249,1086.92
+Intertrigeminal nucleus,I5,549009227,right,all,132,299.817,1066.02,132,299.817,1066.02
+Pons/ behavioral state related,P-sat,1117,left,all,10399,327.657,1308.5,10399,327.657,1308.5
+Pons/ behavioral state related,P-sat,1117,right,all,8847,305.193,1249.54,8847,305.193,1249.54
+Superior central nucleus raphe,CS,679,left,all,1570,304.297,1381.32,1570,304.297,1381.32
+Superior central nucleus raphe,CS,679,right,all,1586,301.729,1384.45,1586,301.729,1384.45
+Locus ceruleus,LC,147,left,all,139,559.609,1559.85,139,559.609,1559.85
+Locus ceruleus,LC,147,right,all,108,568.061,1555.31,108,568.061,1555.31
+Laterodorsal tegmental nucleus,LDT,162,left,all,1072,363.398,1268.5,1072,363.398,1268.5
+Laterodorsal tegmental nucleus,LDT,162,right,all,852,298.384,1161.01,852,298.384,1161.01
+Nucleus incertus,NI,604,left,all,318,274.527,1180.62,318,274.527,1180.62
+Nucleus incertus,NI,604,right,all,248,272.601,1189.18,248,272.601,1189.18
+Pontine reticular nucleus,PRNr,146,left,all,6757,325.645,1309.07,6757,325.645,1309.07
+Pontine reticular nucleus,PRNr,146,right,all,5573,303.185,1227.51,5573,303.185,1227.51
+Nucleus raphe pontis,RPO,238,left,all,169,237.955,1045.43,169,237.955,1045.43
+Nucleus raphe pontis,RPO,238,right,all,153,248.2,1085.04,153,248.2,1085.04
+Subceruleus nucleus,SLC,350,left,all,193,372.244,1295.62,193,372.244,1295.62
+Subceruleus nucleus,SLC,350,right,all,190,347.362,1250.49,190,347.362,1250.49
+Sublaterodorsal nucleus,SLD,358,left,all,181,345.108,1183.78,181,345.108,1183.78
+Sublaterodorsal nucleus,SLD,358,right,all,137,326.229,1184.98,137,326.229,1184.98
+Medulla,MY,354,left,all,105706,300.935,1098.61,105706,300.935,1098.61
+Medulla,MY,354,right,all,87929,291.858,1042.9,87929,291.858,1042.9
+Medulla/ sensory related,MY-sen,386,left,all,34042,304.397,1100.11,34042,304.397,1100.11
+Medulla/ sensory related,MY-sen,386,right,all,25921,287.226,1017.44,25921,287.226,1017.44
+Area postrema,AP,207,left,all,32,171.265,650.594,32,171.265,650.594
+Area postrema,AP,207,right,all,39,207.23,725.513,39,207.23,725.513
+Cochlear nuclei,CN,607,left,all,5575,293.695,1102.43,5575,293.695,1102.43
+Cochlear nuclei,CN,607,right,all,4668,268.019,998.547,4668,268.019,998.547
+Dorsal cochlear nucleus,DCO,96,left,all,1444,295.842,1194.08,1444,295.842,1194.08
+Dorsal cochlear nucleus,DCO,96,right,all,1130,262.691,1089.32,1130,262.691,1089.32
+Ventral cochlear nucleus,VCO,101,left,all,4131,292.944,1070.39,4131,292.944,1070.39
+Ventral cochlear nucleus,VCO,101,right,all,3538,269.721,969.555,3538,269.721,969.555
+Dorsal column nuclei,DCN,720,left,all,1814,310.85,1058.59,1814,310.85,1058.59
+Dorsal column nuclei,DCN,720,right,all,2006,306.02,1027.85,2006,306.02,1027.85
+Cuneate nucleus,CU,711,left,all,1778,312.577,1064.86,1778,312.577,1064.86
+Cuneate nucleus,CU,711,right,all,1843,309.944,1040.56,1843,309.944,1040.56
+Gracile nucleus,GR,1039,left,all,36,225.562,748.5,36,225.562,748.5
+Gracile nucleus,GR,1039,right,all,163,261.66,884.141,163,261.66,884.141
+External cuneate nucleus,ECU,903,left,all,494,188.251,677.532,494,188.251,677.532
+External cuneate nucleus,ECU,903,right,all,512,330.047,1115.51,512,330.047,1115.51
+Nucleus of the trapezoid body,NTB,642,left,all,377,279.085,926.074,377,279.085,926.074
+Nucleus of the trapezoid body,NTB,642,right,all,276,284.389,937.822,276,284.389,937.822
+Nucleus of the solitary tract,NTS,651,left,all,2969,270.883,1107.63,2969,270.883,1107.63
+Nucleus of the solitary tract,NTS,651,right,all,2723,262.526,1034.27,2723,262.526,1034.27
+Spinal nucleus of the trigeminal/ caudal part,SPVC,429,left,all,11719,310.842,1067.71,11719,310.842,1067.71
+Spinal nucleus of the trigeminal/ caudal part,SPVC,429,right,all,7959,278.794,951.288,7959,278.794,951.288
+Spinal nucleus of the trigeminal/ interpolar part,SPVI,437,left,all,7873,340.078,1250.08,7873,340.078,1250.08
+Spinal nucleus of the trigeminal/ interpolar part,SPVI,437,right,all,5693,315.237,1119.42,5693,315.237,1119.42
+Spinal nucleus of the trigeminal/ oral part,SPVO,445,left,all,1997,303.37,1112.69,1997,303.37,1112.69
+Spinal nucleus of the trigeminal/ oral part,SPVO,445,right,all,1827,302.397,1036.08,1827,302.397,1036.08
+Paratrigeminal nucleus,Pa5,589508451,left,all,1192,190.507,682.92,1192,190.507,682.92
+Paratrigeminal nucleus,Pa5,589508451,right,all,218,200.618,633.977,218,200.618,633.977
+Medulla/ motor related,MY-mot,370,left,all,59295,303.635,1117.99,59295,303.635,1117.99
+Medulla/ motor related,MY-mot,370,right,all,52717,299.126,1076.22,52717,299.126,1076.22
+Abducens nucleus,VI,653,left,all,86,237.572,1162.28,86,237.572,1162.28
+Abducens nucleus,VI,653,right,all,105,275.243,1216.7,105,275.243,1216.7
+Facial motor nucleus,VII,661,left,all,2125,316.47,1035.05,2125,316.47,1035.05
+Facial motor nucleus,VII,661,right,all,1898,297.739,964.968,1898,297.739,964.968
+Accessory facial motor nucleus,ACVII,576,left,all,23,283.88,947.957,23,283.88,947.957
+Accessory facial motor nucleus,ACVII,576,right,all,15,247.159,780.867,15,247.159,780.867
+Nucleus ambiguus,AMB,135,left,all,195,252.709,1047.57,195,252.709,1047.57
+Nucleus ambiguus,AMB,135,right,all,155,269.602,1005.86,155,269.602,1005.86
+Nucleus ambiguus/ dorsal division,AMBd,939,left,all,56,291.036,1058.52,56,291.036,1058.52
+Nucleus ambiguus/ dorsal division,AMBd,939,right,all,58,303.528,1053.22,58,303.528,1053.22
+Nucleus ambiguus/ ventral division,AMBv,143,left,all,139,237.268,1043.16,139,237.268,1043.16
+Nucleus ambiguus/ ventral division,AMBv,143,right,all,97,249.317,977.546,97,249.317,977.546
+Dorsal motor nucleus of the vagus nerve,DMX,839,left,all,894,307.93,1018.18,894,307.93,1018.18
+Dorsal motor nucleus of the vagus nerve,DMX,839,right,all,1056,305.282,1015.17,1056,305.282,1015.17
+Gigantocellular reticular nucleus,GRN,1048,left,all,6623,318.862,1088.13,6623,318.862,1088.13
+Gigantocellular reticular nucleus,GRN,1048,right,all,6346,316.692,1062.87,6346,316.692,1062.87
+Infracerebellar nucleus,ICB,372,left,all,123,275.74,1211.55,123,275.74,1211.55
+Infracerebellar nucleus,ICB,372,right,all,107,285.756,1304.99,107,285.756,1304.99
+Inferior olivary complex,IO,83,left,all,1056,221.064,981.6,1056,221.064,981.6
+Inferior olivary complex,IO,83,right,all,911,210.353,973.723,911,210.353,973.723
+Intermediate reticular nucleus,IRN,136,left,all,9606,286.358,1095.26,9606,286.358,1095.26
+Intermediate reticular nucleus,IRN,136,right,all,8731,287.81,1036.51,8731,287.81,1036.51
+Inferior salivatory nucleus,ISN,106,left,all,9,254.806,978.778,9,254.806,978.778
+Inferior salivatory nucleus,ISN,106,right,all,9,269.979,1077.22,9,269.979,1077.22
+Linear nucleus of the medulla,LIN,203,left,all,242,261.541,1077.51,242,261.541,1077.51
+Linear nucleus of the medulla,LIN,203,right,all,230,248.844,991.287,230,248.844,991.287
+Lateral reticular nucleus,LRN,235,left,all,1924,305.796,1120.58,1924,305.796,1120.58
+Lateral reticular nucleus,LRN,235,right,all,1208,281.794,970.704,1208,281.794,970.704
+Lateral reticular nucleus/ magnocellular part,LRNm,955,left,all,1887,308.041,1126.27,1887,308.041,1126.27
+Lateral reticular nucleus/ magnocellular part,LRNm,955,right,all,1208,281.794,970.704,1208,281.794,970.704
+Lateral reticular nucleus/ parvicellular part,LRNp,963,left,all,37,191.311,830.541,37,191.311,830.541
+Lateral reticular nucleus/ parvicellular part,LRNp,963,right,all,0,0,0,0,0,0
+Magnocellular reticular nucleus,MARN,307,left,all,1620,333.6,1038.11,1620,333.6,1038.11
+Magnocellular reticular nucleus,MARN,307,right,all,1587,346.686,1016.26,1587,346.686,1016.26
+Medullary reticular nucleus,MDRN,395,left,all,10782,301.625,993.664,10782,301.625,993.664
+Medullary reticular nucleus,MDRN,395,right,all,9543,299.54,961.133,9543,299.54,961.133
+Medullary reticular nucleus/ dorsal part,MDRNd,1098,left,all,7044,294.292,987.722,7044,294.292,987.722
+Medullary reticular nucleus/ dorsal part,MDRNd,1098,right,all,5630,281.856,934.575,5630,281.856,934.575
+Medullary reticular nucleus/ ventral part,MDRNv,1107,left,all,3738,315.443,1004.86,3738,315.443,1004.86
+Medullary reticular nucleus/ ventral part,MDRNv,1107,right,all,3913,324.985,999.345,3913,324.985,999.345
+Parvicellular reticular nucleus,PARN,852,left,all,7168,278.945,1107.47,7168,278.945,1107.47
+Parvicellular reticular nucleus,PARN,852,right,all,5737,271.06,1023.08,5737,271.06,1023.08
+Parasolitary nucleus,PAS,859,left,all,135,315.361,1139.2,135,315.361,1139.2
+Parasolitary nucleus,PAS,859,right,all,120,297.271,1147.18,120,297.271,1147.18
+Paragigantocellular reticular nucleus,PGRN,938,left,all,2643,300.996,1137.06,2643,300.996,1137.06
+Paragigantocellular reticular nucleus,PGRN,938,right,all,2558,315.528,1074.85,2558,315.528,1074.85
+Paragigantocellular reticular nucleus/ dorsal part,PGRNd,970,left,all,634,260.609,1179.26,634,260.609,1179.26
+Paragigantocellular reticular nucleus/ dorsal part,PGRNd,970,right,all,562,285.096,1174.97,562,285.096,1174.97
+Paragigantocellular reticular nucleus/ lateral part,PGRNl,978,left,all,2009,313.741,1123.74,2009,313.741,1123.74
+Paragigantocellular reticular nucleus/ lateral part,PGRNl,978,right,all,1996,324.097,1046.66,1996,324.097,1046.66
+Perihypoglossal nuclei,PHY,154,left,all,949,278.898,1268.55,949,278.898,1268.55
+Perihypoglossal nuclei,PHY,154,right,all,988,287.922,1276.99,988,287.922,1276.99
+Nucleus of Roller,NR,177,left,all,107,254.069,1061.58,107,254.069,1061.58
+Nucleus of Roller,NR,177,right,all,122,259.642,1079.67,122,259.642,1079.67
+Nucleus prepositus,PRP,169,left,all,842,282.053,1294.85,842,282.053,1294.85
+Nucleus prepositus,PRP,169,right,all,866,291.906,1304.79,866,291.906,1304.79
+Parapyramidal nucleus,PPY,1069,left,all,211,262.522,860.147,211,262.522,860.147
+Parapyramidal nucleus,PPY,1069,right,all,149,251.966,878.067,149,251.966,878.067
+Vestibular nuclei,VNC,701,left,all,11235,323.251,1301.86,11235,323.251,1301.86
+Vestibular nuclei,VNC,701,right,all,9485,309.24,1293.8,9485,309.24,1293.8
+Lateral vestibular nucleus,LAV,209,left,all,520,387.419,1240.4,520,387.419,1240.4
+Lateral vestibular nucleus,LAV,209,right,all,451,372.168,1271.23,451,372.168,1271.23
+Medial vestibular nucleus,MV,202,left,all,6840,313.256,1335.19,6840,313.256,1335.19
+Medial vestibular nucleus,MV,202,right,all,5921,300.257,1317.89,5921,300.257,1317.89
+Spinal vestibular nucleus,SPIV,225,left,all,2878,326.792,1247.87,2878,326.792,1247.87
+Spinal vestibular nucleus,SPIV,225,right,all,2219,308.084,1215.64,2219,308.084,1215.64
+Superior vestibular nucleus,SUV,217,left,all,997,348.14,1261.09,997,348.14,1261.09
+Superior vestibular nucleus,SUV,217,right,all,894,339.853,1339.57,894,339.853,1339.57
+Nucleus x,x,765,left,all,155,288.839,1119.81,155,288.839,1119.81
+Nucleus x,x,765,right,all,195,289.286,1145.23,195,289.286,1145.23
+Hypoglossal nucleus,XII,773,left,all,1438,383.815,1234.75,1438,383.815,1234.75
+Hypoglossal nucleus,XII,773,right,all,1534,342.852,1181.09,1534,342.852,1181.09
+Nucleus y,y,781,left,all,53,330.379,1184.23,53,330.379,1184.23
+Nucleus y,y,781,right,all,50,363.593,1272.98,50,363.593,1272.98
+Medulla/ behavioral state related,MY-sat,379,left,all,842,253.544,897.893,842,253.544,897.893
+Medulla/ behavioral state related,MY-sat,379,right,all,901,263.126,902.615,901,263.126,902.615
+Nucleus raphe magnus,RM,206,left,all,444,262.956,881.682,444,262.956,881.682
+Nucleus raphe magnus,RM,206,right,all,500,254.454,860.5,500,254.454,860.5
+Nucleus raphe pallidus,RPA,230,left,all,113,206.03,882.77,113,206.03,882.77
+Nucleus raphe pallidus,RPA,230,right,all,141,233.652,901.986,141,233.652,901.986
+Nucleus raphe obscurus,RO,222,left,all,285,257.719,929.144,285,257.719,929.144
+Nucleus raphe obscurus,RO,222,right,all,260,295.788,983.946,260,295.788,983.946
+Cerebellum,CB,512,left,all,177920,306.184,1178.39,177920,306.184,1178.39
+Cerebellum,CB,512,right,all,146050,273.894,1097.59,146050,273.894,1097.59
+Cerebellar cortex,CBX,528,left,all,170578,303.483,1171.16,170578,303.483,1171.16
+Cerebellar cortex,CBX,528,right,all,140067,271.714,1087.07,140067,271.714,1087.07
+Vermal regions,VERM,645,left,all,79505,264.73,1189.5,79505,264.73,1189.5
+Vermal regions,VERM,645,right,all,72336,245.379,1146.44,72336,245.379,1146.44
+Lingula (I),LING,912,left,all,313,234.926,1300.94,313,234.926,1300.94
+Lingula (I),LING,912,right,all,376,221.444,1518.38,376,221.444,1518.38
+Central lobule,CENT,920,left,all,17147,247.056,1292.01,17147,247.056,1292.01
+Central lobule,CENT,920,right,all,15578,233.899,1280.37,15578,233.899,1280.37
+Lobule II,CENT2,976,left,all,5210,247.31,1271.03,5210,247.31,1271.03
+Lobule II,CENT2,976,right,all,4444,227.585,1264.53,4444,227.585,1264.53
+Lobule III,CENT3,984,left,all,11937,246.946,1301.17,11937,246.946,1301.17
+Lobule III,CENT3,984,right,all,11134,236.419,1286.69,11134,236.419,1286.69
+Culmen,CUL,928,left,all,27634,285.761,1255.2,27634,285.761,1255.2
+Culmen,CUL,928,right,all,26155,257.397,1182.52,26155,257.397,1182.52
+Lobules IV-V,CUL4/ 5,1091,left,all,27634,285.761,1255.2,27634,285.761,1255.2
+Lobules IV-V,CUL4/ 5,1091,right,all,26155,257.397,1182.52,26155,257.397,1182.52
+Declive (VI),DEC,936,left,all,14844,272.071,1136.85,14844,272.071,1136.85
+Declive (VI),DEC,936,right,all,12745,263.292,1101.83,12745,263.292,1101.83
+Folium-tuber vermis (VII),FOTU,944,left,all,4441,256.292,1028.84,4441,256.292,1028.84
+Folium-tuber vermis (VII),FOTU,944,right,all,3725,240.947,980.3,3725,240.947,980.3
+Pyramus (VIII),PYR,951,left,all,4881,269.433,1123.1,4881,269.433,1123.1
+Pyramus (VIII),PYR,951,right,all,4063,244.499,1071.98,4063,244.499,1071.98
+Uvula (IX),UVU,957,left,all,5257,241.263,1031.1,5257,241.263,1031.1
+Uvula (IX),UVU,957,right,all,4468,221.479,987.51,4468,221.479,987.51
+Nodulus (X),NOD,968,left,all,4988,216.646,997.721,4988,216.646,997.721
+Nodulus (X),NOD,968,right,all,5226,201.761,960.872,5226,201.761,960.872
+Hemispheric regions,HEM,1073,left,all,91073,337.313,1155.16,91073,337.313,1155.16
+Hemispheric regions,HEM,1073,right,all,67731,299.84,1023.66,67731,299.84,1023.66
+Simple lobule,SIM,1007,left,all,19670,319.214,1176.2,19670,319.214,1176.2
+Simple lobule,SIM,1007,right,all,16905,289.05,1056.37,16905,289.05,1056.37
+Ansiform lobule,AN,1017,left,all,35744,359.322,1208.63,35744,359.322,1208.63
+Ansiform lobule,AN,1017,right,all,27834,305.694,1037.94,27834,305.694,1037.94
+Crus 1,ANcr1,1056,left,all,18413,344.566,1175.42,18413,344.566,1175.42
+Crus 1,ANcr1,1056,right,all,15004,296.742,1022.46,15004,296.742,1022.46
+Crus 2,ANcr2,1064,left,all,17331,374.999,1243.91,17331,374.999,1243.91
+Crus 2,ANcr2,1064,right,all,12830,316.162,1056.05,12830,316.162,1056.05
+Paramedian lobule,PRM,1025,left,all,12921,349.363,1155.91,12921,349.363,1155.91
+Paramedian lobule,PRM,1025,right,all,7894,315.656,1042.45,7894,315.656,1042.45
+Copula pyramidis,COPY,1033,left,all,7464,311.368,1116.69,7464,311.368,1116.69
+Copula pyramidis,COPY,1033,right,all,5634,283.644,1048.48,5634,283.644,1048.48
+Paraflocculus,PFL,1041,left,all,13231,314.22,1020.52,13231,314.22,1020.52
+Paraflocculus,PFL,1041,right,all,8013,300.868,887.396,8013,300.868,887.396
+Flocculus,FL,1049,left,all,2043,294.654,1025,2043,294.654,1025
+Flocculus,FL,1049,right,all,1451,284.421,922.442,1451,284.421,922.442
+Cerebellar nuclei,CBN,519,left,all,5596,399.686,1479.83,5596,399.686,1479.83
+Cerebellar nuclei,CBN,519,right,all,4677,344.451,1453.67,4677,344.451,1453.67
+Fastigial nucleus,FN,989,left,all,1490,419.036,1601.25,1490,419.036,1601.25
+Fastigial nucleus,FN,989,right,all,1300,359.125,1533.69,1300,359.125,1533.69
+Interposed nucleus,IP,91,left,all,2807,389.362,1466.75,2807,389.362,1466.75
+Interposed nucleus,IP,91,right,all,2355,327.826,1446.63,2355,327.826,1446.63
+Dentate nucleus,DN,846,left,all,1028,417.571,1395.5,1028,417.571,1395.5
+Dentate nucleus,DN,846,right,all,771,379.102,1376.48,771,379.102,1376.48
+Vestibulocerebellar nucleus,VeCB,589508455,left,all,271,332.381,1267.66,271,332.381,1267.66
+Vestibulocerebellar nucleus,VeCB,589508455,right,all,251,317.992,1342.35,251,317.992,1342.35
+fiber tracts,fiber tracts,1009,left,all,109902,285.483,1090.52,109902,285.483,1090.52
+fiber tracts,fiber tracts,1009,right,all,88599,268.97,983.279,88599,268.97,983.279
+cranial nerves,cm,967,left,all,33573,332.415,1104.4,33573,332.415,1104.4
+cranial nerves,cm,967,right,all,32580,296.803,992.648,32580,296.803,992.648
+vomeronasal nerve,von,949,left,all,29,389.314,800.552,29,389.314,800.552
+vomeronasal nerve,von,949,right,all,29,193.016,517.241,29,193.016,517.241
+olfactory nerve,In,840,left,all,20371,361.039,1167.66,20371,361.039,1167.66
+olfactory nerve,In,840,right,all,25572,308.155,1008.86,25572,308.155,1008.86
+olfactory nerve layer of main olfactory bulb,onl,1016,left,all,14578,386.775,1207.23,14578,386.775,1207.23
+olfactory nerve layer of main olfactory bulb,onl,1016,right,all,20988,318.18,1037.58,20988,318.18,1037.58
+lateral olfactory tract/ general,lotg,21,left,all,4825,304.32,1094,4825,304.32,1094
+lateral olfactory tract/ general,lotg,21,right,all,3844,264.595,872.598,3844,264.595,872.598
+lateral olfactory tract/ body,lot,665,left,all,4159,303.843,1117.85,4159,303.843,1117.85
+lateral olfactory tract/ body,lot,665,right,all,3261,261.411,862.463,3261,261.411,862.463
+dorsal limb,lotd,538,left,all,666,307.299,945.045,666,307.299,945.045
+dorsal limb,lotd,538,right,all,583,282.405,929.286,583,282.405,929.286
+anterior commissure/ olfactory limb,aco,900,left,all,968,256.18,938.848,968,256.18,938.848
+anterior commissure/ olfactory limb,aco,900,right,all,740,250.105,902.214,740,250.105,902.214
+optic nerve,IIn,848,left,all,2694,277.482,1041.72,2694,277.482,1041.72
+optic nerve,IIn,848,right,all,1972,261.913,917.394,1972,261.913,917.394
+brachium of the superior colliculus,bsc,916,left,all,1085,322.111,1176.85,1085,322.111,1176.85
+brachium of the superior colliculus,bsc,916,right,all,583,296.561,1041.78,583,296.561,1041.78
+superior colliculus commissure,csc,336,left,all,155,278.433,1410.06,155,278.433,1410.06
+superior colliculus commissure,csc,336,right,all,209,300.043,1403.06,209,300.043,1403.06
+optic chiasm,och,117,left,all,15,219.686,856.533,15,219.686,856.533
+optic chiasm,och,117,right,all,67,226.638,894.418,67,226.638,894.418
+optic tract,opt,125,left,all,1439,244.333,902.098,1439,244.333,902.098
+optic tract,opt,125,right,all,1083,240.42,767.489,1083,240.42,767.489
+oculomotor nerve,IIIn,832,left,all,430,289.619,1324.46,430,289.619,1324.46
+oculomotor nerve,IIIn,832,right,all,399,253.393,1292.26,399,253.393,1292.26
+medial longitudinal fascicle,mlf,62,left,all,245,264.731,1244.73,245,264.731,1244.73
+medial longitudinal fascicle,mlf,62,right,all,209,260.929,1313.95,209,260.929,1313.95
+posterior commissure,pc,158,left,all,167,319.25,1433.14,167,319.25,1433.14
+posterior commissure,pc,158,right,all,157,238.175,1271.25,157,238.175,1271.25
+trochlear nerve,IVn,911,left,all,21,463.66,1398.52,21,463.66,1398.52
+trochlear nerve,IVn,911,right,all,16,386.011,1197.75,16,386.011,1197.75
+trigeminal nerve,Vn,901,left,all,3526,231.213,820.826,3526,231.213,820.826
+trigeminal nerve,Vn,901,right,all,798,227.22,673.487,798,227.22,673.487
+motor root of the trigeminal nerve,moV,93,left,all,22,521.489,932.636,22,521.489,932.636
+motor root of the trigeminal nerve,moV,93,right,all,14,223.642,573.214,14,223.642,573.214
+sensory root of the trigeminal nerve,sV,229,left,all,3504,229.39,820.124,3504,229.39,820.124
+sensory root of the trigeminal nerve,sV,229,right,all,784,227.284,675.278,784,227.284,675.278
+spinal tract of the trigeminal nerve,sptV,794,left,all,3193,230.986,827.583,3193,230.986,827.583
+spinal tract of the trigeminal nerve,sptV,794,right,all,706,228.576,696.176,706,228.576,696.176
+facial nerve,VIIn,798,left,all,124,277.861,966.347,124,277.861,966.347
+facial nerve,VIIn,798,right,all,91,247.398,934.516,91,247.398,934.516
+genu of the facial nerve,gVIIn,1116,left,all,17,263.769,1082.76,17,263.769,1082.76
+genu of the facial nerve,gVIIn,1116,right,all,15,244.444,1034.8,15,244.444,1034.8
+vestibulocochlear nerve,VIIIn,933,left,all,4899,338.772,1020.12,4899,338.772,1020.12
+vestibulocochlear nerve,VIIIn,933,right,all,2458,256.75,873.504,2458,256.75,873.504
+vestibular nerve,vVIIIn,413,left,all,146,275.813,896.493,146,275.813,896.493
+vestibular nerve,vVIIIn,413,right,all,55,243.114,772,55,243.114,772
+cochlear nerve,cVIIIn,948,left,all,4753,340.706,1023.91,4753,340.706,1023.91
+cochlear nerve,cVIIIn,948,right,all,2403,257.063,875.827,2403,257.063,875.827
+trapezoid body,tb,841,left,all,315,234.487,888,315,234.487,888
+trapezoid body,tb,841,right,all,180,252.704,887.556,180,252.704,887.556
+dorsal acoustic stria,das,506,left,all,50,454.642,1309.4,50,454.642,1309.4
+dorsal acoustic stria,das,506,right,all,37,391.699,1490.16,37,391.699,1490.16
+lateral lemniscus,ll,658,left,all,2963,280.818,1012.69,2963,280.818,1012.69
+lateral lemniscus,ll,658,right,all,1715,263.737,913.217,1715,263.737,913.217
+inferior colliculus commissure,cic,633,left,all,32,243.027,946.938,32,243.027,946.938
+inferior colliculus commissure,cic,633,right,all,16,260.405,1017.69,16,260.405,1017.69
+brachium of the inferior colliculus,bic,482,left,all,1393,490.264,1070.05,1393,490.264,1070.05
+brachium of the inferior colliculus,bic,482,right,all,455,222.563,675.308,455,222.563,675.308
+vagus nerve,Xn,917,left,all,54,211.499,869.407,54,211.499,869.407
+vagus nerve,Xn,917,right,all,43,229.353,829.047,43,229.353,829.047
+solitary tract,ts,237,left,all,54,211.499,869.407,54,211.499,869.407
+solitary tract,ts,237,right,all,43,229.353,829.047,43,229.353,829.047
+dorsal roots,drt,792,left,all,1425,274.793,1266.31,1425,274.793,1266.31
+dorsal roots,drt,792,right,all,1202,262.501,1146.26,1202,262.501,1146.26
+cervicothalamic tract,cett,932,left,all,1425,274.793,1266.31,1425,274.793,1266.31
+cervicothalamic tract,cett,932,right,all,1202,262.501,1146.26,1202,262.501,1146.26
+dorsal column,dc,514,left,all,42,238.326,735.357,42,238.326,735.357
+dorsal column,dc,514,right,all,26,222.825,761.692,26,222.825,761.692
+cuneate fascicle,cuf,380,left,all,42,238.326,735.357,42,238.326,735.357
+cuneate fascicle,cuf,380,right,all,26,222.825,761.692,26,222.825,761.692
+medial lemniscus,ml,697,left,all,1383,275.901,1282.44,1383,275.901,1282.44
+medial lemniscus,ml,697,right,all,1176,263.378,1154.76,1176,263.378,1154.76
+cerebellum related fiber tracts,cbf,960,left,all,14377,263.349,1134.03,14377,263.349,1134.03
+cerebellum related fiber tracts,cbf,960,right,all,11357,244.768,1087.44,11357,244.768,1087.44
+cerebellar commissure,cbc,744,left,all,27,328.674,1271.85,27,328.674,1271.85
+cerebellar commissure,cbc,744,right,all,25,287.66,1175.4,25,287.66,1175.4
+cerebellar peduncles,cbp,752,left,all,3020,307.544,1037.54,3020,307.544,1037.54
+cerebellar peduncles,cbp,752,right,all,2021,262.167,904.52,2021,262.167,904.52
+superior cerebelar peduncles,scp,326,left,all,1637,324.78,1193.96,1637,324.78,1193.96
+superior cerebelar peduncles,scp,326,right,all,1042,293.201,1130.41,1042,293.201,1130.41
+superior cerebellar peduncle decussation,dscp,812,left,all,38,316.526,1305.34,38,316.526,1305.34
+superior cerebellar peduncle decussation,dscp,812,right,all,38,311.796,1261.42,38,311.796,1261.42
+uncinate fascicle,uf,850,left,all,69,308.919,1028.22,69,308.919,1028.22
+uncinate fascicle,uf,850,right,all,79,279.207,1097.29,79,279.207,1097.29
+ventral spinocerebellar tract,sctv,866,left,all,330,283.273,984.379,330,283.273,984.379
+ventral spinocerebellar tract,sctv,866,right,all,90,281.902,929.856,90,281.902,929.856
+middle cerebellar peduncle,mcp,78,left,all,799,291.81,774.756,799,291.81,774.756
+middle cerebellar peduncle,mcp,78,right,all,597,204.957,567.248,597,204.957,567.248
+inferior cerebellar peduncle,icp,1123,left,all,584,280.758,958.616,584,280.758,958.616
+inferior cerebellar peduncle,icp,1123,right,all,382,266.925,815.458,382,266.925,815.458
+dorsal spinocerebellar tract,sctd,553,left,all,142,222.93,949.134,142,222.93,949.134
+dorsal spinocerebellar tract,sctd,553,right,all,0,0,0,0,0,0
+arbor vitae,arb,728,left,all,11330,251.412,1159.42,11330,251.412,1159.42
+arbor vitae,arb,728,right,all,9311,240.876,1126.9,9311,240.876,1126.9
+supra-callosal cerebral white matter,scwm,484682512,left,all,3401,243.321,1118,3401,243.321,1118
+supra-callosal cerebral white matter,scwm,484682512,right,all,2735,253.537,885.488,2735,253.537,885.488
+lateral forebrain bundle system,lfbs,983,left,all,34501,270.676,1078.08,34501,270.676,1078.08
+lateral forebrain bundle system,lfbs,983,right,all,23048,252.484,926.806,23048,252.484,926.806
+corpus callosum,cc,776,left,all,19202,256.884,1091.46,19202,256.884,1091.46
+corpus callosum,cc,776,right,all,11555,238.343,951.675,11555,238.343,951.675
+corpus callosum/ anterior forceps,fa,956,left,all,4545,279.595,1081.96,4545,279.595,1081.96
+corpus callosum/ anterior forceps,fa,956,right,all,3460,263.526,931.431,3460,263.526,931.431
+external capsule,ec,579,left,all,3480,294.865,1092.32,3480,294.865,1092.32
+external capsule,ec,579,right,all,2699,276.747,925.374,2699,276.747,925.374
+corpus callosum/ extreme capsule,ee,964,left,all,456,284.718,845.906,456,284.718,845.906
+corpus callosum/ extreme capsule,ee,964,right,all,489,244.179,720.967,489,244.179,720.967
+genu of corpus callosum,ccg,1108,left,all,1213,220.961,1166.16,1213,220.961,1166.16
+genu of corpus callosum,ccg,1108,right,all,1137,213.218,1030.24,1137,213.218,1030.24
+corpus callosum/ posterior forceps,fp,971,left,all,4478,293.279,999.832,4478,293.279,999.832
+corpus callosum/ posterior forceps,fp,971,right,all,934,281.413,969.116,934,281.413,969.116
+corpus callosum/ body,ccb,484682516,left,all,7642,224.177,1172.45,7642,224.177,1172.45
+corpus callosum/ body,ccb,484682516,right,all,5028,218.015,972.857,5028,218.015,972.857
+corpus callosum/ splenium,ccs,986,left,all,868,273.737,925.506,868,273.737,925.506
+corpus callosum/ splenium,ccs,986,right,all,507,239.46,893.953,507,239.46,893.953
+corticospinal tract,cst,784,left,all,5739,258.444,1056.66,5739,258.444,1056.66
+corticospinal tract,cst,784,right,all,3462,248.804,935.178,3462,248.804,935.178
+internal capsule,int,6,left,all,3167,262.458,1179.77,3167,262.458,1179.77
+internal capsule,int,6,right,all,1920,247.612,994.693,1920,247.612,994.693
+cerebal peduncle,cpd,924,left,all,2189,256.288,899.164,2189,256.288,899.164
+cerebal peduncle,cpd,924,right,all,1212,250.514,842.021,1212,250.514,842.021
+pyramid,py,190,left,all,58,211.119,835.759,58,211.119,835.759
+pyramid,py,190,right,all,44,236.578,892.409,44,236.578,892.409
+pyramidal decussation,pyd,198,left,all,66,241.158,754.288,66,241.158,754.288
+pyramidal decussation,pyd,198,right,all,73,211.329,798.521,73,211.329,798.521
+thalamus related,lfbst,896,left,all,9560,305.72,1064.06,9560,305.72,1064.06
+thalamus related,lfbst,896,right,all,8031,274.416,887.417,8031,274.416,887.417
+external medullary lamina of the thalamus,em,1092,left,all,663,255.409,1441.55,663,255.409,1441.55
+external medullary lamina of the thalamus,em,1092,right,all,455,242.473,1155.83,455,242.473,1155.83
+optic radiation,or,484682520,left,all,7675,305.848,1010.34,7675,305.848,1010.34
+optic radiation,or,484682520,right,all,6634,271.38,852.702,6634,271.38,852.702
+auditory radiation,ar,484682524,left,all,1222,332.217,1196.68,1222,332.217,1196.68
+auditory radiation,ar,484682524,right,all,942,311.221,1002.24,942,311.221,1002.24
+extrapyramidal fiber systems,eps,1000,left,all,3028,265.925,1140.06,3028,265.925,1140.06
+extrapyramidal fiber systems,eps,1000,right,all,2127,270.046,1145.96,2127,270.046,1145.96
+cerebral nuclei related,epsc,760,left,all,681,266.354,1401.79,681,266.354,1401.79
+cerebral nuclei related,epsc,760,right,all,569,269.309,1301.32,569,269.309,1301.32
+nigrostriatal tract,nst,102,left,all,681,266.354,1401.79,681,266.354,1401.79
+nigrostriatal tract,nst,102,right,all,569,269.309,1301.32,569,269.309,1301.32
+tectospinal pathway,tsp,877,left,all,977,272.32,1064.51,977,272.32,1064.51
+tectospinal pathway,tsp,877,right,all,859,273.386,1090.73,859,273.386,1090.73
+direct tectospinal pathway,tspd,1051,left,all,0,0,0,0,0,0
+direct tectospinal pathway,tspd,1051,right,all,0,0,0,0,0,0
+doral tegmental decussation,dtd,1060,left,all,7,182.73,1359,7,182.73,1359
+doral tegmental decussation,dtd,1060,right,all,13,255.225,1782.85,13,255.225,1782.85
+crossed tectospinal pathway,tspc,1043,left,all,970,272.967,1062.39,970,272.967,1062.39
+crossed tectospinal pathway,tspc,1043,right,all,846,273.665,1080.09,846,273.665,1080.09
+rubrospinal tract,rust,863,left,all,1370,261.151,1063.84,1370,261.151,1063.84
+rubrospinal tract,rust,863,right,all,699,266.54,1087.36,699,266.54,1087.36
+ventral tegmental decussation,vtd,397,left,all,66,317.768,1403.82,66,317.768,1403.82
+ventral tegmental decussation,vtd,397,right,all,74,272.65,1376.72,74,272.65,1376.72
+medial forebrain bundle system,mfbs,991,left,all,17478,255.752,1036.96,17478,255.752,1036.96
+medial forebrain bundle system,mfbs,991,right,all,13646,255.606,965.814,13646,255.606,965.814
+cerebrum related,mfbc,768,left,all,15214,257.719,1013.97,15214,257.719,1013.97
+cerebrum related,mfbc,768,right,all,11579,257.453,930.983,11579,257.453,930.983
+amygdalar capsule,amc,884,left,all,283,262.966,870.597,283,262.966,870.597
+amygdalar capsule,amc,884,right,all,373,226.215,750.461,373,226.215,750.461
+anterior commissure/ temporal limb,act,908,left,all,565,262.635,1265.45,565,262.635,1265.45
+anterior commissure/ temporal limb,act,908,right,all,421,241.494,1121.71,421,241.494,1121.71
+cingulum bundle,cing,940,left,all,3569,235.012,918.665,3569,235.012,918.665
+cingulum bundle,cing,940,right,all,2663,244.529,858.618,2663,244.529,858.618
+fornix system,fxs,1099,left,all,9836,266.142,1037.23,9836,266.142,1037.23
+fornix system,fxs,1099,right,all,7504,267.386,958.381,7504,267.386,958.381
+alveus,alv,466,left,all,3711,286.827,1059.83,3711,286.827,1059.83
+alveus,alv,466,right,all,3499,306.045,1003.31,3499,306.045,1003.31
+dorsal fornix,df,530,left,all,60,242.661,1151.57,60,242.661,1151.57
+dorsal fornix,df,530,right,all,69,225.808,1138.74,69,225.808,1138.74
+fimbria,fi,603,left,all,4795,249.804,1004.01,4795,249.804,1004.01
+fimbria,fi,603,right,all,2898,226.39,870.154,2898,226.39,870.154
+postcommissural fornix,fxpo,737,left,all,631,234.484,1162.28,631,234.484,1162.28
+postcommissural fornix,fxpo,737,right,all,571,223.404,1108.89,571,223.404,1108.89
+medial corticohypothalamic tract,mct,428,left,all,59,287.023,1529.02,59,287.023,1529.02
+medial corticohypothalamic tract,mct,428,right,all,65,294.117,1565.86,65,294.117,1565.86
+columns of the fornix,fx,436,left,all,572,229.064,1124.45,572,229.064,1124.45
+columns of the fornix,fx,436,right,all,506,214.321,1050.19,506,214.321,1050.19
+hippocampal commissures,hc,618,left,all,639,302.082,1021.03,639,302.082,1021.03
+hippocampal commissures,hc,618,right,all,467,292.054,958.563,467,292.054,958.563
+dorsal hippocampal commissure,dhc,443,left,all,589,312.363,1014.9,589,312.363,1014.9
+dorsal hippocampal commissure,dhc,443,right,all,416,301.402,939.947,416,301.402,939.947
+ventral hippocampal commissure,vhc,449,left,all,50,180.98,1093.24,50,180.98,1093.24
+ventral hippocampal commissure,vhc,449,right,all,51,215.806,1110.41,51,215.806,1110.41
+stria terminalis,st,301,left,all,961,251.404,1024.24,961,251.404,1024.24
+stria terminalis,st,301,right,all,618,222.252,889.162,618,222.252,889.162
+commissural branch of stria terminalis,stc,484682528,left,all,156,299.049,1065.99,156,299.049,1065.99
+commissural branch of stria terminalis,stc,484682528,right,all,81,228.28,818.358,81,228.28,818.358
+hypothalamus related,mfsbshy,824,left,all,2264,242.532,1191.43,2264,242.532,1191.43
+hypothalamus related,mfsbshy,824,right,all,2067,245.264,1160.93,2067,245.264,1160.93
+medial forebrain bundle,mfb,54,left,all,177,260.788,1158.11,177,260.788,1158.11
+medial forebrain bundle,mfb,54,right,all,181,246.696,1124.71,181,246.696,1124.71
+supraoptic commissures,sup,349,left,all,27,254.486,912.074,27,254.486,912.074
+supraoptic commissures,sup,349,right,all,5,287.694,716.4,5,287.694,716.4
+mammillary related,mfbsma,46,left,all,427,246.372,1252.09,427,246.372,1252.09
+mammillary related,mfbsma,46,right,all,401,251.857,1240.52,401,251.857,1240.52
+principal mammillary tract,pm,753,left,all,32,262.573,1150.81,32,262.573,1150.81
+principal mammillary tract,pm,753,right,all,38,240.274,1120.63,38,240.274,1120.63
+mammillothalamic tract,mtt,690,left,all,238,238.024,1271.59,238,238.024,1271.59
+mammillothalamic tract,mtt,690,right,all,209,231.346,1209.84,209,231.346,1209.84
+mammillotegmental tract,mtg,681,left,all,114,241.865,1342.74,114,241.865,1342.74
+mammillotegmental tract,mtg,681,right,all,119,299.077,1414.64,119,299.077,1414.64
+mammillary peduncle,mp,673,left,all,43,292.469,979.233,43,292.469,979.233
+mammillary peduncle,mp,673,right,all,35,226.371,961.943,35,226.371,961.943
+epithalamus related,mfbse,1083,left,all,1633,239.351,1183.79,1633,239.351,1183.79
+epithalamus related,mfbse,1083,right,all,1480,243.158,1145.3,1480,243.158,1145.3
+stria medullaris,sm,802,left,all,1102,253.264,1160.97,1102,253.264,1160.97
+stria medullaris,sm,802,right,all,990,260.901,1113.52,990,260.901,1113.52
+fasciculus retroflexus,fr,595,left,all,345,222.07,1433.79,345,222.07,1433.79
+fasciculus retroflexus,fr,595,right,all,336,222.51,1372.99,336,222.51,1372.99
+habenular commissure,hbc,611,left,all,186,188.972,855.349,186,188.972,855.349
+habenular commissure,hbc,611,right,all,154,174.152,852.825,154,174.152,852.825
+ventricular systems,VS,73,left,all,20536,253.06,953.844,20536,253.06,953.844
+ventricular systems,VS,73,right,all,27263,234.607,824.648,27263,234.607,824.648
+lateral ventricle,VL,81,left,all,16080,256.565,962.502,16080,256.565,962.502
+lateral ventricle,VL,81,right,all,22286,229.107,794.226,22286,229.107,794.226
+subependymal zone,SEZ,98,left,all,376,261.658,970.566,376,261.658,970.566
+subependymal zone,SEZ,98,right,all,413,203.498,809.179,413,203.498,809.179
+choroid plexus,chpl,108,left,all,6601,226.391,886.827,6601,226.391,886.827
+choroid plexus,chpl,108,right,all,10056,210.732,776.942,10056,210.732,776.942
+third ventricle,V3,129,left,all,1941,217.271,936.165,1941,217.271,936.165
+third ventricle,V3,129,right,all,1849,219.944,922.484,1849,219.944,922.484
+cerebral aqueduct,AQ,140,left,all,353,527.686,1628.01,353,527.686,1628.01
+cerebral aqueduct,AQ,140,right,all,400,510.206,1610.22,400,510.206,1610.22
+fourth ventricle,V4,145,left,all,2162,214.289,795.247,2162,214.289,795.247
+fourth ventricle,V4,145,right,all,2726,249.063,891.646,2726,249.063,891.646
+lateral recess,V4r,153,left,all,1498,191.05,728.584,1498,191.05,728.584
+lateral recess,V4r,153,right,all,1797,177.015,633.715,1797,177.015,633.715
+central canal/ spinal cord/medulla,c,164,left,all,0,0,0,0,0,0
+central canal/ spinal cord/medulla,c,164,right,all,2,263.55,931.5,2,263.55,931.5
