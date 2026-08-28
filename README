@@ -44,15 +44,16 @@ statistics and co-activation network analysis.
 .
 ├── README.md
 ├── LICENSE
-├── sessionInfo.txt               # R environment used for the published run
+├── sessionInfo.txt               # R environment for the analysis + figure run
+├── sessionInfo_network.txt       # R environment for the network run
 ├── scripts/
 │   ├── preprocess_neuroinfo.R    # step 1: clean per-animal exports
 │   ├── regional_analysis.R       # step 3: region-wise statistics
 │   ├── network_analysis.R        # step 4: co-activation networks
-│   ├── regional_figures.R        # step 5: Figures 2 and 3
-│   ├── coactivation_figures.R    # step 6: Figures 4 and S2
-│   ├── cartography_figures.R     # step 7: Figure 5 panels A and B
-│   ├── network_graph_figures.R   # step 8: Figure 5 panel C
+│   ├── regional_figures.R        # step 5: Figures 2 and S1
+│   ├── coactivation_figures.R    # step 6: Figures 3 and S2
+│   ├── cartography_figures.R     # step 7: Figure 4 panels A and B, S3, S4
+│   ├── network_graph_figures.R   # step 8: Figure 4 panel C
 │   └── divisions.R               # shared division palette (sourced, not run)
 ├── data/
 │   ├── 1.json                    # Allen CCFv3 structure ontology
@@ -293,7 +294,7 @@ resampling.
 Every workbook opens with a README sheet describing each of its sheets and the
 method behind it.
 
-### Step 5. Figures 2 and 3
+### Step 5. Figures 2 and S1
 
 ```bash
 Rscript scripts/regional_figures.R
@@ -305,24 +306,24 @@ the primary and by-sex statistics workbooks from `results/`, and
 `data/region_division_lookup.csv`. Sources `scripts/divisions.R` for the
 division palette.
 
-Renders eight panels, each written twice at 1200 dpi as an LZW-compressed TIFF
+Renders seven panels, each written twice at 1200 dpi as an LZW-compressed TIFF
 for submission and a PNG for assembly:
 
 | Figure | Panels produced |
 |---|---|
-| Figure 2 | A (lollipop, top 30 regions by Cohen's \|d\|), B (significant-region counts), C (whole-brain totals), E (exemplar bars: MBO, ASO, TRS, MEA) |
-| Figure 3 | A (diverging bars, males vs females), B (sex-stratified: SNr, AVPV, LC), C (acute vs dependent effect sizes), D (exemplar bars: DMH, NOD) |
+| Figure 2 | A (diverging effect-size bars, males vs females), B (whole-brain totals, split by sex), C (sex-resolved exemplars: SNr, AVPV, PRE, PRM) |
+| Figure S1 | A (lollipop, top 30 regions by Cohen's \|d\|), B (significant-region counts), C (whole-brain totals, sexes pooled), D (exemplar bars: MBO, ASO, TRS, MEA) |
 
 Figure 2 Panel D is representative light-sheet imagery and is not produced by
 this script. Panels are written to `results/figures/Figure2/` and
-`results/figures/Figure3/` and assembled into final figures separately.
+`results/figures/FigureS1/` and assembled into final figures separately.
 
 `divisions.R` is sourced rather than run on its own. It defines the 13-division
 CCFv3 grouping, its colour palette, a 7-division coarse grouping used where a
 13-colour legend is not legible, and the `struct_of()` / `super_of()` helpers
 that map region acronyms onto each.
 
-### Step 6. Figures 4 and S2
+### Step 6. Figures 3 and S2
 
 ```bash
 Rscript scripts/coactivation_figures.R
@@ -336,7 +337,7 @@ Both figure sets are produced in a single run, each into its own folder:
 
 | Set | Contents | Output folder |
 |---|---|---|
-| Figure 4 | Combined per-condition heatmaps plus companion panels (mean \|r\| by condition, region involvement, within-division mean \|r\|), condition titles baked in | `results/figures/Figure4/` |
+| Figure 3 | Combined per-condition heatmaps plus companion panels (mean \|r\| by condition, region involvement, within-division mean \|r\|), condition titles baked in | `results/figures/Figure3/` |
 | Figure S2 | Sex-stratified heatmaps (Males/Females per condition), condition-difference and sex-difference maps, as small titleless panels | `results/figures/FigureS2/` |
 
 To render only one set, drop the other from `RENDER_MODES` near the top of the
@@ -351,7 +352,7 @@ Mean \|r\| values are computed from the correlation matrices at run time. Set
 `MEANR_FROM_DATA <- FALSE` to substitute the reported values held in
 `MEANR_REPORTED`, which are otherwise used only as a cross-check.
 
-### Step 7. Figure 5, Panels A and B
+### Step 7. Figure 4 Panels A and B, plus Figures S3 and S4
 
 ```bash
 Rscript scripts/cartography_figures.R
@@ -373,10 +374,20 @@ For each atlas region polygon the value is resolved by exact acronym match,
 then by averaging descendants, then by nearest ancestor; polygons with no
 coverage are left grey. Nine coronal slices spanning anterior to posterior are
 composited into a horizontal strip per condition, with a matching colourbar.
-Outputs are written to `results/figures/Figure5/` as HTML (an interactive SVG
-grid) and PNG.
 
-### Step 8. Figure 5, Panel C
+The same run produces three figure sets, all written to `results/figures/Figure4/`
+as paired 1200 dpi TIFF and PNG:
+
+| Set | Contents |
+|---|---|
+| Figure 4 A and B | Combined-sex PC and WMDz strips, one per condition, with a shared colourbar per metric |
+| Figure S3 | The same strips rendered per sex (Males and Females), on their own shared scale |
+| Figure S4 | The joint PC-WMDz cartographic scatter, one panel per condition, connector hubs labelled |
+
+The Combined and per-sex sets are scaled independently, so their colourbars do
+not necessarily span the same range; each set carries its own legend file.
+
+### Step 8. Figure 4 Panel C
 
 ```bash
 Rscript scripts/network_graph_figures.R
@@ -394,8 +405,8 @@ computed on. Encoding:
 | Element | Encodes |
 |---|---|
 | Node size | Participation coefficient (weighted) |
-| Node fill | Within-module degree z-score, blue-white-red, clamped at 2.5 |
-| Node ring | Consensus-Louvain module, assigned within panel |
+| Node fill | Major brain division (the 7-way grouping from `divisions.R`) |
+| Node ring | Black ring marks a cartographic hub (WMDz >= 1.5) |
 | Edge | Positive co-activation edges retained at 10% density |
 | Layout | Force-directed, Kamada-Kawai, fixed seed |
 
@@ -405,7 +416,7 @@ and keeps the giant component, so the node count drawn in a panel is smaller
 than the node count in the analysis graph; metrics are always computed on the
 full thresholded network.
 
-Outputs to `results/figures/Figure5C/`: twelve network panels, a shared legend,
+Outputs to `results/figures/Figure4C/`: twelve network panels, a shared legend,
 and three role-composition bar panels, each as paired TIFF and PNG.
 
 ---
