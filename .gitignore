@@ -1,0 +1,27 @@
+# Generated outputs
+results/
+
+# R
+.Rhistory
+.RData
+.Rproj.user/
+*.Rproj
+
+# Python
+__pycache__/
+*.pyc
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+
+# Machine-specific run wrappers (contain absolute local paths - never deposit)
+*_LOCAL.R
+run_local.command
+
+# Local backups
+*.bak_*
