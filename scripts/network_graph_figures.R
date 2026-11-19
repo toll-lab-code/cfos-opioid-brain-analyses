@@ -1,13 +1,13 @@
 # network_graph_figures.R
 # =============================================================================
-# Figure 4, Panel C: force-directed co-activation network graphs, plus the
+# Figure 6, Panel C: force-directed co-activation network graphs, plus the
 # cartographic role-composition bars.
 #
 # Accompanies:
 #   Martinez M, Ozawa A, Van Zant D, Thornberry J, Toll L.
-#   Whole Brain Cellular Activation After Mu and NOP Receptor Agonism
-#   Identified Differential Regional and Network Consequences.
-#   [JOURNAL] 2026. [PAPER_DOI]
+#   Whole Brain Cellular Activation After Mu and NOP Receptor Agonism:
+#   Shared Regional Targets with Divergent Network Consequences.
+#   Submitted to Psychopharmacology, 2026.
 #
 # Code author:  Madeline Martinez
 # Contact:      Lawrence Toll (corresponding author)
@@ -15,7 +15,7 @@
 #               Charles E. Schmidt College of Medicine,
 #               Florida Atlantic University
 # Repository:   https://github.com/toll-lab-code/cfos-opioid-brain-analyses
-# Archived:     [ZENODO_DOI] (archive created at acceptance)
+# Archived:     Zenodo; DOIs for this release are given in readme.md
 # License:      MIT (see LICENSE)
 # Tested with:  R 4.4.3 (see sessionInfo.txt)
 #
@@ -65,7 +65,7 @@ SCRIPT_DIR  <- path.expand(Sys.getenv("CFOS_SCRIPT_DIR", "scripts"))  # division
 
 conn_file  <- file.path(OUTPUT_ROOT, "01_Connectivity.xlsx")
 roles_file <- file.path(OUTPUT_ROOT, "03_Modules_and_Roles.xlsx")
-out_dir    <- file.path(OUTPUT_ROOT, "figures", "Figure4C")
+out_dir    <- file.path(OUTPUT_ROOT, "figures", "Figure6C")
 dir.create(out_dir, showWarnings = FALSE, recursive = TRUE)
 
 ## Graphics device. "cairo" writes plain sRGB with NO embedded colour profile,
@@ -294,54 +294,91 @@ halo_text <- function(x, y, labels, cex, halo = "white", col = "black") {
   text(x, y, labels, cex = cex, col = col, adj = c(0.5, 0.5))
 }
 
-## hub labels centred on their node; only labels that would overlap are nudged
-## the minimum distance to clear (no leader lines). Lower-priority labels give
-## way first, so the most important ones stay dead-centred.
-place_net_labels <- function(lay, keep, labs, prio = NULL) {
+## hub labels: each label is placed at the best of a ring of candidate positions
+## around its node, highest-priority label first. A candidate is rejected if its
+## box would overlap a label already placed, cover any black-ringed hub node
+## (including its own), or leave the panel; among the rest the one covering the
+## fewest other nodes and sitting closest to its node wins. A short leader joins
+## label and node. (The previous version only pushed overlapping labels apart, so
+## labels could still sit on top of hub nodes and run into each other's leaders.)
+place_net_labels <- function(lay, keep, labs, prio = NULL, vrad = NULL, ring = NULL) {
   if (!any(keep)) return(invisible())
+  N   <- nrow(lay)
+  if (is.null(vrad)) vrad <- rep(0.01, N)
+  if (is.null(ring)) ring <- keep
   idx <- which(keep)
-  ax <- lay[idx, 1]; ay <- lay[idx, 2]           # node anchors = plotted coords (rescale=FALSE)
+  ax <- lay[idx, 1]; ay <- lay[idx, 2]
   tx <- labs[idx]; n <- length(idx)
-  if (is.null(prio)) prio <- seq_len(n) else prio <- prio[idx]
-  w  <- strwidth(tx, cex = lab_cex) / 2 + strwidth("n", cex = lab_cex) * 0.35
-  h  <- strheight("Mg", cex = lab_cex) * 0.62
-  ## start each label pushed off its node, radially outward from the cloud centre,
-  ## so it doesn't bury the node and the leader line has a clear direction.
+  pr <- if (is.null(prio)) rep(0, n) else prio[idx]
+  w  <- strwidth(tx, cex = lab_cex) / 2 + strwidth("n", cex = lab_cex) * 0.30
+  h  <- strheight("Mg", cex = lab_cex) * 0.75
+  pad <- strwidth("n", cex = lab_cex) * 0.25
   cx <- mean(lay[, 1]); cy <- mean(lay[, 2])
-  dirx <- ax - cx; diry <- ay - cy
-  dl <- sqrt(dirx^2 + diry^2); dl[dl < 1e-6] <- 1e-6
-  off <- 3.0 * h
-  lx <- ax + dirx / dl * off
-  ly <- ay + diry / dl * off
-  ## separate overlapping label boxes (lower priority moves)
-  for (it in 1:600) {
-    moved <- FALSE
-    if (n > 1) for (i in 1:(n - 1)) for (j in (i + 1):n) {
-      dx <- lx[j] - lx[i]; dy <- ly[j] - ly[i]
-      ox <- (w[i] + w[j]) - abs(dx); oy <- 2 * h - abs(dy)
-      if (ox > 0 && oy > 0) {
-        lo <- if (prio[i] <= prio[j]) i else j
-        sgn <- if (oy <= ox) c(0, if ((ly[lo] - (ly[i]+ly[j])/2) >= 0) 1 else -1)
-        else           c(if ((lx[lo] - (lx[i]+lx[j])/2) >= 0) 1 else -1, 0)
-        step <- (if (oy <= ox) oy else ox) + 1e-4
-        lx[lo] <- lx[lo] + sgn[1] * step
-        ly[lo] <- ly[lo] + sgn[2] * step
-        moved <- TRUE
-      }
-    }
-    if (!moved) break
+  ## does box (x, y, hw, hh) intersect the circle (px, py, r)?
+  hits <- function(x, y, hw, hh, px, py, r) {
+    qx <- pmin(pmax(px, x - hw), x + hw); qy <- pmin(pmax(py, y - hh), y + hh)
+    (px - qx)^2 + (py - qy)^2 < r^2
   }
-  ## keep every label box inside the panel frame so nothing clips once the cloud
-  ## fills the panel (edge-node labels get a short inward leader instead of
-  ## shooting past the border). w is per-label half-width; h is the half-height.
-  lx <- pmin(pmax(lx, -1 + w), 1 - w)
-  ly <- pmin(pmax(ly, -1 + h), 1 - h)
-  ## leader line node -> label: white halo under a thin dark line, so it reads over
-  ## the grey edges. Text (with its own halo) is drawn last and covers the label end.
+  ## proper crossing of segments p1-p2 and p3-p4
+  crosses <- function(p1, p2, p3, p4) {
+    o <- function(a, b, c) sign((b[1] - a[1]) * (c[2] - a[2]) - (b[2] - a[2]) * (c[1] - a[1]))
+    o(p1, p2, p3) * o(p1, p2, p4) < 0 && o(p3, p4, p1) * o(p3, p4, p2) < 0
+  }
+  lx <- ax; ly <- ay; placed <- logical(n)
+  for (k in order(-pr)) {
+    a0   <- atan2(ay[k] - cy, ax[k] - cx)               # radially outward first
+    angs <- a0 + c(0, rep(seq(pi / 8, pi, by = pi / 8), each = 2) * c(1, -1))
+    best <- NULL; best_cost <- Inf
+    for (d in c(1.2, 1.8, 2.6, 3.6, 5.0) * h + vrad[idx[k]]) {
+      for (ai in seq_along(angs)) {
+        a  <- angs[ai]
+        ## distance d is measured to the nearer edge of the box, not its centre
+        x  <- ax[k] + cos(a) * (d + w[k] * abs(cos(a)))
+        y  <- ay[k] + sin(a) * (d + h * abs(sin(a)))
+        if (x - w[k] < -1 || x + w[k] > 1 || y - h < -1 || y + h > 1) next
+        if (any(placed) && any(abs(x - lx[placed]) < w[k] + w[placed] + pad &
+                               abs(y - ly[placed]) < 2 * h + pad)) next
+        if (any(hits(x, y, w[k], h, lay[ring, 1], lay[ring, 2], vrad[ring] + pad))) next
+        ## the leader may not cross another leader or run through another label
+        if (any(placed)) {
+          bad <- FALSE
+          tt <- seq(0.1, 0.9, length.out = 9)
+          sx <- ax[k] + (x - ax[k]) * tt; sy <- ay[k] + (y - ay[k]) * tt
+          for (j in which(placed)) {
+            if (any(abs(sx - lx[j]) < w[j] & abs(sy - ly[j]) < h) ||
+                crosses(c(ax[k], ay[k]), c(x, y), c(ax[j], ay[j]), c(lx[j], ly[j]))) {
+              bad <- TRUE; break }
+            ## nor may this label sit on an earlier label's leader
+            tj <- seq(0.1, 0.9, length.out = 9)
+            if (any(abs(ax[j] + (lx[j] - ax[j]) * tj - x) < w[k] &
+                    abs(ay[j] + (ly[j] - ay[j]) * tj - y) < h)) { bad <- TRUE; break }
+          }
+          if (bad) next
+        }
+        cover <- sum(hits(x, y, w[k], h, lay[, 1], lay[, 2], vrad))
+        cost  <- 1.5 * d / h + 2.5 * cover + 0.15 * (ai - 1) / 2
+        if (cost < best_cost) { best_cost <- cost; best <- c(x, y) }
+      }
+      if (!is.null(best) && best_cost < 1.5 * d / h + 0.5) break   # clean spot at this ring
+    }
+    if (is.null(best)) {                                     # crowded: nearest legal spot
+      best <- c(ax[k] + cos(a0) * (2.6 * h + w[k]), ay[k] + sin(a0) * 2.6 * h)
+      best <- c(min(max(best[1], -1 + w[k]), 1 - w[k]), min(max(best[2], -1 + h), 1 - h))
+    }
+    lx[k] <- best[1]; ly[k] <- best[2]; placed[k] <- TRUE
+  }
+  ## leader from the node's edge to the label box's edge; white halo under it so
+  ## it reads over the grey edges
   for (k in seq_len(n)) {
-    segments(ax[k], ay[k], lx[k], ly[k], col = "white",  lwd = 2.6, lend = 1)
-    segments(ax[k], ay[k], lx[k], ly[k], col = "grey20", lwd = 0.8, lend = 1)
-    points(ax[k], ay[k], pch = 21, bg = "grey20", col = "white", cex = 0.5, lwd = 0.4)
+    dx <- lx[k] - ax[k]; dy <- ly[k] - ay[k]; L <- sqrt(dx^2 + dy^2)
+    if (L < 1e-9) next
+    s0 <- vrad[idx[k]] / L
+    s1 <- 1 - min(w[k] / max(abs(dx), 1e-9), h / max(abs(dy), 1e-9)) * 0.85
+    if (s1 <= s0) next                                       # label sits against its node
+    x0 <- ax[k] + dx * s0; y0 <- ay[k] + dy * s0
+    x1 <- ax[k] + dx * s1; y1 <- ay[k] + dy * s1
+    segments(x0, y0, x1, y1, col = "white",  lwd = 2.4, lend = 1)
+    segments(x0, y0, x1, y1, col = "grey20", lwd = 0.8, lend = 1)
   }
   for (k in seq_len(n)) halo_text(lx[k], ly[k], tx[k], cex = lab_cex)
 }
@@ -452,7 +489,9 @@ draw_network <- function(g) {
        rescale = FALSE, xlim = c(-1, 1), ylim = c(-1, 1))
   
   ## overlay node labels; centred on their node, only colliding ones nudged
-  place_net_labels(lay, keep, V(g)$name, prio = label_imp)
+  place_net_labels(lay, keep, V(g)$name, prio = label_imp,
+                   vrad = node_size(V(g)$PC) / 200,   # igraph vertex.size is in 1/200 of the plot
+                   ring = hub[zo])
   
   ## module labels: number each module M1..Mk at its centroid, coloured to match
   ## the module ring, de-overlapped. Numeric (not anatomical) because these
@@ -525,12 +564,53 @@ for (sx in sexes) for (tr in treatments) {
 }
 
 ## ------------------------ SHARED LEGEND / KEY ------------------------------
+## Division-key spec (divisions.R): 2.4 mm swatch, 1.2 mm to label, 3.4 mm rows,
+## 4.0 mm from title to first row. The default (division_super) key is drawn to
+## it in mm coordinates so it matches every other division key in the paper.
+draw_legend_super <- function() {
+  W <- 2.0 * 25.4; H <- 2.4 * 25.4                  # device size (mm)
+  par(family = font_fam, mar = c(0, 0, 0, 0))
+  plot(NA, xlim = c(0, W), ylim = c(0, H), xaxs = "i", yaxs = "i",
+       axes = FALSE, xlab = "", ylab = "")
+  tc   <- 8 / 6                                      # 8 pt text at pointsize 6
+  dcex <- 1.98 * (8 / 6) * KEY_SW_MM / 2.4           # pch 21 dot KEY_SW_MM across
+  sx   <- 1.0                                        # swatch left edge
+  lx   <- sx + KEY_SW_MM + KEY_GAP_MM                # label x
+  y    <- H - 2.0                                    # first title line centre
+  text(sx, y, "Major division", adj = c(0, 0.5), font = 2, cex = tc)
+  y <- y - KEY_PITCH_MM
+  text(sx, y, "(node fill)", adj = c(0, 0.5), font = 2, cex = tc)
+  y <- y - KEY_TITLE_MM
+  for (i in seq_along(super_order)) {
+    points(sx + KEY_SW_MM / 2, y, pch = 21, cex = dcex, bg = super_col[super_order[i]],
+           col = "white", lwd = 0.5)
+    text(lx, y, super_order[i], adj = c(0, 0.5), cex = tc)
+    y <- y - KEY_PITCH_MM
+  }
+  points(sx + KEY_SW_MM / 2, y, pch = 21, cex = dcex, bg = "grey80", col = "black", lwd = 1.6)
+  text(lx, y, "Hub (WMDz \u2265 1.5)", adj = c(0, 0.5), cex = tc)
+  ## PC size key: node sizes are data, so dots keep the rendered node sizes
+  y <- y - KEY_PITCH_MM - 2.4                        # one blank row before the next title
+  text(sx, y, "Participation", adj = c(0, 0.5), font = 2, cex = tc)
+  y <- y - KEY_PITCH_MM
+  text(sx, y, "coefficient (PC)", adj = c(0, 0.5), font = 2, cex = tc)
+  y <- y - KEY_TITLE_MM - 0.8                        # room for the largest dot
+  pcv <- c(0.0, 0.3, 0.6)
+  for (i in seq_along(pcv)) {
+    xx <- sx + 2.2 + (i - 1) * 7.5
+    points(xx, y, pch = 21, bg = "grey85", col = "grey40",
+           cex = node_size(pcv[i]) / 2.55)            # PC-0.6 dot == a PC-0.6 node at 69 mm
+    text(xx, y - 4.0, pcv[i], cex = tc)
+  }
+}
+
 draw_legend <- function() {
+  if (color_mode == "division_super") return(draw_legend_super())
   par(family = font_fam, mar = c(0.5, 0.5, 0.5, 0.5))
   plot(NA, xlim = c(0, 1), ylim = c(0, 1), axes = FALSE, xlab = "", ylab = "")
   
   if (color_mode == "division_fill") {
-    text(0.02, 0.97, "CCFv3 Division (Node Fill)", adj = 0, font = 2, cex = 0.85)
+    text(0.02, 0.97, "CCFv3 division (node fill)", adj = 0, font = 2, cex = 0.85)
     nL <- length(div_order); half <- ceiling(nL / 2)
     for (i in seq_len(nL)) {
       col_i <- if (i <= half) 0L else 1L
@@ -546,10 +626,10 @@ draw_legend <- function() {
     ybase <- yh - 0.08
   } else if (color_mode %in% c("division_super", "super_module", "group_fill", "group_ring")) {
     ttl <- switch(color_mode,
-                  division_super = "Major Division (Node Fill)",
-                  super_module   = "Major Division (Node Fill)",
-                  group_fill     = "Module Identity (Node Fill)",
-                  group_ring     = "Module Identity (Node Ring)")
+                  division_super = "Major division (node fill)",
+                  super_module   = "Major division (node fill)",
+                  group_fill     = "Module identity (node fill)",
+                  group_ring     = "Module identity (node ring)")
     text(0.02, 0.985, sub(" \\(", "\n(", ttl), adj = c(0, 1), font = 2, cex = 8/6)  # 8 pt; wrapped before "(" to fit the 36 mm channel
     ring_swatch <- (color_mode == "group_ring")
     for (i in seq_along(super_order)) {
@@ -594,12 +674,13 @@ draw_legend <- function() {
   }
   
   ## PC size (shared)
-  text(0.02, ybase, "Participation\nCoefficient (PC)", adj = c(0, 1), font = 2, cex = 8/6)  # wrapped to fit channel
+  text(0.02, ybase, "Participation\ncoefficient (PC)", adj = c(0, 1), font = 2, cex = 8/6)  # wrapped to fit channel
   pcv <- c(0.0, 0.3, 0.6)
   for (i in seq_along(pcv)) {
-    points(0.08 + (i - 1) * 0.15, ybase - 0.13, pch = 21, bg = "grey85",
+    ## dots sit a full line below the two-line title so the 0.6 dot clears "(PC)"
+    points(0.08 + (i - 1) * 0.15, ybase - 0.175, pch = 21, bg = "grey85",
            col = "grey40", cex = node_size(pcv[i]) / 2.55)   # dots sized to the 69 mm render's nodes (PC 0.6 dot == PC-0.6 node)
-    text(0.08 + (i - 1) * 0.15, ybase - 0.19, pcv[i], cex = 8/6)  # number tucked under its dot (8 pt)
+    text(0.08 + (i - 1) * 0.15, ybase - 0.24, pcv[i], cex = 8/6)  # number tucked under its dot (8 pt)
   }
   ## edge key intentionally omitted: edges are a single uniform hairline, so the
   ## meaning (positive co-activations at 10% density; width not mapped to r) is

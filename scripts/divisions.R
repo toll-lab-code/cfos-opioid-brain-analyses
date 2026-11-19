@@ -5,9 +5,9 @@
 #
 # Accompanies:
 #   Martinez M, Ozawa A, Van Zant D, Thornberry J, Toll L.
-#   Whole Brain Cellular Activation After Mu and NOP Receptor Agonism
-#   Identified Differential Regional and Network Consequences.
-#   [JOURNAL] 2026. [PAPER_DOI]
+#   Whole Brain Cellular Activation After Mu and NOP Receptor Agonism:
+#   Shared Regional Targets with Divergent Network Consequences.
+#   Submitted to Psychopharmacology, 2026.
 #
 # Code author:  Madeline Martinez
 # Contact:      Lawrence Toll (corresponding author)
@@ -15,7 +15,7 @@
 #               Charles E. Schmidt College of Medicine,
 #               Florida Atlantic University
 # Repository:   https://github.com/toll-lab-code/cfos-opioid-brain-analyses
-# Archived:     [ZENODO_DOI] (archive created at acceptance)
+# Archived:     Zenodo; DOIs for this release are given in readme.md
 # License:      MIT (see LICENSE)
 # Tested with:  R 4.4.3 (see sessionInfo.txt)
 #
@@ -23,7 +23,7 @@
 # the division grouping and palette are identical across all figures.
 #
 #   division_order  : canonical legend order (13 divisions)
-#   division_colors : 13 divisions -> hex   (main figures: 2, 3, 4, Fig 5 cartography)
+#   division_colors : 13 divisions -> hex   (main Figures 2-5 and Figure 6 cartography)
 #   division_abbr   : 13 full names -> short codes (for space-limited panels)
 #   super_order     : canonical order (7 super-divisions)
 #   super_map       : 13 divisions -> 7 super-divisions
@@ -85,7 +85,8 @@ super_map <- c(
 # Each super-colour is a representative member division's colour (all drawn from
 # the 13 above), so the coarse hairballs read as a grouping of the same palette.
 super_colors <- c(
-  "Cerebral cortex" = "#4dad4c",  # Olfactory (cortex family)
+  "Cerebral cortex" = "#3949ab",  # Isocortex (cortex family). Was the Olfactory green,
+                                  # but green means Olfactory in every other figure.
   "Cerebral nuclei" = "#9c27b0",  # Amygdala  (nuclei family)
   "Thalamus"        = "#607d8b",  # exact
   "Hypothalamus"    = "#4cd0e9",  # exact
@@ -111,3 +112,27 @@ struct_of <- function(regions) {
 super_of <- function(regions) {
   d <- struct_of(regions); s <- unname(super_map[d]); s[is.na(s)] <- "Other"; s
 }
+
+# ---- Division-key geometry (one spec for every division key in the paper) ----
+# Every key that names the CCFv3 divisions (Figs 2, 3a, 4a, 5, 6c, S1, S4) is
+# drawn to these numbers, whatever draws it (ggplot, base graphics, composite):
+#   bold 8 pt title "CCFv3 division", 8 pt labels, a 2.4 mm swatch (square for
+#   bar/heat-map figures, a dot for point figures), 1.2 mm from swatch to label,
+#   rows 3.4 mm apart, and 4.0 mm from the title's centre to the first row's.
+KEY_SW_MM    <- 2.4   # swatch side (square) or diameter (dot)
+KEY_GAP_MM   <- 1.2   # swatch right edge -> label
+KEY_PITCH_MM <- 3.4   # row-to-row (centre to centre)
+KEY_TITLE_MM <- 4.0   # title centre -> first row centre
+
+# ggplot key glyph: a fixed KEY_SW_MM square centred in its key cell, whatever
+# the cell's size, so square size and row pitch can be set independently.
+key_square <- function(data, params, size) {
+  col <- if (!is.null(data$fill) && !all(is.na(data$fill))) data$fill else data$colour
+  a   <- if (is.null(data$alpha) || is.na(data$alpha)) 1 else data$alpha
+  grid::rectGrob(width = grid::unit(KEY_SW_MM, "mm"), height = grid::unit(KEY_SW_MM, "mm"),
+                 gp = grid::gpar(fill = grDevices::adjustcolor(col, alpha.f = a), col = NA))
+}
+KEY_TITLE_GAP_MM <- 1.04  # ggplot legend.title bottom margin that yields KEY_TITLE_MM (measured)
+# Horizontal (multi-row) division keys, Figs 2 and S1: 7 columns at these fixed
+# offsets (mm from the key's left edge), so the two keys are the same grid.
+KEY_COL_X_MM <- c(0, 19.1, 43.9, 67.9, 96.2, 115.5, 136.7)

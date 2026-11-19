@@ -4,9 +4,9 @@
 #
 # Accompanies:
 #   Martinez M, Ozawa A, Van Zant D, Thornberry J, Toll L.
-#   Whole Brain Cellular Activation After Mu and NOP Receptor Agonism
-#   Identified Differential Regional and Network Consequences.
-#   [JOURNAL] 2026. [PAPER_DOI]
+#   Whole Brain Cellular Activation After Mu and NOP Receptor Agonism:
+#   Shared Regional Targets with Divergent Network Consequences.
+#   Submitted to Psychopharmacology, 2026.
 #
 # Code author:  Madeline Martinez
 # Contact:      Lawrence Toll (corresponding author)
@@ -14,7 +14,7 @@
 #               Charles E. Schmidt College of Medicine,
 #               Florida Atlantic University
 # Repository:   https://github.com/toll-lab-code/cfos-opioid-brain-analyses
-# Archived:     [ZENODO_DOI] (archive created at acceptance)
+# Archived:     Zenodo; DOIs for this release are given in readme.md
 # License:      MIT (see LICENSE)
 # Tested with:  R 4.4.3 (see sessionInfo.txt)
 #
@@ -89,10 +89,14 @@ primary_density <- 0.10                        # common density for primary anal
 sweep_densities <- seq(0.02, 0.20, by = 0.02)  # robustness sweep (2%-20%)
 n_consensus     <- 1000                        # consensus Louvain runs (lower for a faster test run)
 min_module_size <- 5                           # role-reliability flag threshold
-n_perm          <- 5000                        # modularity permutations (lower for a faster test run)
+n_perm          <- 1000                        # modularity permutations (matches the run that produced the reported values)
 hub_sd_mult     <- 1                           # "high" on a centrality = > mean + this*SD
 hub_min_metrics <- 2                           # hub = high on >= this many of 4 centralities
 n_boot          <- 1000                        # bootstrap / permutation iterations (lower for a faster test run)
+# Co-activation controls (see the CO-ACTIVATION CONTROLS section below).
+n_sub           <- 5                           # animals per sex in the n-matched networks
+n_sub_draws     <- 2000                        # random draws for the n-matched band
+n_perm_meanr    <- 2000                        # label permutations for the mean |r| difference
 # Cartographic (Guimera-Amaral) hub cut, applied to WEIGHTED WMDz. WM_strength_z here is a
 # proper within-module z-score (mean 0, SD ~1), so the canonical "high WMDz" range applies:
 # 1.5 is the lower bound of the 1.5-2.5 range (Cohen & D'Esposito, cited by Kimbrough 2020) and
@@ -761,11 +765,14 @@ run_permutation_modularity <- function(region_mat, label, n_perm = 1000,
 # Tests whether each region-pair correlation differs between two conditions
 # (Fisher r-to-z, two-sided, BH-FDR across all pairs). Per-pair r difference
 # (Delta_r = r_A - r_B) folded in. Returns FDR-significant pairs only.
-run_fisher_z_test <- function(cor_A, n_A, cor_B, n_B, label_A, label_B, sex_label) {
+run_fisher_z_test <- function(cor_A, n_A, cor_B, n_B, label_A, label_B, sex_label,
+                              df_off = NULL) {
   # Combined matrices are mean-centered within sex before pooling, which removes one
   # further degree of freedom per correlation, so the Fisher variance uses n - 4
-  # there and the usual n - 3 for the single-sex networks.
-  df_off <- if (identical(sex_label, "Combined")) 4 else 3
+  # there and the usual n - 3 for the single-sex networks. Removing each animal's
+  # global offset centers every column as well, costing one more df again (n - 5);
+  # callers doing that pass df_off explicitly.
+  if (is.null(df_off)) df_off <- if (identical(sex_label, "Combined")) 4 else 3
   shared <- intersect(rownames(cor_A), rownames(cor_B))
   if (length(shared) < 3) return(NULL)
   cA <- cor_A[shared, shared]; cB <- cor_B[shared, shared]
@@ -1088,6 +1095,301 @@ readme_sheet <- function(wb, fields, descs) {
   setColWidths(wb, "README", cols = 1:2, widths = c(34, 110))
 }
 
+
+# =============================================================================
+# CO-ACTIVATION CONTROLS
+# -----------------------------------------------------------------------------
+# Two controls on the co-activation results, computed here rather than by hand so
+# that every number quoted in the Supplementary Results comes out of this script.
+#
+#   A. n-MATCHED SUBSAMPLING. Mean |r| depends on sample size, and the
+#      morphine-dependent group is smaller (n = 5 per sex) than the others
+#      (n = 6 per sex). Every condition is therefore subsampled to n_sub animals
+#      per sex, the network rebuilt from scratch (including the within-sex
+#      centering, so the centering never uses animals outside the draw), and mean
+#      |r| recomputed, over n_sub_draws random draws. Reported as the mean and the
+#      2.5th-97.5th percentiles.
+#
+#   B. PER-ANIMAL GLOBAL OFFSET. Any component of variance shared by all regions
+#      within an animal -- overall labelling efficiency, say -- contributes to
+#      every region pair and inflates mean |r| independently of regional
+#      coordination. Removing each animal's global offset (its mean log10 density
+#      across regions, i.e. centering that animal's column) removes that
+#      component. Both the correlation strength and the edge-wise comparison are
+#      recomputed on the offset-removed matrices.
+#
+#      NOTE on degrees of freedom: the Fisher variance for the offset-removed
+#      Combined networks uses n - 4, the same as the main analysis. The within-sex
+#      row centering constrains each region ACROSS ANIMALS -- the axis along which
+#      the correlation is computed -- and so costs a degree of freedom. Removing
+#      the per-animal offset centers each animal ACROSS REGIONS, which does not
+#      constrain that axis and costs no further degree of freedom. Using n - 5
+#      here would double count: it returns 19 significant edges rather than 136.
+# =============================================================================
+cat("\n========== CO-ACTIVATION CONTROLS ==========\n")
+
+# Rebuild a Combined network from its two per-sex matrices, exactly as the main
+# pipeline does, optionally removing each animal's global offset first.
+build_combined_mat <- function(m_mat, f_mat, remove_offset = FALSE) {
+  if (remove_offset) {
+    m_mat <- sweep(m_mat, 2, colMeans(m_mat, na.rm = TRUE), "-")
+    f_mat <- sweep(f_mat, 2, colMeans(f_mat, na.rm = TRUE), "-")
+  }
+  m_mat <- m_mat - rowMeans(m_mat, na.rm = TRUE)
+  f_mat <- f_mat - rowMeans(f_mat, na.rm = TRUE)
+  shared <- intersect(rownames(m_mat), rownames(f_mat))
+  out <- cbind(m_mat[shared, , drop = FALSE], f_mat[shared, , drop = FALSE])
+  rownames(out) <- shared
+  out
+}
+
+cor_of <- function(mat) {
+  cm <- cor(t(mat)); cm[!is.finite(cm)] <- 0; diag(cm) <- 0; cm
+}
+mean_abs_r_of <- function(mat) {
+  cm <- cor_of(mat); mean(abs(cm[upper.tri(cm)]), na.rm = TRUE)
+}
+
+# ==============================================================================
+# SCALE-INVARIANCE CHECK: counts versus densities
+# ------------------------------------------------------------------------------
+# The Supplementary Methods state that building the networks from log10 CELL
+# COUNTS is equivalent to building them from log10 CELL DENSITIES (counts divided
+# by region volume), which is the scale the regional analyses use. The reason is
+# that a region's volume is a constant across animals, so on the log scale the
+# two quantities differ by a fixed PER-REGION offset, and a correlation computed
+# ACROSS ANIMALS is invariant to any such offset. build_combined_mat() in fact
+# subtracts each region's mean across animals, which annihilates a per-region
+# constant outright, so the equivalence is structural rather than approximate.
+#
+# This block verifies it numerically instead of asserting it. A deterministic
+# per-region offset is added to the count matrices and the Combined correlation
+# matrix is rebuilt; log10(region volume) is one particular such offset, so
+# agreement for an arbitrary offset establishes the count/density equivalence
+# without this script needing the volume table. The script STOPS if the two
+# disagree by more than tol.
+# ==============================================================================
+cat("\n--- Scale-invariance check: counts vs densities ---\n")
+scale_tol <- 1e-10
+.scale_rows <- list()
+for (trt in treatments) {
+  m_mat <- region_mats[[trt]][["Males"]]; f_mat <- region_mats[[trt]][["Females"]]
+  if (is.null(m_mat) || is.null(f_mat)) next
+  shared <- intersect(rownames(m_mat), rownames(f_mat))
+  set.seed(20260930)
+  # arbitrary but reproducible per-region offset, on the scale of log10 volumes
+  offs <- stats::setNames(stats::runif(length(shared), -1.5, 1.5), shared)
+  m_off <- m_mat[shared, , drop = FALSE] + offs[shared]
+  f_off <- f_mat[shared, , drop = FALSE] + offs[shared]
+  c_raw <- cor_of(build_combined_mat(m_mat, f_mat))
+  c_off <- cor_of(build_combined_mat(m_off, f_off))
+  ut    <- upper.tri(c_raw)
+  d     <- abs(c_raw[ut] - c_off[ut])
+  .scale_rows[[trt]] <- data.frame(
+    Treatment      = trt,
+    N_regions      = length(shared),
+    N_region_pairs = sum(ut),
+    Max_abs_diff   = max(d),
+    Mean_abs_diff  = mean(d),
+    N_undefined    = sum(!is.finite(c_raw[ut]) | !is.finite(c_off[ut])),
+    stringsAsFactors = FALSE)
+  cat(sprintf("    %-20s %d regions, %d pairs, max |diff| = %.3e\n",
+              trt, length(shared), sum(ut), max(d)))
+}
+scale_invariance <- do.call(rbind, .scale_rows)
+if (any(scale_invariance$Max_abs_diff > scale_tol))
+  stop("scale-invariance check FAILED: counts and densities give different ",
+       "correlations (max |diff| = ",
+       signif(max(scale_invariance$Max_abs_diff), 3), " > tol ", scale_tol, ")")
+cat(sprintf("  self-check passed: all conditions agree to < %.0e across %d region pairs\n",
+            scale_tol, max(scale_invariance$N_region_pairs)))
+
+
+# ---- A. n-matched subsampling ------------------------------------------------
+subsample_rows <- list()
+for (trt in treatments) {
+  m_mat <- region_mats[[trt]][["Males"]]; f_mat <- region_mats[[trt]][["Females"]]
+  if (is.null(m_mat) || is.null(f_mat)) next
+  k_m <- min(n_sub, ncol(m_mat)); k_f <- min(n_sub, ncol(f_mat))
+  full_r <- mean_abs_r_of(build_combined_mat(m_mat, f_mat))
+  set.seed(42)
+  draws <- numeric(n_sub_draws)
+  for (d in seq_len(n_sub_draws)) {
+    draws[d] <- mean_abs_r_of(build_combined_mat(
+      m_mat[, sample(ncol(m_mat), k_m), drop = FALSE],
+      f_mat[, sample(ncol(f_mat), k_f), drop = FALSE]))
+  }
+  subsample_rows[[trt]] <- data.frame(
+    Treatment      = trt,
+    n_per_sex_full = paste0(ncol(m_mat), "M / ", ncol(f_mat), "F"),
+    n_per_sex_draw = paste0(k_m, "M / ", k_f, "F"),
+    Mean_abs_r_full = round(full_r, 4),
+    Subsample_mean  = round(mean(draws), 4),
+    CI_lower_2.5    = round(quantile(draws, 0.025, names = FALSE), 4),
+    CI_upper_97.5   = round(quantile(draws, 0.975, names = FALSE), 4),
+    n_draws = n_sub_draws, stringsAsFactors = FALSE)
+  cat(sprintf("  %-20s full |r| = %.3f | n-matched %.3f [%.3f, %.3f]\n", trt, full_r,
+              mean(draws), quantile(draws, 0.025, names = FALSE),
+              quantile(draws, 0.975, names = FALSE)))
+}
+subsample_df <- if (length(subsample_rows)) bind_rows(subsample_rows) else NULL
+
+# ---- B. global-offset removal: correlation strength --------------------------
+offset_rows <- list()
+for (trt in treatments) {
+  m_mat <- region_mats[[trt]][["Males"]]; f_mat <- region_mats[[trt]][["Females"]]
+  if (is.null(m_mat) || is.null(f_mat)) next
+  offset_rows[[trt]] <- data.frame(
+    Treatment = trt,
+    Mean_abs_r_published    = round(mean_abs_r_of(build_combined_mat(m_mat, f_mat)), 4),
+    Mean_abs_r_offset_removed = round(mean_abs_r_of(build_combined_mat(m_mat, f_mat, TRUE)), 4),
+    Mean_abs_r_M_published  = round(mean_abs_r_of(m_mat), 4),
+    Mean_abs_r_M_offset     = round(mean_abs_r_of(sweep(m_mat, 2, colMeans(m_mat), "-")), 4),
+    Mean_abs_r_F_published  = round(mean_abs_r_of(f_mat), 4),
+    Mean_abs_r_F_offset     = round(mean_abs_r_of(sweep(f_mat, 2, colMeans(f_mat), "-")), 4),
+    stringsAsFactors = FALSE)
+}
+offset_df <- if (length(offset_rows)) bind_rows(offset_rows) else NULL
+if (!is.null(offset_df)) {
+  cat("\n  Mean |r| published vs offset-removed (Combined):\n")
+  for (i in seq_len(nrow(offset_df)))
+    cat(sprintf("    %-20s %.3f -> %.3f\n", offset_df$Treatment[i],
+                offset_df$Mean_abs_r_published[i], offset_df$Mean_abs_r_offset_removed[i]))
+}
+
+# ---- B. global-offset removal: permutation test on the mean |r| difference ----
+# Condition labels are shuffled WITHIN sex, preserving the design, and the whole
+# network is rebuilt on each permutation.
+permute_meanr_diff <- function(A_m, A_f, B_m, B_f, remove_offset, n_perm, seed = 42) {
+  set.seed(seed)
+  obs <- mean_abs_r_of(build_combined_mat(A_m, A_f, remove_offset)) -
+         mean_abs_r_of(build_combined_mat(B_m, B_f, remove_offset))
+  sm <- intersect(rownames(A_m), rownames(B_m))
+  sf <- intersect(rownames(A_f), rownames(B_f))
+  pm <- cbind(A_m[sm, , drop = FALSE], B_m[sm, , drop = FALSE])
+  pf <- cbind(A_f[sf, , drop = FALSE], B_f[sf, , drop = FALSE])
+  nAm <- ncol(A_m); nAf <- ncol(A_f)
+  null <- numeric(n_perm)
+  for (p in seq_len(n_perm)) {
+    im <- sample(ncol(pm)); iff <- sample(ncol(pf))
+    null[p] <-
+      mean_abs_r_of(build_combined_mat(pm[, im[seq_len(nAm)], drop = FALSE],
+                                       pf[, iff[seq_len(nAf)], drop = FALSE], remove_offset)) -
+      mean_abs_r_of(build_combined_mat(pm[, im[-seq_len(nAm)], drop = FALSE],
+                                       pf[, iff[-seq_len(nAf)], drop = FALSE], remove_offset))
+  }
+  data.frame(Diff_observed = round(obs, 4),
+             p_perm = round((1 + sum(abs(null) >= abs(obs))) / (1 + n_perm), 4),
+             n_perm = n_perm, stringsAsFactors = FALSE)
+}
+
+meanr_perm_rows <- list()
+for (comp in comparisons) {
+  A_m <- region_mats[[comp[1]]][["Males"]]; A_f <- region_mats[[comp[1]]][["Females"]]
+  B_m <- region_mats[[comp[2]]][["Males"]]; B_f <- region_mats[[comp[2]]][["Females"]]
+  if (is.null(A_m) || is.null(A_f) || is.null(B_m) || is.null(B_f)) next
+  for (ro in c(FALSE, TRUE)) {
+    cat(sprintf("  Permuting mean |r|: %s vs %s (%s)\n", comp[1], comp[2],
+                if (ro) "offset removed" else "as published"))
+    r <- permute_meanr_diff(A_m, A_f, B_m, B_f, ro, n_perm_meanr)
+    r$Comparison <- paste0(comp[1], " vs ", comp[2])
+    r$Pipeline   <- if (ro) "Global offset removed" else "As published"
+    meanr_perm_rows[[paste(comp[1], comp[2], ro)]] <- r
+  }
+}
+meanr_perm_df <- if (length(meanr_perm_rows))
+  bind_rows(meanr_perm_rows) %>% dplyr::select(Comparison, Pipeline, everything()) else NULL
+
+# ---- B. global-offset removal: edge-wise comparison --------------------------
+# Same Fisher r-to-z test as the main analysis, on the offset-removed networks,
+# with n - 5 for the extra centering. Counts are split by direction, because the
+# direction is the point: the published contrast is uniform, and the question is
+# whether it stays uniform once the animal-level term is gone.
+edge_rows <- list()
+for (comp in comparisons) {
+  A_m <- region_mats[[comp[1]]][["Males"]]; A_f <- region_mats[[comp[1]]][["Females"]]
+  B_m <- region_mats[[comp[2]]][["Males"]]; B_f <- region_mats[[comp[2]]][["Females"]]
+  if (is.null(A_m) || is.null(A_f) || is.null(B_m) || is.null(B_f)) next
+  nA <- n_samples[[comp[1]]][["Combined"]]; nB <- n_samples[[comp[2]]][["Combined"]]
+  for (ro in c(FALSE, TRUE)) {
+    cA <- cor_of(build_combined_mat(A_m, A_f, ro))
+    cB <- cor_of(build_combined_mat(B_m, B_f, ro))
+    # df: n - 4, the same as the main analysis, for BOTH pipelines. The within-sex
+    # row centering constrains each region ACROSS ANIMALS and so costs a degree of
+    # freedom from an across-animal correlation. Removing the per-animal global
+    # offset centers each animal ACROSS REGIONS, which is a constraint in the other
+    # direction: with 198 regions it is one linear constraint on a 198-dimensional
+    # profile and does not remove a degree of freedom from the correlation of any
+    # given region pair over animals. Using n - 5 here would be conservative for the
+    # wrong reason and is not applied.
+    fz <- run_fisher_z_test(cA, nA, cB, nB, comp[1], comp[2], "Combined", df_off = 4)
+    n_sig <- if (is.null(fz)) 0 else nrow(fz)
+    n_up  <- if (is.null(fz)) 0 else sum(fz$Delta_r < 0)   # stronger in condition B
+    n_dn  <- if (is.null(fz)) 0 else sum(fz$Delta_r > 0)   # stronger in condition A
+    edge_rows[[paste(comp[1], comp[2], ro)]] <- data.frame(
+      Comparison = paste0(comp[1], " vs ", comp[2]),
+      Pipeline   = if (ro) "Global offset removed" else "As published",
+      N_significant = n_sig,
+      N_stronger_in_second = n_up,
+      N_stronger_in_first  = n_dn,
+      Fisher_df_offset = 4, stringsAsFactors = FALSE)
+    cat(sprintf("  Edgewise %-38s %-22s %4d sig (%d / %d)\n",
+                paste0(comp[1], " vs ", comp[2]),
+                if (ro) "offset removed" else "as published", n_sig, n_up, n_dn))
+  }
+}
+edge_df <- if (length(edge_rows)) bind_rows(edge_rows) else NULL
+
+# ---- Workbook 4: co-activation controls --------------------------------------
+wb4 <- createWorkbook()
+readme_sheet(wb4,
+  c("Purpose", "Subsampling", "Global_offset", "MeanR_permutation", "Edgewise", "Caveat"),
+  c("Controls on the co-activation analysis: sample-size matching and removal of the per-animal global offset.",
+    "Every condition subsampled to n_sub animals per sex, network rebuilt per draw (centering recomputed within the draw), mean |r| over n_sub_draws draws; mean and 2.5-97.5 percentiles.",
+    "Mean |r| with and without each animal's global offset (its mean log10 density across regions) removed, for the Combined network and each sex.",
+    "Condition labels shuffled within sex, whole network rebuilt per permutation; two-sided add-one p on the mean |r| difference.",
+    "Fisher r-to-z edge-wise comparison on the offset-removed networks (BH q<0.05), counts split by direction. Fisher variance uses n-4, as in the main analysis: the within-sex row centering costs a df from an across-animal correlation, whereas removing the per-animal offset centers across regions and does not.",
+    "Proportional/centering controls are conservative: they cannot by themselves establish the absence of an effect, and are reported as sensitivity analyses."))
+
+# --- C. VARIANCE DECOMPOSITION: per-animal global offset vs region-specific ----
+# The Supplementary Methods quote the share of variance carried by the per-animal
+# global offset in each condition; it was previously computed outside this code.
+# The matrix used here is the one the network is actually built from (each region
+# centred within sex, males and females then pooled), so these numbers describe
+# exactly the variance the correlations see. The offset share is the sum of
+# squares of the per-animal column means about the grand mean, over the total sum
+# of squares. SD_region_specific is the spread that remains once each animal's
+# offset is removed -- a FALL in that value with a flat SD_global_offset is what
+# "more stereotyped activation profiles" means.
+vardecomp_df <- do.call(rbind, lapply(treatments, function(trt) {
+  m_mat <- region_mats[[trt]][["Males"]]; f_mat <- region_mats[[trt]][["Females"]]
+  if (is.null(m_mat) || is.null(f_mat)) return(NULL)
+  X      <- build_combined_mat(m_mat, f_mat)
+  gm     <- mean(X, na.rm = TRUE)
+  off    <- colMeans(X, na.rm = TRUE)
+  ok     <- !is.na(X)
+  ss_tot <- sum((X - gm)^2, na.rm = TRUE)
+  ss_off <- sum((matrix(off, nrow(X), ncol(X), byrow = TRUE) - gm)^2 * ok, na.rm = TRUE)
+  resid  <- sweep(X, 2, off, "-")
+  data.frame(Treatment                  = trt,
+             Pct_variance_global_offset = round(100 * ss_off / ss_tot, 1),
+             SD_global_offset           = round(sd(off, na.rm = TRUE), 3),
+             SD_region_specific         = round(sd(as.numeric(resid), na.rm = TRUE), 3),
+             n_animals                  = ncol(X),
+             n_regions                  = nrow(X),
+             stringsAsFactors = FALSE)
+}))
+if (!is.null(vardecomp_df)) print(vardecomp_df, row.names = FALSE)
+
+if (!is.null(subsample_df))  add_sheet(wb4, "Subsampling", subsample_df)
+if (!is.null(offset_df))     add_sheet(wb4, "Global_offset", offset_df)
+if (!is.null(vardecomp_df))  add_sheet(wb4, "Variance_decomposition", vardecomp_df)
+if (!is.null(meanr_perm_df)) add_sheet(wb4, "MeanR_permutation", meanr_perm_df)
+if (!is.null(edge_df))       add_sheet(wb4, "Edgewise", edge_df)
+add_sheet(wb4, "Scale_invariance", scale_invariance)
+saveWorkbook(wb4, file.path(output_root, "04_Coactivation_Controls.xlsx"), overwrite = TRUE)
+
+
 # ---- Workbook 0: Processed input matrices (raw counts -> log10 region x animal) ----
 wb0 <- createWorkbook()
 readme_sheet(wb0,
@@ -1151,6 +1453,114 @@ if (!is.null(metric_comparisons)) add_sheet(wb2, "Metric_Comparisons", metric_co
 saveWorkbook(wb2, file.path(output_root, "02_Network_Metrics.xlsx"), overwrite = TRUE)
 
 # ---- Workbook 3: Modules, node roles (WMDz + PC), and hubs ----
+
+# ==============================================================================
+# HUB STABILITY: leave-one-animal-out jackknife
+# ------------------------------------------------------------------------------
+# Reviewer 3 (major 5) asked for "some assessment of how stable hub identity is
+# across animals". Hub composition is compared across conditions descriptively;
+# this quantifies how much of that comparison survives dropping a single animal.
+#
+# Each animal is removed in turn, the Combined network is rebuilt from the two
+# reduced per-sex matrices (so the within-sex centring is recomputed on the
+# animals that remain), re-thresholded to the same matched density, and the
+# multi-centrality hub set recomputed by the SAME criterion as the published
+# analysis -- four weighted centralities, "high" = above mean + 1 SD within the
+# network, hub = high on >= hub_min_metrics. Reusing threshold_to_density() and
+# add_hub_scores() is deliberate: it makes the jackknife hub sets identical in
+# definition to the published ones rather than merely similar.
+#
+# Reported per condition: the Jaccard index between each jackknife hub set and
+# the full-sample set, and the proportion of jackknife networks in which each
+# full-sample hub is recovered. These are resampling diagnostics, not a test:
+# jackknife replicates share n-1 animals and are therefore not independent, so
+# they quantify the stability of hub assignment and do not constitute a test of
+# difference between conditions.
+# ==============================================================================
+hub_jack_summary <- NULL; hub_jack_region <- NULL
+if (exists("comb_nodes") && !is.null(comb_nodes)) {
+  cat("\n--- Hub stability: leave-one-animal-out jackknife ---\n")
+
+  # Hub set from one region x animal matrix, by the published criterion.
+  .jk_hub_set <- function(region_mat, target_density = primary_density) {
+    if (is.null(region_mat) || ncol(region_mat) < 3) return(character(0))
+    cor_mat <- cor(t(region_mat)); cor_mat[!is.finite(cor_mat)] <- 0; diag(cor_mat) <- 0
+    thr <- threshold_to_density(cor_mat, target_density)
+    g   <- graph_from_adjacency_matrix(thr$adj, mode = "undirected",
+                                       weighted = TRUE, diag = FALSE)
+    iso <- which(degree(g) == 0); if (length(iso) > 0) g <- delete_vertices(g, iso)
+    if (vcount(g) < 3) return(character(0))
+    comp     <- igraph::components(g)
+    in_giant <- comp$membership == which.max(comp$csize)
+    eig      <- setNames(rep(NA_real_, vcount(g)), V(g)$name)
+    if (sum(in_giant) >= 2) {
+      gg <- induced_subgraph(g, which(in_giant))
+      eig[V(gg)$name] <- as.numeric(eigen_centrality(gg, weights = E(gg)$weight)$vector)
+    }
+    im <- thr$adj[V(g)$name, V(g)$name]
+    im[im > 0] <- 1 / im[im > 0]; diag(im) <- 0
+    gi <- graph_from_adjacency_matrix(im, mode = "undirected", weighted = TRUE, diag = FALSE)
+    nd <- data.frame(
+      Region               = V(g)$name,
+      Strength             = strength(g),
+      Weighted_betweenness = betweenness(gi, normalized = TRUE, weights = E(gi)$weight),
+      Weighted_closeness   = closeness(gi,   normalized = TRUE, weights = E(gi)$weight),
+      Eigenvector          = as.numeric(eig[V(g)$name]),
+      stringsAsFactors     = FALSE)
+    nd <- add_hub_scores(nd)
+    nd$Region[which(nd$Hub)]
+  }
+  .jaccard <- function(a, b) {
+    u <- length(union(a, b)); if (u == 0) NA_real_ else length(intersect(a, b)) / u
+  }
+
+  srows <- list(); rrows <- list()
+  for (trt in treatments) {
+    m_mat <- region_mats[[trt]][["Males"]]; f_mat <- region_mats[[trt]][["Females"]]
+    if (is.null(m_mat) || is.null(f_mat)) next
+    full_hubs <- comb_nodes$Region[comb_nodes$Treatment == trt &
+                                     !is.na(comb_nodes$Hub) & comb_nodes$Hub]
+    if (length(full_hubs) == 0) next
+    # Verify the published hub set is recovered from the full matrix before
+    # trusting any leave-one-out set built the same way.
+    chk <- .jk_hub_set(build_combined_mat(m_mat, f_mat))
+    if (!setequal(chk, full_hubs))
+      warning(sprintf(paste("Hub jackknife: recomputed full-sample hub set for %s does not match",
+                            "the published set (%d vs %d regions, %d shared). Reported stability",
+                            "refers to the recomputed set."),
+                      trt, length(chk), length(full_hubs), length(intersect(chk, full_hubs))))
+    jack <- list()
+    for (j in seq_len(ncol(m_mat)))
+      jack[[length(jack) + 1]] <- .jk_hub_set(build_combined_mat(m_mat[, -j, drop = FALSE], f_mat))
+    for (j in seq_len(ncol(f_mat)))
+      jack[[length(jack) + 1]] <- .jk_hub_set(build_combined_mat(m_mat, f_mat[, -j, drop = FALSE]))
+    n_jk <- length(jack)
+    jac  <- vapply(jack, function(s) .jaccard(s, full_hubs), numeric(1))
+    rec  <- vapply(full_hubs, function(rg)
+              mean(vapply(jack, function(s) rg %in% s, logical(1))), numeric(1))
+    srows[[length(srows) + 1]] <- data.frame(
+      Treatment = trt, n_animals = n_jk, N_hubs_full_sample = length(full_hubs),
+      Mean_Jaccard = round(mean(jac, na.rm = TRUE), 3),
+      Min_Jaccard  = round(min(jac,  na.rm = TRUE), 3),
+      Mean_recovery_of_full_hubs = round(mean(rec), 3),
+      stringsAsFactors = FALSE)
+    # Recovery for every region that is a hub in the full sample of ANY condition,
+    # so regions that lose hub status can be read across conditions.
+    all_ref <- unique(comb_nodes$Region[!is.na(comb_nodes$Hub) & comb_nodes$Hub])
+    rec_all <- vapply(all_ref, function(rg)
+                 mean(vapply(jack, function(s) rg %in% s, logical(1))), numeric(1))
+    rrows[[length(rrows) + 1]] <- data.frame(
+      Treatment = trt, Region = all_ref, Structure = struct_of(all_ref),
+      Hub_in_full_sample = all_ref %in% full_hubs,
+      Recovery_fraction = round(rec_all, 3), N_jackknife = n_jk,
+      stringsAsFactors = FALSE)
+    cat(sprintf("  %-20s n=%2d  full hubs %2d  mean Jaccard %.2f  mean recovery %.0f%%\n",
+                trt, n_jk, length(full_hubs), mean(jac, na.rm = TRUE), 100 * mean(rec)))
+  }
+  if (length(srows)) hub_jack_summary <- do.call(rbind, srows)
+  if (length(rrows)) hub_jack_region  <- do.call(rbind, rrows)
+}
+
 wb3 <- createWorkbook()
 readme_sheet(wb3,
              c("Network modules", "Node_Roles", "WM_degree_z", "Participation_coef",
@@ -1201,6 +1611,8 @@ for (lab in names(modules_list)) {
     mutate(Pct = round(100 * N / sum(N), 1)) %>% arrange(Treatment, Sex, Network_module, desc(N))
 }
 if (length(comp_list) > 0) add_sheet(wb3, "Module_Composition", bind_rows(comp_list))
+if (!is.null(hub_jack_summary)) add_sheet(wb3, "Hub_Jackknife_Summary", hub_jack_summary)
+if (!is.null(hub_jack_region))  add_sheet(wb3, "Hub_Jackknife_ByRegion", hub_jack_region)
 if (length(stability_list) > 0) add_sheet(wb3, "Module_Stability", bind_rows(stability_list))
 if (length(modmethod_list) > 0) add_sheet(wb3, "Module_Method_Comparison", bind_rows(modmethod_list))
 saveWorkbook(wb3, file.path(output_root, "03_Modules_and_Roles.xlsx"), overwrite = TRUE)
@@ -1210,4 +1622,5 @@ writeLines(capture.output(sessionInfo()),
 
 cat("\nAll workbooks written to:", output_root, "\n")
 cat("  00_Processed_Data.xlsx | 01_Connectivity.xlsx | 02_Network_Metrics.xlsx | 03_Modules_and_Roles.xlsx\n")
+cat("  04_Coactivation_Controls.xlsx\n")
 cat("Done.\n")

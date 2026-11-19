@@ -1,15 +1,15 @@
 #!/usr/bin/env Rscript
 # cartography_figures.R
 # =============================================================================
-# Figure 4, Panels A and B: cartographic node metrics mapped onto the atlas.
+# Figure 6, Panels A and B: cartographic node metrics mapped onto the atlas.
 #   Panel A : participation coefficient (PC) coronal atlas strips + colorbar
 #   Panel B : within-module degree z-score (WMDz) coronal atlas strips + colorbar
 #
 # Accompanies:
 #   Martinez M, Ozawa A, Van Zant D, Thornberry J, Toll L.
-#   Whole Brain Cellular Activation After Mu and NOP Receptor Agonism
-#   Identified Differential Regional and Network Consequences.
-#   [JOURNAL] 2026. [PAPER_DOI]
+#   Whole Brain Cellular Activation After Mu and NOP Receptor Agonism:
+#   Shared Regional Targets with Divergent Network Consequences.
+#   Submitted to Psychopharmacology, 2026.
 #
 # Code author:  Madeline Martinez
 # Contact:      Lawrence Toll (corresponding author)
@@ -17,7 +17,7 @@
 #               Charles E. Schmidt College of Medicine,
 #               Florida Atlantic University
 # Repository:   https://github.com/toll-lab-code/cfos-opioid-brain-analyses
-# Archived:     [ZENODO_DOI] (archive created at acceptance)
+# Archived:     Zenodo; DOIs for this release are given in readme.md
 # License:      MIT (see LICENSE)
 # Tested with:  R 4.4.3 (see sessionInfo.txt)
 #
@@ -62,7 +62,7 @@ SCRIPT_DIR  <- path.expand(Sys.getenv("CFOS_SCRIPT_DIR", "scripts"))
 # Third-party atlas folder: rgb2acr.json, acr2parent.json, acr2full.json, coronal_svg/
 SBA_DIR     <- path.expand(Sys.getenv("CFOS_SBA_DIR", file.path(DATA_DIR, "sba_data")))
 SHEET_FILE  <- file.path(OUTPUT_ROOT, "03_Modules_and_Roles.xlsx")   # network-pipeline output (Node_Roles sheet)
-OUTPUT_DIR  <- file.path(OUTPUT_ROOT, "figures", "Figure4")          # strip + colorbar PNGs are written here
+OUTPUT_DIR  <- file.path(OUTPUT_ROOT, "figures", "Figure6")          # strip + colorbar PNGs are written here
 SHEET_NAME  <- "Node_Roles"
 FONT        <- Sys.getenv("CFOS_FONT", "Arial")
 
@@ -136,18 +136,22 @@ OUTLINE_COLOR <- "#000000"
 # print size below -- so keep this comfortably above the final resolution.
 RENDER_SCALE <- 3
 
-# -- Print sizing (for assembly into the NPP figure) -------------------
+# -- Print sizing (for assembly into the final figure) -------------------
 # Each strip is exported to be PLACED at this physical width and resolution.
 # Layout: a 2-column (178 mm) figure with a PC column beside a WMDz column;
 # ~3.3 in per strip fits two side by side with room for row labels + a gutter.
 # Raise OUTPUT_DPI to 900-1200 if the strips will be enlarged beyond this width.
-STRIP_WIDTH_IN  <- 3.35   # content ~82.4 mm = the A/B panel slot (side-by-side)
+# 80 mm per strip so panels a and b sit side by side inside the 165 mm band
+# (80 + 4 mm gap + 80 = 164). At the previous 3.35 in the files came out 85.09 mm
+# and two of them totalled 170.2 mm, which overflowed the Psychopharmacology
+# 174 mm page less its 4.5 mm margins.
+STRIP_WIDTH_IN  <- 80 / 25.4   # 80.00 mm per strip (a/b side by side in 174 mm)
 OUTPUT_DPI      <- 1200
 STRIP_MARGIN_IN <- 0.05   # white margin around each strip (room for leaders)
 
 # Horizontal colorbars sit under each A/B block, rendered at their FINAL
 # placement size with pointsize = 8 so text is absolute pt (8 pt title, 8 pt
-# ticks; NPP >= 8 pt floor) and the bar drops in 1:1 -- no downscaling.
+# ticks; 8 pt floor) and the bar drops in 1:1 -- no downscaling.
 COLORBAR_WIDTH_IN  <- 2.52   # ~64 mm bar under each A/B block
 COLORBAR_HEIGHT_IN <- 0.50   # 8 pt title (top) + bar + 8 pt tick labels (bottom); raised from 0.42 to keep the bar thickness once text -> 8 pt
 
@@ -155,10 +159,10 @@ METRICS <- list(
   # PC: bounded 0->1, unsigned -> sequential map (no canonical colour in the
   # lineage, where PC is encoded as node size). Swap "viridis" for "mako",
   # "magma", "rocket", etc. to taste.
-  PC   = list(label = "Participation Coefficient",    cmap = "viridis", diverging = FALSE),
+  PC   = list(label = "Participation coefficient",    cmap = "viridis", diverging = FALSE),
   # WMDz: signed z-score -> canonical blue(low)-white(0)-red(high) diverging,
   # centered at 0 (Kimbrough 2020/2021; Ardinger 2024).
-  WMDz = list(label = "Within-Module Degree Z-Score", cmap = "bwr",     diverging = TRUE)
+  WMDz = list(label = "Within-module degree z-score", cmap = "bwr",     diverging = TRUE)
 )
 
 # -- Data source config ------------------------------------------------
@@ -173,7 +177,7 @@ SEXES_TO_PLOT <- c("Combined", "Males", "Females")
 
 # Color-scale groups: sexes within the same group share ONE scale per metric
 # (so panels are directly comparable), and get one shared legend. Combined sits
-# alone (main figure); Males+Females share a scale (supplemental sex comparison).
+# alone (main figure); Males+Females share a scale (Figure S3, sex comparison).
 # Each group name is used in the legend filename. Sexes not in SEXES_TO_PLOT are
 # ignored automatically.
 SCALE_GROUPS <- list(
@@ -318,12 +322,18 @@ build_resolver <- function(my_values, acr2parent, children) {
 # In Python this returned a matplotlib Normalize object. Here we return
 # a small list(vmin, vmax) plus a normalize() helper.
 
+# Diverging (WMDz) scales are capped at +/- DIVERGING_CAP so every WMDz map in
+# the paper shares the -3..3 bar of Figure 6. In the sex-stratified maps (Fig.
+# S3) only 2 of ~2,200 values pass -3 (min -3.19); cmap_color() clamps them to
+# the end colour, as the caption states. NA = no cap (scale from the data).
+DIVERGING_CAP <- 3
 make_norm <- function(values, diverging) {
   arr <- as.numeric(values)
   arr <- arr[!is.na(arr)]
   if (length(arr) == 0L) return(list(vmin = 0, vmax = 1, ticks = c(0, 1)))
   if (diverging) {
     m <- max(abs(min(arr)), abs(max(arr)))
+    if (!is.na(DIVERGING_CAP)) m <- min(m, DIVERGING_CAP)
     p <- pretty(c(-m, m)); step <- if (length(p) > 1) p[2] - p[1] else m
     vmax <- ceiling(m / step) * step               # round OUT so bar ends on a tick
     return(list(vmin = -vmax, vmax = vmax, ticks = seq(-vmax, vmax, by = step)))
@@ -425,12 +435,12 @@ svg_native_width <- function(svg_text) {
 colorbar_image <- function(norm, cmap_name, label) {
   tf <- tempfile(fileext = ".png")
   # Render at the FINAL placement size with pointsize = 8, so text is absolute:
-  # cex 1 -> 8 pt (bold title) and cex.axis 1 -> 8 pt (ticks). NPP >= 8 pt floor;
+  # cex 1 -> 8 pt (bold title) and cex.axis 1 -> 8 pt (ticks). 8 pt floor;
   # placed 1:1 at assembly.
   grDevices::png(tf,
                  width  = round(COLORBAR_WIDTH_IN  * OUTPUT_DPI),
                  height = round(COLORBAR_HEIGHT_IN * OUTPUT_DPI),
-                 res = OUTPUT_DPI, pointsize = 8, type = dev_type)
+                 res = OUTPUT_DPI, pointsize = 8, type = dev_type, family = FONT)
   # Safety net: if an error occurs mid-plot, still close the device.
   ok <- FALSE
   on.exit(if (!ok && grDevices::dev.cur() > 1L) grDevices::dev.off(), add = TRUE)
@@ -445,7 +455,9 @@ colorbar_image <- function(norm, cmap_name, label) {
     z = matrix(seq_len(n), nrow = n, ncol = 1),
     col = cols, axes = FALSE, xlab = "", ylab = ""
   )
-  graphics::axis(1, at = norm$ticks, cex.axis = 1, mgp = c(3, 0.4, 0), tcl = -0.3)
+  graphics::box(col = "grey30", lwd = 0.3)   # same hairline frame as the regional and co-activation bar panels
+  graphics::axis(1, at = norm$ticks, cex.axis = 1, mgp = c(3, 0.4, 0), tcl = -0.3,
+                 labels = sub("^-", "\u2212", trimws(format(norm$ticks))))   # true minus
   graphics::mtext(label, side = 3, line = 0.3, font = 2, cex = 1)
   graphics::par(op)
   
@@ -702,11 +714,11 @@ main <- function() {
 }
 
 # #############################################################################
-# ## SECTION C -- Supplemental Figure S4: cartographic scatter (PC vs WMDz)   ##
+# ## SECTION C -- Supplemental Figure S3: cartographic scatter (PC vs WMDz)   ##
 # #############################################################################
 # =============================================================================
-# Supplemental Figure S4 (the joint PC-WMDz cartographic-role scatter; formerly
-# numbered S3 before the NPP figure reorganization).
+# Supplemental Figure S3 (the joint PC-WMDz cartographic-role scatter; numbered
+# S3 in the paper).
 #
 # Guimera-Amaral cartographic scatter: within-module degree z-score (WMDz, y)
 # vs participation coefficient (PC, x), one panel per condition, Combined
@@ -718,8 +730,8 @@ main <- function() {
 # WMDZ_COLUMN above). Independent of the SBA atlas -- needs only readxl + base
 # graphics -- so it renders even when the atlas inputs are absent.
 #
-# NPP artwork spec: rendered at final 178 mm width, placed 1:1, pointsize = 8 so
-# every text element is 8 pt (>= NPP floor); panel/axis titles carry the
+# Artwork spec: rendered at final 174 mm width, placed 1:1, pointsize = 8 so
+# every text element is 8 pt (>= the 8 pt floor); panel/axis titles carry the
 # hierarchy through BOLD, not larger type. 1200 dpi TIFF (LZW) + PNG.
 # =============================================================================
 
@@ -727,7 +739,7 @@ main <- function() {
 if (!exists("FONT")) FONT <- "Arial"
 
 SC_TREATMENTS <- c("Vehicle", "Acute Morphine", "Morphine-Dependent", "Ro 64-6198")
-# Sexes to render (one 2x2 figure each). "Combined" is the S4 figure; add
+# Sexes to render (one 2x2 figure each). "Combined" is the S3 figure; add
 # "Males","Females" for sex-stratified versions (same code path).
 SCATTER_SEXES <- c("Combined")
 
@@ -744,14 +756,14 @@ SC_LX_LO <- 0.05; SC_LX_HI <- 0.78; SC_MIN_GAP <- 0.135
 SC_ROW_Y1 <- 3.25                       # single-row band height (<= 4 labels)
 SC_ROW_Y2 <- c(3.50, 2.72)              # two-row band heights (> 4 labels)
 
-SC_W_IN <- 178 / 25.4                   # 178 mm double-column width (place 1:1)
-SC_H_IN <- 150 / 25.4                   # ~150 mm tall (2x2 + side legend)
+SC_W_IN <- 174 / 25.4                   # 174 mm full width (Psychopharmacology)
+SC_H_IN <- 138 / 25.4                   # 138 mm tall (2x2 + side legend); was 150, mostly white space
 
 # -- Canonical division palette ----------------------------------------------
 # Reuse divisions.R (single source of truth) if reachable; otherwise fall back
 # to an inline copy of division_order / division_colors so this section renders
 # standalone. Either way the colours match Figs 2-5 (Striatum = #ff5da2, etc.).
-if (!exists("division_colors") || !exists("division_order")) {
+if (!exists("division_colors") || !exists("division_order") || !exists("KEY_SW_MM")) {
   .div_path <- file.path(if (exists("SCRIPT_DIR")) SCRIPT_DIR else "scripts",
                          "divisions.R")
   if (file.exists(.div_path)) try(source(.div_path), silent = TRUE)
@@ -770,6 +782,11 @@ if (!exists("division_colors") || !exists("division_order")) {
     "Pons" = "#7b5548", "Medulla" = "#ba7517", "Cerebellum" = "#fdd835")
 }
 
+# Division-key spec (divisions.R); inline fallback for a standalone run.
+if (!exists("KEY_SW_MM")) {
+  KEY_SW_MM <- 2.4; KEY_GAP_MM <- 1.2; KEY_PITCH_MM <- 3.4; KEY_TITLE_MM <- 4.0
+}
+
 # -- Helpers ------------------------------------------------------------------
 # White-halo text (8-way offset white copies, then the label on top) so region
 # codes stay legible over dots and guide lines.
@@ -784,16 +801,22 @@ sc_halo_text <- function(x, y, labels, cex = 1, halo = "white", col = "black") {
 # 1-D label de-clutter on a sorted vector: push neighbours apart to SC_MIN_GAP,
 # then keep the whole row inside [SC_LX_LO, SC_LX_HI] by rolling back from
 # whichever end overflows.
-sc_declutter <- function(v) {
+# Gaps come from the labels' rendered widths (plus one "n" of space), not a fixed
+# PC distance: a fixed 0.135 let wide neighbours such as AVPV and PARN touch.
+sc_declutter <- function(v, labs) {
   n <- length(v)
-  if (n > 1) for (i in 2:n) if (v[i] < v[i - 1] + SC_MIN_GAP) v[i] <- v[i - 1] + SC_MIN_GAP
-  if (n && v[n] > SC_LX_HI) {
-    v[n] <- SC_LX_HI
-    if (n > 1) for (i in (n - 1):1) v[i] <- min(v[i], v[i + 1] - SC_MIN_GAP)
+  hw  <- strwidth(labs, cex = 1) / 2
+  gap <- function(i) hw[i - 1] + hw[i] + strwidth("n", cex = 1)
+  lo <- pmax(SC_LX_LO, SC_XLIM[1] + hw); hi <- pmin(SC_LX_HI + 0.04, SC_XLIM[2] - hw)
+  v <- pmin(pmax(v, lo), hi)
+  if (n > 1) for (i in 2:n) if (v[i] < v[i - 1] + gap(i)) v[i] <- v[i - 1] + gap(i)
+  if (n && v[n] > hi[n]) {
+    v[n] <- hi[n]
+    if (n > 1) for (i in (n - 1):1) v[i] <- min(v[i], v[i + 1] - gap(i + 1))
   }
-  if (n && v[1] < SC_LX_LO) {
-    v[1] <- SC_LX_LO
-    if (n > 1) for (i in 2:n) v[i] <- max(v[i], v[i - 1] + SC_MIN_GAP)
+  if (n && v[1] < lo[1]) {
+    v[1] <- lo[1]
+    if (n > 1) for (i in 2:n) v[i] <- max(v[i], v[i - 1] + gap(i))
   }
   v
 }
@@ -813,7 +836,8 @@ sc_draw_panel <- function(sub, panel_title) {
   }
   # L-shaped axes only (no top/right spine)
   axis(1, at = SC_XTICKS, cex.axis = 1, lwd = 0.6, mgp = c(3, 0.35, 0), tcl = -0.3)
-  axis(2, at = SC_YTICKS, cex.axis = 1, las = 1, lwd = 0.6, mgp = c(3, 0.55, 0), tcl = -0.3)
+  axis(2, at = SC_YTICKS, labels = sub("^-", "\u2212", SC_YTICKS),   # true minus
+       cex.axis = 1, las = 1, lwd = 0.6, mgp = c(3, 0.55, 0), tcl = -0.3)
   title(main = panel_title, font.main = 2, cex.main = 1, line = 0.5)
   # connector-hub (R6) labels, parked in the band above the cloud
   hubs <- sub[!is.na(sub$Role) & sub$Role == "R6 connector hub", , drop = FALSE]
@@ -826,7 +850,7 @@ sc_draw_panel <- function(sub, panel_title) {
       idx <- which(((seq_len(n) - 1L) %% n_rows) == (r - 1L))
       if (!length(idx)) next
       g  <- hubs[idx, , drop = FALSE]
-      lx <- sc_declutter(pmin(pmax(g$PCv, SC_LX_LO), SC_LX_HI))
+      lx <- sc_declutter(g$PCv, g$Region)
       ly <- row_y[r]
       for (k in seq_along(idx)) {
         segments(lx[k], ly, g$PCv[k], g$WMv[k], col = "grey40", lwd = 0.6)
@@ -839,8 +863,8 @@ sc_draw_panel <- function(sub, panel_title) {
 
 # Full 2x2 figure + side legend + shared axis titles (deterministic NDC layout).
 sc_draw_figure <- function(dat) {
-  PL <- 0.085; PR <- 0.80; PB <- 0.10; PT <- 0.94   # panel-block extent (NDC)
-  gx <- 0.045; gy <- 0.075                          # inter-panel gaps
+  PL <- 0.045; PR <- 0.80; PB <- 0.035; PT <- 0.975 # panel-block extent (NDC)
+  gx <- 0.045; gy <- 0.045                          # inter-panel gaps
   cw <- (PR - PL - gx) / 2; rh <- (PT - PB - gy) / 2
   pf <- list(c(PL, PL + cw, PB + rh + gy, PT),       # top-left
              c(PR - cw, PR, PB + rh + gy, PT),       # top-right
@@ -848,31 +872,38 @@ sc_draw_figure <- function(dat) {
              c(PR - cw, PR, PB, PB + rh))            # bottom-right
   par(family = FONT)
   for (i in seq_along(SC_TREATMENTS)) {
-    par(fig = pf[[i]], new = (i > 1), mar = c(2.2, 2.7, 1.8, 0.5))
+    par(fig = pf[[i]], new = (i > 1), mar = c(1.6, 2.7, 1.8, 0.5))
     sc_draw_panel(dat[dat$Treatment == SC_TREATMENTS[i], , drop = FALSE],
                   SC_TREATMENTS[i])
   }
   # legend (canonical order, divisions present in the data)
+  # Key drawn to the shared division-key spec in divisions.R (2.4 mm dot, 1.2 mm
+  # to the label, 3.4 mm rows, 4.0 mm title-to-first-row), in mm coordinates.
+  # Rows were 7.3 mm apart before, twice the pitch of every other key.
   par(fig = c(0.805, 1.0, PB, PT), new = TRUE, mar = c(0, 0, 0, 0))
-  plot(NA, xlim = c(0, 1), ylim = c(0, 1), xaxs = "i", yaxs = "i",
+  LW <- (1.0 - 0.805) * SC_W_IN * 25.4; LH <- (PT - PB) * SC_H_IN * 25.4
+  plot(NA, xlim = c(0, LW), ylim = c(0, LH), xaxs = "i", yaxs = "i",
        axes = FALSE, xlab = "", ylab = "")
   present <- division_order[division_order %in% unique(dat$Structure)]
-  text(0.02, 0.985, "Structure", adj = c(0, 1), font = 2, cex = 1)
-  y0 <- 0.90; dy <- 0.058
+  ty <- LH - 1.6                                    # title centre
+  text(0.4, ty, "CCFv3 division", adj = c(0, 0.5), font = 2, cex = 1)
+  dot_cex <- 1.98 * KEY_SW_MM / 2.4                 # pch 21 at cex 1.98 measures 2.4 mm across here
   for (j in seq_along(present)) {
-    yy <- y0 - (j - 1) * dy
-    points(0.07, yy, pch = 21, bg = division_colors[[present[j]]],
-           col = "white", cex = 1.3, lwd = 0.5)
-    text(0.14, yy, present[j], adj = c(0, 0.5), cex = 1)
+    yy <- ty - KEY_TITLE_MM - (j - 1) * KEY_PITCH_MM
+    points(0.4 + KEY_SW_MM / 2, yy, pch = 21, bg = division_colors[[present[j]]],
+           col = "white", cex = dot_cex, lwd = 0.5)
+    text(0.4 + KEY_SW_MM + KEY_GAP_MM, yy, present[j], adj = c(0, 0.5), cex = 1)
   }
   # shared axis titles (single centred labels over the panel block only)
   par(fig = c(0, 1, 0, 1), new = TRUE, mar = c(0, 0, 0, 0))
   plot(NA, xlim = c(0, 1), ylim = c(0, 1), xaxs = "i", yaxs = "i",
        axes = FALSE, xlab = "", ylab = "")
-  text((PL + PR) / 2, 0.028, "Participation Coefficient (PC)",
-       adj = c(0.5, 0.5), font = 2, cex = 1)
-  text(0.022, (PB + PT) / 2, "Within-Module Degree Z-score (WMDz)",
-       srt = 90, adj = c(0.5, 0.5), font = 2, cex = 1)
+  # Regular weight, like every other axis title in the paper; bold is kept for
+  # panel and legend titles. Set just outside the tick labels.
+  text((PL + PR) / 2, 0.018, "Participation coefficient (PC)",
+       adj = c(0.5, 0.5), font = 1, cex = 1)
+  text(0.022, (PB + PT) / 2, "Within-module degree z-score (WMDz)",
+       srt = 90, adj = c(0.5, 0.5), font = 1, cex = 1)
 }
 
 # -- Runner -------------------------------------------------------------------
@@ -888,8 +919,8 @@ run_cartography_scatter <- function() {
   
   for (sx in SCATTER_SEXES) {
     d <- roles[roles$Sex == sx, , drop = FALSE]
-    if (nrow(d) == 0L) { message("  [S4] no rows for Sex == '", sx, "'"); next }
-    stub <- file.path(OUTPUT_DIR, sprintf("FigureS4_scatter_%s", safe_filename(sx)))
+    if (nrow(d) == 0L) { message("  [S3] no rows for Sex == '", sx, "'"); next }
+    stub <- file.path(OUTPUT_DIR, sprintf("FigureS3_scatter_%s", safe_filename(sx)))
     tiff(paste0(stub, ".tiff"), width = SC_W_IN, height = SC_H_IN, units = "in",
          res = OUTPUT_DPI, compression = "lzw", family = FONT, pointsize = 8,
          type = dev_type)
@@ -897,7 +928,7 @@ run_cartography_scatter <- function() {
     png(paste0(stub, ".png"), width = SC_W_IN, height = SC_H_IN, units = "in",
         res = OUTPUT_DPI, family = FONT, pointsize = 8, type = dev_type)
     sc_draw_figure(d); dev.off()
-    cat(sprintf("  wrote %s.{tiff,png}  (Fig. S4 cartographic scatter, Sex = %s)\n",
+    cat(sprintf("  wrote %s.{tiff,png}  (Fig. S3 cartographic scatter, Sex = %s)\n",
                 basename(stub), sx))
   }
 }
@@ -906,11 +937,11 @@ run_cartography_scatter <- function() {
 # RUN
 # =============================================================================
 # Panels A/B (regional atlas maps) -- require the SBA atlas inputs (rsvg/magick
-# + coronal SVGs). Wrapped in tryCatch so Supplemental Figure S4 (Section C)
-# still renders when those inputs are absent: S4 needs only the Node_Roles
+# + coronal SVGs). Wrapped in tryCatch so Supplemental Figure S3 (Section C)
+# still renders when those inputs are absent: S3 needs only the Node_Roles
 # sheet + base graphics.
 tryCatch(main(), error = function(e)
   message("[Panels A/B] atlas render skipped: ", conditionMessage(e)))
 
-# Supplemental Figure S4 -- cartographic scatter (PC vs WMDz).
+# Supplemental Figure S3 -- cartographic scatter (PC vs WMDz).
 run_cartography_scatter()

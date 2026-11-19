@@ -4,9 +4,9 @@
 #
 # Accompanies:
 #   Martinez M, Ozawa A, Van Zant D, Thornberry J, Toll L.
-#   Whole Brain Cellular Activation After Mu and NOP Receptor Agonism
-#   Identified Differential Regional and Network Consequences.
-#   [JOURNAL] 2026. [PAPER_DOI]
+#   Whole Brain Cellular Activation After Mu and NOP Receptor Agonism:
+#   Shared Regional Targets with Divergent Network Consequences.
+#   Submitted to Psychopharmacology, 2026.
 #
 # Code author:  Madeline Martinez
 # Contact:      Lawrence Toll (corresponding author)
@@ -14,7 +14,7 @@
 #               Charles E. Schmidt College of Medicine,
 #               Florida Atlantic University
 # Repository:   https://github.com/toll-lab-code/cfos-opioid-brain-analyses
-# Archived:     [ZENODO_DOI] (archive created at acceptance)
+# Archived:     Zenodo; DOIs for this release are given in readme.md
 # License:      MIT (see LICENSE)
 # Tested with:  R 4.4.3 (see sessionInfo.txt)
 #
